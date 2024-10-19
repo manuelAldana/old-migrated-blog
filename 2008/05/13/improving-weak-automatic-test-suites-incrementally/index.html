@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Improving weak automatic test-suites incrementally</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Improving weak automatic test-suites incrementally Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Bashing the refactoring criticism' href='../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html' />
+<link rel='next' title='Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)' href='../../21/eclipse-vs-intellij/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../21/eclipse-vs-intellij/index.html">Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</a> </div>
+	<div class="older"> <a href="../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html">Bashing the refactoring criticism</a> &gt; </div>
+</div>
+					
+			<h4>May 13th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Improving weak automatic test-suites incrementally</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/05/13/improving-weak-automatic-test-suites-incrementally/&amp;title=Improving+weak+automatic+test-suites+incrementally&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>A key element for good quality software is a good automatic run test-suite, which contains both unit and integration tests. As Frederic P. Brooks already mentions in his book &#8216;The Mythical Man-Month&#8217;, developers (as other humans, too) are far away from being perfect. As software from the outside view often needs to be written 100% correctly (only one missing or wrong statement in the whole execution path can make a feature to be buggy), we need to have a reliable way to get quick feedback whether something works or has been broken. A powerful way to accomplish this is by checking the behaviour with automatic running test-cases. Though this practice is already state of the art, you often find systems with a weak test-suite. This article shows why the feedback-loop is so important to how improve your test suite by getting a testing culture and to introduce test-cases step by step.</p>
+<h3>Tests give you invaluable feedback</h3>
+<p>In following situations the feedback of tests is very helpful or even essential:</p>
+<ul>
+<li>Existing tests tell you that you didn&#8217;t break existing behaviour after doing adaptions. These regression tests show you a green bar if a code change did not affect working features.</li>
+<li>Tests help you to introduce new features. Writings new tests is done in parallel when touching production code. This way you can concentrate on this single feature and you further more get a quick response, whether the feature is implemented correctly (green bar) or not (red bar).</li>
+<li>Tests help you to reproduce a bug. You write a new test case which shows you a the bug as a red bar. With this you have a very good starting point to debug and fix it. When fixed you get a positive response (green bar shows up).</li>
+</ul>
+<h3>The dilemma of weak test-suites</h3>
+<p>Of course one single test-case won&#8217;t do the catch. Your aim should be have many test-cases which summed up represent your whole strong test suite. Unfortunately test suites are often weak, especially when changing code they don&#8217;t give you a red bar if something has been broken. The reason why a test suite is weak can be manifold:</p>
+<h4>No practice of testing, too few tests</h4>
+<p>The view of tests as central &#8220;development-drivers&#8221; is not practiced. Things are implemented and after that roughly tested in a manual way. There is no coding of automatic tests which prove that bug-fixes are done correctly or features work like specified. Testcode is seen as not-so-important stuff, because it does not show up in the production code and this way does not give real additional value to the customer.</p>
+<h4>Tests aren&#8217;t executed regularly</h4>
+<p>Tests which are part of the test suite exist, but their execution is not part of the build. Thus they are hardly executed and are triggered manually. Often this is the case because the tests need human intervention and cannot be run automatically by a build server or similar. It also can be that in fact you have a completely automatic test suite but is just not common that it is executed often. If tests aren&#8217;t executed regularly (e.g. once a day, after each commit), you lose the advantage of quick feedback. With this running the tests after a week/month or so, you don&#8217;t know what code change caused the test failures or errors. After a while developers will get reluctant about tests, they will be getting used to red bars and simply put will just ignore them at some point. In the end tests won&#8217;t be maintained and your test code gets more a burden than a help. Finally your test-code decays to dead code.</p>
+<h4>Missing or very expensive tools</h4>
+<p>For test automation the proper tools are very important. Nowadays you get a lot of good open-source test tools (Fit, xUnit-frameworks). Never the less for some special areas it is not trivial how to automate some testing steps, especially in integration testing (e.g. setting up and validating smart-cards contents, or testing message-oriented/asynchronous systems in general). Some vendors sometimes provide some more advanced testing tools but these are either very expensive or/and cannot be extended for special problems.</p>
+<h3>The dilemma solution</h3>
+<p>Above mentioned constraints to get a good test-suite are often hard but can be tackled. First of all everyone in the team needs to understand that tests aren&#8217;t given to the customer but are inherent important to the development process. Well, you don&#8217;t include you favorite IDE to the customer, never the less you couldn&#8217;t create software without it, could you? Testing continously needs to be a new habit, so give the team some more time to dig into this, like planning trainings for JUnit or test automation in general. If the team starts to value tests there still could be the problem that there are hardly any automated tests, which can be very demotivating (&#8216;The where to start&#8230;?&#8217; issue). Never the less you can start up by writing tests for all new features you want to implement or for areas you want to refactor. When knowing a bug always reproduce a bug with a test case initially. After doing this for a while you will see how your backing safety-net will grow bigger and bigger. Of course the test cases of the test division won&#8217;t be replaced by newly introduced test cases of the developers. There still are many tests which are difficult or cannot be automated at all (like user acceptance or GUI tests). So see developer-testing as supplements and not replacements for the &#8220;traditional&#8221; tests. Of course the testers could also help to improve the automated integration tests, because they are more black box focused. In a very mature test focused process a tester for instance would attach a reproducing integration test to a bug report.</p>
+<p>As mentioned not executed tests some day will end up as dead code. To avoid this introduce certain triggers (e.g. nightly, after each commit) to run your test suite. See the test runnings as part of the software build itself. This view is very powerful and is also recommended by the Continous Integration concept. If run very regularly developers will soon start to appreciate the tests and will have &#8220;fun&#8221; with extending test-suite. Looking at the visible green bar or getting rid of a red one can be very motivating.</p>
+<p>In former times test tools often had been something more for the people in the test division. The picture has changed a lot. Automated tests created directly from the developers is state of the art and is supported by many useful and open-source tools (Fitness, xUnit, db-unit, Mock-Frameworks, soap-ui etc.). They are extensible and can be combined to get an even more powerful testing tool. Further more Continous Integration servers for running and triggering tests are mature, free and can be extended (CruiseControl, Continuum, Hudson etc.).</p>
+<h3>Summary</h3>
+<p>Generally the view of tests from the developers side has changed a lot. Especially since the rise of Unit-testing, some new integration test-tools and the concept of Continous Integration, test-creation by developers is much more common. Even if your organization has not introduced this practice you can do so by building up your test-suite incrementally and executing it regularly. The harder part will be to get the developers to a testing routine/culture but this effort will far be outweighed by the benefits.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts in Continous Integration" rel="category tag">Continous Integration</a> &middot;  <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../21/eclipse-vs-intellij/index.html">Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</a> </div>
+	<div class="older"> <a href="../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html">Bashing the refactoring criticism</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F05%252F13%252Fimproving-weak-automatic-test-suites-incrementally%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

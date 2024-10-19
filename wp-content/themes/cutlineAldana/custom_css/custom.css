@@ -1,0 +1,57 @@
+/*
+	custom.css — custom styles for Cutline that YOU define
+	------------------------------------------------------
+	
+	This stylesheet will allow you to futureproof your
+	changes against future releases and upgrades. I know
+	you work hard on your modified styles, and I don't
+	want you to feel like every upgrade is a total drag!
+	
+	Instructions:
+	
+	Modifying existing Cutline styles to your liking is a
+	breeze with this handy stylesheet. The <body> tag
+	within the header.php file has been appended with a
+	CSS class called "custom," and thanks to this, you now
+	have the ability to override ANY style that's declared
+	in the original Cutline stylesheet.
+	
+	In practice, you simply need to copy the CSS for the
+	element that you want to change (from style.css) and
+	then paste it here. Prefix the new CSS declaration
+	with .custom, and then make your tweaks as necessary.
+	
+	Here's an example:
+	
+	To change the default color of unvisited links from 
+	blue to red (#c00) and remove the default underline, 
+	this is what you would do:
+	
+	.custom a { color: #c00; text-decoration: none; }
+	
+	Cool? Now get to hackin!
+*/
+
+/* 
+Style Sheet code for Image Caption Easy Plugin for WordPress
+Copy and Paste this code into your WordPress theme style sheet file (style.css) then upload to its location.
+You can edit any of these to suit your needs.
+*/
+.imagecaptioneasy {
+  padding: 5px;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 10px;
+  line-height: 1.15em;
+  text-align: center;
+  border: 1px solid #808080;
+  background: #EAEAEA;
+  color: #333;
+}
+.imagecaptioneasy img { border: 0px solid #fff; margin-bottom:5px; }
+.imagecaptioneasy span { text-align: center; }
+.imagecaptioneasy_top_left { margin: 0 11px 11px 0; float: left; }
+.imagecaptioneasy_top_right { margin: 0 0 11px 11px; float: right; }
+.imagecaptioneasy_top_nowrap { margin: 0 0 11px 0; float: none; }
+.imagecaptioneasy_left { margin: 11px 11px 11px 0; float: left; }
+.imagecaptioneasy_right { margin: 11px 0 11px 11px; float: right; }
+.imagecaptioneasy_nowrap { margin: 11px 0 11px 0; float: none; }

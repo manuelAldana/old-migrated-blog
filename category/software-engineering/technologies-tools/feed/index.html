@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Manuel Aldana &#187; Technologies/Tools</title>
+	<atom:link href="http://www.aldana-online.de/category/software-engineering/technologies-tools/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.aldana-online.de</link>
+	<description>Software Engineering: blog &#38; .lessons_learned</description>
+	<lastBuildDate>Wed, 30 May 2018 18:51:07 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>The evil path of Mobile-Apps (vs. Webstandards)&#8230;</title>
+		<link>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/</link>
+		<comments>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/#comments</comments>
+		<pubDate>Thu, 26 Jan 2012 00:06:13 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=341</guid>
+		<description><![CDATA[The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?
+Step backwards from Web-Standards
+I think web-standards like HTML, JavaScript, [...]]]></description>
+			<content:encoded><![CDATA[<p>The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?</p>
+<h3>Step backwards from Web-Standards</h3>
+<p>I think web-standards like HTML, JavaScript, CSS are key technologies for the Internet. The Webapp-Provider can develop in a very agile way as the application is released on servers and ready to be accessed by Webbrowser. The User on the other hand doesn’t need to install anything, the only “application-gate” is the Webbrowser, simply try out a website, toss it away or revisit. No installation/removal necessary. The URL is your application-hook.<br />
+On the Mobile App side big step backwards: I now face the pain that every website has its own app which basically doubles content. I need to go through the annoying search/install/upgrade/removal path to try out things. Instead of keeping simple URL-Bookmarks for several websites the Desktop now is packed with tons of distracting App-Icons and alarming Upgrading Notifications.</p>
+<h3>High Implementation Effort</h3>
+<p>On top of your HTML/Javascript based Webapplication and optional HTTP API you need to add effort to more apps. Your whole application setup gets fragmented and increases maintenance and developing efforts to a big extent. Today 2 major platforms exist (Android, iOS) and it seems that Windows Mobile platform will follow. Yes, on the Webapplication side you indirectly also need to support multiple Browsers (Safara, FF, IE, Chrome etc.) but this effort is much less as maintaining desktop-lik Mobile Apps.</p>
+<h3>App-Store Drawbacks</h3>
+<p>Smartphone Apps are typically distributed through App-Stores (like Apple’s App-Store or Google’s Android Market). These App-Stores and their review process do have their pros: They act as a single entry point for end-users, which can search/browse and rate apps which is really comfortable. Also the review-process and policies can kind of enforce a style guide which can positively influence usabilty. Besides malicious apps are easier to filter and kick-out from App-Store. On top it seems that users tend to be more willing to pay for certain apps in contrast to pay for a website content, which is good for the App-Providers.</p>
+<p>Never the less there are a lot of disadvantages which makes Software Development for Mobile-Apps tough:</p>
+<h4>Missing/Intransparent Auto-Upgrade</h4>
+<p>It can happen that your current installed app is inconsistent to the latest released one (I see this through circle icon top-left of app or App-Store icon) and isn&#8217;t upgraded on the fly. This causes headaches both on user and App-Provider side. The user is annoyed because he/she need to actively upgrade App-versions all the time and at some point will simply not do it. The App-Provider has to invest a lot of developing and testing resources to make all the backend (like APIs) compatible to very old App-releases as there is no guarantee that very old Apps aren’t “out there” any longer. Down compatiblity and supporting multiple application versions is in my view one of the biggest cost drivers in Software Industry.</p>
+<h4>Inefficient Packaging</h4>
+<p>When upgrading an App the whole binary package needs to be downloaded. This is extremely inefficient as usually between releases only a smaller part of App changes (source-code diff). Especially in areas where bandwith isn’t good downloading a 5MB upgrade is a big pain. A more sophisticated packaging build tool which makes binary diffs possible would ease a lot and come hand in hand with an Auto-Upgrade feature. To me it is a mistery why none of current App-Stores have such a feature&#8230;</p>
+<h4>Release/Rollout delay</h4>
+<p>Due to the app-review process there is a delay between your internal approval of app and the final downloadable app inside App-Store. This usual takes a week but also can take longer (e.g. during peak times when many app-providers are offering new apps or versions at the same time). Thinking of being agile and releasing software often (see Continous Delivery) this is a major drawback. You have to invest much more effort on testing your app-package as major production issues could cause an app being unusable without possibilty to react quickly as major bug fix releases need to go through review process again. In such an error-risk environment changes are done much more defensively and you also will meet all the other disadvantages of NOT RELEASING OFTEN.  </p>
+<h4>Distribution dependency</h4>
+<p>App-Store owners (Apple, Google) have full control whether an app is available or not. Apple even has policies disallowing apps which are implementing similar functions as preinstalled Apple ones (Email-Client, Webbrowser). You are dependent on the good will on the reviewers. These hard restriction aren’t found for typical Desktop or webapplications. In Desktop case you simply directly a bundled application-package. As webapplication provider you simply rollout you app and let users find you by the “application”-gate the Webbrowser.</p>
+<h3>Future-Hope</h3>
+<p>My bet and hope (esp. as a Software Developer) is the HTML 5 standard + Responsive-Web-Design movement. It keeps the highly flexible Webapplication oriented approach and offers a single point for both Desktop Webbrowsers and Mobile devices (frontend is “adapting” to end-device). My gut-feeling is undermined as big web-player Google also seems to go this way, e.g. there are hardly any dedicated Google Mobile Apps rather they try to tackle the Mobile Usability problem directly on the Webapplication side.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Accessing rrdtool-files Data with Java / Scala</title>
+		<link>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/</link>
+		<comments>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/#comments</comments>
+		<pubDate>Sun, 03 Jul 2011 10:52:36 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[monitoring]]></category>
+		<category><![CDATA[rrdtool]]></category>
+		<category><![CDATA[scala]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=315</guid>
+		<description><![CDATA[Though rrdtool is widely used especially for monitoring, it took me a while to find a simple and compatible bridge for reading data of rrd-files with Java. Following hopefully helps others to save some time and to workaround some pitfalls.
+My requirement was:
+
+Monitoring website showing trends of metrics, i.e. compare current with past values, both absolute [...]]]></description>
+			<content:encoded><![CDATA[<p>Though <a href="http://www.mrtg.org/rrdtool/" target="_blank">rrdtool</a> is widely used especially for monitoring, it took me a while to find a simple and compatible bridge for reading data of rrd-files with Java. Following hopefully helps others to save some time and to workaround some pitfalls.</p>
+<p>My requirement was:</p>
+<ul>
+<li>Monitoring website showing trends of metrics, i.e. compare current with past values, both absolute and relative (hour over hour, day over day, etc.).</li>
+<li>Data backed is round-robin-database. The rrd-files are generated by munin (with under the hood rrdtool). Data should be accessed read-only.</li>
+<li>Website&#8217;s technology stack is Java based (<a href="http://www.playframework.org/" target="_blank">Play! framework</a> with <a href="http://scala.playframework.org/" target="_blank">Scala integration</a>).</li>
+</ul>
+<p>Because I use Play! framework I needed a way to access rrd-files with Java-Technology. My first look at <a href="http://code.google.com/p/rrd4j/" target="_blank">rrd4j</a> looked promising but failed, because rrd4j is a port and cannot read rrd-files created by original rrdtool. After some time-consuming research and Google-digging I finally stepped over  <a href="http://oss.stamfest.net/java-rrd-hg/" target="_blank">java-rrd</a>.</p>
+<h3>Installation Steps java-rrd</h3>
+<p>I couldn&#8217;t find the library built and distributed in any Maven-repository, so you have to download + build yourself:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># download + unpack</span><br />
+wget http://oss.stamfest.net/java-rrd-hg/archive/tip.tar.gz<br />
+tar xfz &lt;downloaded-tarball.tar.gz&gt;<br />
+<span class="co1"># build .jar library with Maven</span><br />
+<span class="kw3">cd</span> &lt;untarred-directory&gt;<br />
+mvn package<br />
+cp target/*.jar &lt;your-target-lib-folder&gt;</div>
+</div>
+<p>Instead of dump-copying and to be more clean with your build-system you might want to deploy the .jar file to a repository like Nexus.</p>
+<h3>Read-Access Usage java-rrd</h3>
+<p>As I use Play! framework with Scala integration, Scala was the integration way:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd._</span><br />
+&#8230;.<br />
+<span class="me1">val</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span><br />
+val command = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#41;</span><br />
+val result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span></p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span><br />
+<span class="kw1">else</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span></div>
+</div>
+<p>For completeness another snippet in Java source language:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd.CommandResult;</span><br />
+<span class="co2">import net.stamfest.rrd.RRDp;</span><br />
+&#8230;.<br />
+<span class="me1">RRDp</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span>;<br />
+<a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> command = <span class="br0">&#123;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#125;</span>;<br />
+CommandResult result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span>;</p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span>;<br />
+<span class="kw1">else</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span>;</div>
+</div>
+<p>With java-rrd you can also access rrdtool over sockets/network. </p>
+<h3>Parsing rrdtool output</h3>
+<p>rrdtool output after fetch is plain text, something like:</p>
+<div class="codesnip-container" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed<br />
+<br/><br />
+ 920804700: nan<br />
+ 920805000: 4.0000000000e+02<br />
+ 920805300: 2.0000000000e+03<br />
+ 920805600: 0.0000000000e+00<br />
+ 920806800: 3.3333333333e+01</div>
+<p>Above needs to be processed further to be &#8220;structured enough&#8221; for your code. For example do following (I only show Scala, I skipped Java iterating syntax hell&#8230;, did I mention that I love passing functions ;):</p>
+<div class="codesnip-container" >
+<div class="codesnip">def outputToNumberPairs<span class="br0">&#40;</span>rrdFetchOutput: <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#41;</span> = <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// filtering unneeded + empty lines</span><br />
+&nbsp; &nbsp; val list = rrdFetchOutput.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;<span class="es0">\n</span>&#8220;</span><span class="br0">&#41;</span>.<span class="me1">filter</span><span class="br0">&#40;</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> =&gt; n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span> &amp;&amp; !n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;nan&#8221;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <span class="co1">// parsing strings to numeric values and combine to pair</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i &lt;- list<span class="br0">&#41;</span> yield i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toLong</span> -&gt; i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toFloat</span>.<span class="me1">round</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+GIVES BACK:<br />
+===<br />
+res34: <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#91;</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3ALong+java.sun.com&#038;bntl=1"><span class="kw3">Long</span></a>, Int<span class="br0">&#41;</span><span class="br0">&#93;</span> = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">920805000</span>,<span class="nu0">400</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805300</span>,<span class="nu0">2000</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805600</span>,<span class="nu0">0</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920806800</span>,<span class="nu0">33</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>IntelliJ IDEA rocks (revisited)!</title>
+		<link>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/</link>
+		<comments>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/#comments</comments>
+		<pubDate>Sun, 12 Dec 2010 11:41:32 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[ide]]></category>
+		<category><![CDATA[intellij]]></category>
+		<category><![CDATA[java-ide]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=235</guid>
+		<description><![CDATA[Many people ask me why I prefer IntelliJ over any other IDE. I switched to IntelliJ about 3 years ago so I cannot compare current IntelliJ 10 vs. other current IDEs Eclipse 3.6 or Netbeans 6.9. Still pair programming with colleagues who use different IDE and sometimes having to skip back to Eclipse I feel [...]]]></description>
+			<content:encoded><![CDATA[<p>Many people ask me why I prefer IntelliJ over any other IDE. I switched to IntelliJ about 3 years ago so I cannot compare current IntelliJ 10 vs. other current IDEs Eclipse 3.6 or Netbeans 6.9. Still pair programming with colleagues who use different IDE and sometimes having to skip back to Eclipse I feel confirmed that IntelliJ is best IDE on market (my opinion is primarily based on Java-Apps). IntelliJ has recently released version 10 and improved a lot of things.</p>
+<h3>Performance</h3>
+<p>IntelliJ strikes in performance. It keeps all the files in an index. Access to and searching through all files is extremely fast, also compilation is instant (you don&#8217;t even sense it). Only the initial indexing process sometimes feels a bit slow, but version 10 shows <a target="_blank" href="http://blogs.jetbrains.com/idea/2010/12/intellij-idea-10-rc-3-indexing-speed-improvements/">big performance improvements</a> on the initial index-process. I subjectively think that version 10 feels faster and UI is better responding.</p>
+<h3>Automatic in-memory compilation</h3>
+<p>Whereas for Eclipse you have to do a manual <Ctrl+S> for saving a file, IntelliJ is doing it for you. Some people say, that this is &#8220;just&#8221; another shortcut to press, but I remember that it was a big relief not to do it. It really makes your fingers faster to go on with another task.</p>
+<h3>Auto-Completion + Intentions</h3>
+<p>The autocompletions and intentions are very clever (general code improvement, refactorings, type-completion, varables names, refactorings etc.). I sometimes feel that they read my mind. Since version 10 another major improvement got live: Instant auto-completion, you get suggestions as you type. I like this very much on Microsoft Visual-Studio IDEs, now finally there for IntelliJ.</p>
+<h3>Refactoring Support</h3>
+<p>Codebases should be continously improved. Structural improvements impose a risk that you break code, therefore automatic safe refactorings are extremely important. Here IntelliJ has the best toolset. It also plays nice with SCM support, when moving around files or renaming packages.</p>
+<h3>Prepackaged tool support</h3>
+<p>On other IDEs you have to install many plugins manually. On IntelliJ the most important ones are already there (maven, nearly alls SCMs) and are integrated well. I can&#8217;t remember one case where plugins got conflicted with each other.</p>
+<h3>The small things&#8230;</h3>
+<p>IntelliJ shows many little gimmicks, which put together make &#8220;the&#8221; big difference. Here an excerpt:</p>
+<ul>
+<li>Run Unit-Tests on package basis (package focus in Project Window and &lt;Shift&gt;+&lt;Ctrl&gt;+F10)</li>
+<li>Instant code execution on breakpoint (Debug-Window &lt;Alt&gt;+F8)</li>
+<li>Instant copy file path so you can quickly jump to path on command-line (focus file/directory and &lt;Ctrl&gt;+C)</li>
+<li>File comparisons: Excellent Diff-View. Compare with clipboard. Compare with other branch.</li>
+<li>Coloring of files on tab and lines inside editor if they where changed by you without having committed. Instant notification inside editor, when file got out of synch with SCM repository (shows the commit-time and author of change).</li>
+<li>Show SCM history of selection/marked codelines.</li>
+<li>Working with resource-bundles. Inside code hover over a message-key and it shows you the translation instantly (like foo.bar.logout would give you little text-box &#8220;Logout&#8221;). Also refactoring the message-keys is safe (messages.properties gets upated). </li>
+<li>Quick jump to Run/Debug settings (&lt;Alt&gt;+&lt;Shift&gt;+F10).</li>
+<li>Automatic Code quality checks + report before SCM commit.</li>
+<li>Intention &#8216;Create Test-Class&#8217;</li>
+<li>Automatic files refresh. When switching to command line and doing SCM or maven actions, switching to IntelliJ back all files are refreshed automatically. No danger of stale data inside IDE.</li>
+<li>General search for plain text or structural search.</li>
+<li>Auto collapsing tool windows on losing focus. Very convenient on smaller notebook screens or generally increasing editor space.</li>
+<li>Stable editor, even for very large files, e.g. it can show 5MB large XML-docs and even diffs between them (Eclipse always crashed here).</li>
+<li>etc. (list goes on forever) &#8230;.</li>
+</ul>
+<h3>Minor annoyances</h3>
+<p>Of course with the praise from above there are still some drawbacks. I often had problems with SCM merging facilities (especially subversion), I now always do merging on command-line. When upgrading or changing plugins restart has to be done manually (at least on Linux version). Also some intentions could be added (when adding @Override above a method &lt;Ctrl&gt;+Enter, Pull-Up method, Extract Superclass or Introduce Interface should be suggested). For other IDE converts the different types of autocompletions are a bit confusing (&lt;Ctrl&gt;+Space, &lt;Ctrl&gt;+&lt;Shift&gt;+Space, &lt;Ctrl&gt;+&lt;Shift&gt;+&lt;Alt&gt;+Space).</p>
+<h3>Price considerations</h3>
+<p>The Community Edition is free. For Ultimate Edition which I use you have to pay some money, but regarding the productivity boosts this is simply peanuts. Budget people, please do the math: Depending New User vs. Upgrade (~1.50EUR vs. ~0.75EUR per day) how much does a developer cost an hour? Apart from making the developer happier you will also save money if only a fraction of the IDE related idle/waiting time is reduced.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>From Java Easymock to Mockito</title>
+		<link>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/</link>
+		<comments>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/#comments</comments>
+		<pubDate>Sun, 27 Jun 2010 13:29:10 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=174</guid>
+		<description><![CDATA[While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with Mockito namespace. What I noticed was that the mocking test-code looked similar to easymock but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it [...]]]></description>
+			<content:encoded><![CDATA[<p>While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with <a href="http://mockito.org/" target="_blank">Mockito</a> namespace. What I noticed was that the mocking test-code looked similar to <a href="http://www.easymock.org/" target="_blank">easymock</a> but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it :).</p>
+<h3>Easymock before</h3>
+<p>Around 2005 there were several mocking frameworks available. The main reason I chose to work with easymock was that it was both powerful and refactoring friendly. It supports automatic safe refactorings well because the expectations on method calls aren&#8217;t setup as a loose string-snippet but on statically typed info (method call expectations are directly bound to the object-type).</p>
+<p>Though I found easymock great and made stubbing and mocking much easier as before, I found it had some drawbacks (speaking of version 2.5):</p>
+<ul>
+<li>The mocking/stubbing of interfaces vs. classes is not transparent. It is done through different Main-classes (EasyMock + classextension.EasyMock). This implied that mixing mocking both interfaces and classes inside one test-class followed in cluttered code and importing hell.</li>
+<li>The error messages of easymock are confusing sometimes. Often it is not clear whether the test-case has failed or easymock was used wrong (e.g. forgetting to call replay()).</li>
+<li>The mandatory call of replay() after having setup the mocked object always felt redundant and made test-case longer.</li>
+<li>The non-clear separation between setting up a mock and verifying it. Setting up a mock added also a verification on all expectations as soon as you called verify(). When writing + reading test-code this always confused me, because you already had to cope with verify logic in the setup part of the test-case.</li>
+</ul>
+<h3>Mockito after</h3>
+<p>The guys of <a href="http://mockito.org/" target="_blank">Mockito</a> say that they were inspired by Easymock and indeed you see its heritage. After having used it for about 3 months now so far the hands-on impressions are great and I now exclusively use Mockito for writing unit-tests.</p>
+<p>My positive experiences were:</p>
+<ul>
+<li>Test-code still is safe in regard of using static-typed based automatic refactorings.</li>
+<li>Transparency of classes vs. interfaces. In both cases you call Mockito.mock(MyInterface.class) or Mockito.mock(MyClass.class).</li>
+<li>Clear seperation between setting up a mock and verifiying it. This feels more intuitive and the clear setup/excercise/verify test-code order is preserved.</li>
+<li>Helpful error message, when an assertion wasn&#8217;t met or the tool guessed a framework usage error.</li>
+<li>The naming of methods is intuitive (like when(), thenReturn()).</li>
+<li>When earlier I used the real domain-objects as test-data (i.e. by filling data through setters/constructors), now I use mockito to stub them (i.e. stubbing the getters). Domain code logic has now much less impact on test-runs.</li>
+<li>Nice short, straightforward <a href="http://mockito.googlecode.com/svn/tags/latest/javadoc/org/mockito/Mockito.html" target="_blank">documentation</a>.</li>
+<li>A great name + logo ;)</li>
+</ul>
+<p>In summary: The mockito folks did a great job (they took the nice ideas from Easymock creator and improved its drawbacks). Now looking at old test-code using Easymock I subjectively need much more time to grasp what the intent of the test is. With Mockito the test-cases read more like a clear sequential &#8220;requirements story&#8221; like test-cases always should.</p>
+<h3>Migration of test-code</h3>
+<p>If you are already using easymock the tool switch is amazingly quick. Following migration path helped me:</p>
+<ol>
+<li>Give yourself and your colleagues around two weeks investing time to work with the tool and get comfortable with it. Write all your new test-classes with Mockito.</li>
+<li>If you like it make the switch: Explicitly communicate that using the old mocking framework is deprecated (if possible use static code analysis tools where you can mark severaly packages deprecated (org.easymock.*)). Now usage of Mockito for new test-classes should be mandatory.</li>
+<li>If you have already big test-codebase I do NOT recommend a big-bang test-code migration. Such migration work is time consuming and boring. Therefore taking the incremental approach is better: Only migrate Easymock code to Mockito in case you anyway touch the class, i.e. are modifying or adding test-cases.</li>
+</ol>
+<p>Looking at the test-migrations I did so far, migrating Easymock code to Mockito is quite straightforward. Get rid of all replay(), verify() calls and adjust to the slight API changes. The only thing you have to watch out for more are the explicit verification on mocked-calls. Easymock did implicitly verify all expectations when calling verify() on the mock-object, on Mockito side you explicitly have to call verifications on each method. The same counts for strict mocks. You have to add respective verifications.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tomcat JDBC-Realm in digest mode</title>
+		<link>http://www.aldana-online.de/2010/04/05/tomcat-jdbc-realm-in-digest-mode/</link>
+		<comments>http://www.aldana-online.de/2010/04/05/tomcat-jdbc-realm-in-digest-mode/#comments</comments>
+		<pubDate>Mon, 05 Apr 2010 11:57:38 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=154</guid>
+		<description><![CDATA[tomcat, realm digest style, jdbc]]></description>
+			<content:encoded><![CDATA[<p>Though the <a href="http://tomcat.apache.org/tomcat-6.0-doc/realm-howto.html" target="_blank">tomcat-docs</a> gives most information, there are some pitfalls when using tomcats facilities for HTTP Auth in Digest mode including hashed passwords. Following is a list to avoid them (tested on tomcat 6.0.x).</p>
+<h3>JDBC Driver to classpath</h3>
+<p>Tomcat realm handling is container internal, therefore it is not enough to have jdbc-driver (e.g. mysql-connector-java-5.1.6.jar) in your application classpath. You have to explicit add it to the container classpath (e.g. TOMCAT_HOME/lib).</p>
+<h3>Configuration Snippets</h3>
+<p>Tomcat container config, which can appear as nested element inside &lt;Engine&gt;, &lt;Host&gt; or &lt;Context&gt; (e.g. TOMCAT_HOME/conf/context.xml):</p>
+<pre>
+<div class="codesnip-container" >
+<div class="codesnip">...
+<span class="sc3"><span class="coMULTI">&lt;!-- database connection settings + enabling hashed passwords (MD5 sum style) --&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;Realm</span>
+&nbsp;<span class="re0">className</span>=<span class="st0">"org.apache.catalina.realm.JDBCRealm"</span>
+&nbsp;<span class="re0">digest</span>=<span class="st0">"MD5"</span>
+&nbsp;<span class="re0">driverName</span>=<span class="st0">"com.mysql.jdbc.Driver"</span>
+&nbsp;<span class="re0">connectionURL</span>=<span class="st0">"jdbcURL"</span>
+&nbsp;<span class="re0">connectionName</span>=<span class="st0">"dbUser"</span>
+&nbsp;<span class="re0">connectionPassword</span>=<span class="st0">"dbPwd"</span>
+&nbsp;<span class="re0">userRoleTable</span>=<span class="st0">"role_table"</span>
+&nbsp;<span class="re0">userTable</span>=<span class="st0">"user_table"</span>
+&nbsp;<span class="re0">userNameCol</span>=<span class="st0">"dbuser_column"</span>
+&nbsp;<span class="re0">userCredCol</span>=<span class="st0">"dbpwd_column"</span>
+&nbsp;<span class="re0">roleNameCol</span>=<span class="st0">"role_column"</span><span class="re2">/&gt;</span></span>
+...</div>
+</div>
+</pre>
+<p>Webapplication web.xml:</p>
+<pre>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="sc3"><span class="re1">&lt;web</span>-app<span class="re2">&gt;</span></span>
+...
+&nbsp;<span class="sc3"><span class="re1">&lt;security</span>-constraint<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;web</span>-resource-collection<span class="re2">&gt;</span></span>
+&nbsp; &nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;web</span>-resource-name<span class="re2">&gt;</span></span>Secure area<span class="sc3"><span class="re1">&lt;/web</span>-resource-name<span class="re2">&gt;</span></span>
+&nbsp; &nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;url</span>-pattern<span class="re2">&gt;</span></span>/*<span class="sc3"><span class="re1">&lt;/url</span>-pattern<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;/web</span>-resource-collection<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;auth</span>-constraint<span class="re2">&gt;</span></span>
+&nbsp; &nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;role</span>-name<span class="re2">&gt;</span></span>admin<span class="sc3"><span class="re1">&lt;/role</span>-name<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;/auth</span>-constraint<span class="re2">&gt;</span></span>
+&nbsp;<span class="sc3"><span class="re1">&lt;/security</span>-constraint<span class="re2">&gt;</span></span>
+
+&nbsp;<span class="sc3"><span class="re1">&lt;login</span>-config<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="coMULTI">&lt;!-- enabling HTTP Auth digest mode --&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;auth</span>-method<span class="re2">&gt;</span></span>DIGEST<span class="sc3"><span class="re1">&lt;/auth</span>-method<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;realm</span>-name<span class="re2">&gt;</span></span>your-realm<span class="sc3"><span class="re1">&lt;/realm</span>-name<span class="re2">&gt;</span></span>
+&nbsp;<span class="sc3"><span class="re1">&lt;/login</span>-config<span class="re2">&gt;</span></span>
+
+&nbsp;<span class="sc3"><span class="coMULTI">&lt;!-- roles must be defined to be used in security-constraint --&gt;</span></span>
+&nbsp;<span class="sc3"><span class="re1">&lt;security</span>-role<span class="re2">&gt;</span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;description<span class="re2">&gt;</span></span></span>Role sample<span class="sc3"><span class="re1">&lt;/description<span class="re2">&gt;</span></span></span>
+&nbsp; &nbsp;<span class="sc3"><span class="re1">&lt;role</span>-name<span class="re2">&gt;</span></span>admin<span class="sc3"><span class="re1">&lt;/role</span>-name<span class="re2">&gt;</span></span>
+&nbsp;<span class="sc3"><span class="re1">&lt;/security</span>-role<span class="re2">&gt;</span></span>
+...
+<span class="sc3"><span class="re1">&lt;/web</span>-app<span class="re2">&gt;</span></span></div>
+</div>
+</pre>
+<h3>Password patterns</h3>
+<p>For HTTP Auth Digest tomcat expects a special cleartext pattern for the hashed password entry inside the database. Unfortunately the cleartext snippet is different from the one from Http Auth Basic (this took me some time to find out&#8230;).</p>
+<p>Bash CLI samples for HTTP Auth password hashing (md5sum):</p>
+<pre>
+<div class="codesnip-container" ># Basic style (only the password without user or realm info is hashed)
+echo -n password | md5sum
+# Digest style (<b>'your-realm'</b> is entry from web.xml-&gt;login-config-&gt;realm-name)
+echo -n username:your-realm:password | md5sum</div>
+</pre>
+<h3>Migration HTTP Auth Basic to Digest</h3>
+<p>As you saw above tomcats Auth Basic and Digest cleartext password patterns are different. Therefore just switching the entry of <b>web.xml-&gt;login-config-&gt;auth-method</b> from <b>&#8216;BASIC&#8217;</b> to <b>&#8216;DIGEST&#8217;</b> wouldn&#8217;t suffice. I recommend to completely create a new database column (e.g. passwords_digest) so the separation and transition-path between Basic and Digest style is more clear. In case you hashed the Basic passwords already further more you have to reset the user passwords (the nature of good hashes are that you practically cannot map back to cleartext).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/04/05/tomcat-jdbc-realm-in-digest-mode/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Most favorite firefox addons/plugins</title>
+		<link>http://www.aldana-online.de/2009/11/21/most-favorite-firefox-addons/</link>
+		<comments>http://www.aldana-online.de/2009/11/21/most-favorite-firefox-addons/#comments</comments>
+		<pubDate>Sat, 21 Nov 2009 12:03:13 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=132</guid>
+		<description><![CDATA[One of firefox killer-features is the variety of add-ons. Following is an overview of the add-ons I use currently.
+Vimperator
+Vimperator is a real gem! Adds some vim (editor) feeling to the browser. Makes you faster, because nearly all mouse action can be supplemented with keyboard shortcuts. Also automates more complicated flows with macros. At start using [...]]]></description>
+			<content:encoded><![CDATA[<p>One of firefox killer-features is the variety of add-ons. Following is an overview of the add-ons I use currently.</p>
+<h3>Vimperator</h3>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/4891https://addons.mozilla.org/en-US/firefox/addon/4891" target="_blank">Vimperator</a> is a real gem! Adds some vim (editor) feeling to the browser. Makes you faster, because nearly all mouse action can be supplemented with keyboard shortcuts. Also automates more complicated flows with macros. At start using vimperator can be somewhat annoying because pressing some keys do unexpected things, but investing time to get used to it pays off definetely.</p>
+<h3>Xmarks</h3>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/2410" target="_blank">Xmarks</a> saves your bookmarks to a server and makes synchronization possible between different machines. Very handy if you are working from different computers. Most likely it could be replaced by upcoming firefox 4 which offers this functionality in its core.</p>
+<h3>Web Developer</h3>
+<p><a href="http://addons.mozilla.org/en-US/firefox/addon/60" target="_blank">Web Developer</a> is a nice webdeveloper testing kit. Numerous things can be done like style/CSS testing, gathering meta-information of the page, handling cookies, finding broken images.</p>
+<h3>Firebug</h3>
+<p><a href="http://addons.mozilla.org/en-US/firefox/addon/1843" target="_blank">Firebug</a> is a perfect accompany to Webdeveloper for testing/analyzing websites. Offers JavaScript debugging, analyzing DOM tree, viewing CSS styleor watching HTTP calls and request/response contents. It is also plugin aware (see below).</p>
+<h3>Firecookie</h3>
+<p><a href="http://addons.mozilla.org/en-US/firefox/addon/6683" target="_blank">Firecookie</a> is an addon for firebug. Makes cookies handling (reading, deleting, editing) much easier as with Webdeveloper plugin.</p>
+<h3>YSlow</h3>
+<p><a href="http://addons.mozilla.org/en-US/firefox/addon/5369" target="_blank">YSlow</a> is an addon for firebug, which offers performance test for webapplications. Gives a good overview how your site performs and gives a summary in grade style (A-F). If it gives you bad grade, still question whether they are appropriate in your special case (e.g. YSlow moans about missing CDNs, but an usage of a CDN doesn&#8217;t always makes sense or you don&#8217;t have any control over certain included components).</p>
+<h3>Live HTTP Headers</h3>
+<p>Firebug offers good HTTP traffic tracking. But sometimes I also use <a href="http://addons.mozilla.org/en-US/firefox/addon/3829" target="_blank">Live HTTP Headers</a> because you can filter tracking HTTP calls by URL and content-type, for HTTP POST you can set your own defined payload.</p>
+<h3>JSONView</h3>
+<p>When testing webapps, instead of using curl sometimes it is handy to fire a HTTP request directly through firefox. If doing so by default firefox makes problems and prompts to save json (Content-type: application/json) as a file to instead of just displaying the content inside the browser window. <a href="http://addons.mozilla.org/en-US/firefox/addon/10869" target="_blank">JSONView</a> bypasses this and displays json content appropriately.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2009/11/21/most-favorite-firefox-addons/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Reasons NOT to use ClearCase</title>
+		<link>http://www.aldana-online.de/2009/03/19/reasons-why-you-should-stay-away-from-clearcase/</link>
+		<comments>http://www.aldana-online.de/2009/03/19/reasons-why-you-should-stay-away-from-clearcase/#comments</comments>
+		<pubDate>Thu, 19 Mar 2009 00:20:18 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[clearcase not good]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=128</guid>
+		<description><![CDATA[After 3 years of working with ClearCase SCM tool I came to the point that you should not use it for developing software. Surely it has its moments: The branching and merging capabilities are good and the graphical version tree is nice. Also the concept of the config-spec, which is a kind of query-language for [...]]]></description>
+			<content:encoded><![CDATA[<p>After 3 years of working with ClearCase SCM tool I came to the point that you should not use it for developing software. Surely it has its moments: The branching and merging capabilities are good and the graphical version tree is nice. Also the concept of the config-spec, which is a kind of query-language for an scm-configuration (the set of checked out artifacts) is powerful. But there also many shootout reasons, why it is bad.</p>
+<h3>No atomic commits</h3>
+<p>Once you checked in files it is very hard to revert to a certain state, because atomic commits aren&#8217;t supported. When checking in multiple files, each file gets a new revision (similar to CVS) and not the check-in itself. I think this is a crucial feature, because you hardly want revert single files but complete commit actions (which should map tasks). With ClearCase you can only revert to certain states by using Labels. In practice using ClearCase Labels for each check-in is overkill and thus not done.</p>
+<h3>Crappy user interface</h3>
+<p>The GUI of ClearCase Explorer is just a big joke. Horrible in usability and ugly looking. Different and often necessary functions aren&#8217;t provided (e.g. recursively checking in worked on artifacts). Command line tool cleartool used with cygwin is much better, but still some things aren&#8217;t available like recursively adding new files/folders to source control. I have to laugh my head off if I read a 50 lines of code long <a href=" http://www.ibm.com/developerworks/rational/library/4687.html#N10283" target="_blank">script</a> to workaround this.</p>
+<h3>High administration efforts</h3>
+<p>Administrating ClearCase beast is far from obvious or lightweight (in difference to other scm-systems like CVS, subversion or Git). Expect to put quite a few dedicated ClearCase experts to just keep it running.</p>
+<h3>Horrible performance</h3>
+<p>Nothing is worse as making your developers wait while interfacing with SCM-tool, it is like driving with hand brakes enabled. It slows down your brain and also your work. Getting fresh new files to your snapshot view takes around 30 minutes for 10K artifacts. An update (no artifacts were changed) for the same amount takes roughly 5 minutes. When experimenting a lot and jumping between different up-to-date views means a lot of waiting. It gets even worse, when you&#8217;re working on files and you want to check-in or update them. Check-out, check-in and adding to source control cycles take around 10-15 seconds which is obviously a nightmare. It gets very annoying when you&#8217;re refactoring renaming/moving types or methods (many files can be affected).</p>
+<h3>Lack of support of distributed development</h3>
+<p>Today software development is often a distributed thing (developers are spread around the world working on the same product/project). ClearCase definetely isn&#8217;t suitable for this,  because it is badly suited for offline work. Doing a check-out (action before you can edit  a file/folder) requires that you are network connected. Here you could use the hijack option but  this is rather a workaround as a feature (you basically just unlock the file on the filesystem). If your development sites are far away from your ClearCase server the check-in/check-out latency can even increase so dramatically that it is not usable at all. There are workarounds for that like using ClearCase Multisite (scm DB replica technology), but you have to pay extra for it and is not trivial to adminstrate.</p>
+<h3>Git as alternative</h3>
+<p>Though being a big fan+supporter of Open Source I am still willing to pay money for good software. But looking at IBM-monster ClearCase I wouldn&#8217;t invest my money here, it has all these discussed shortcomings, and further more IBM doesn&#8217;t seem to invest money to improve their product significantly. Recently I had a look a <a href="http://git-scm.com/" target="_blank">Git</a> scm which looks very good, especially for its branching+merging features, where ClearCase has its major strengths.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2009/03/19/reasons-why-you-should-stay-away-from-clearcase/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Continous code improvement with IntelliJ scm-integration</title>
+		<link>http://www.aldana-online.de/2009/02/18/continous-code-improvement-with-intellij/</link>
+		<comments>http://www.aldana-online.de/2009/02/18/continous-code-improvement-with-intellij/#comments</comments>
+		<pubDate>Wed, 18 Feb 2009 00:21:37 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[code inspections]]></category>
+		<category><![CDATA[code quality]]></category>
+		<category><![CDATA[intellij]]></category>
+		<category><![CDATA[scm]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=124</guid>
+		<description><![CDATA[As software engineers we get overwhelmed by the masses of bad-quality source code we work with each day. At this stage improvement of all these source code artifacts is a never ending story. To tackle this problem IntelliJ IDE goes the step-by-step improvement approach, where it runs actions and includes its powerfull code inspections on [...]]]></description>
+			<content:encoded><![CDATA[<p>As software engineers we get overwhelmed by the masses of bad-quality source code we work with each day. At this stage improvement of all these source code artifacts is a never ending story. To tackle this problem IntelliJ IDE goes the step-by-step improvement approach, where it runs actions and includes its powerfull code inspections on your changes you are about to propagate to source control repository.<br />
+<span id="more-124"></span></p>
+<h3>Code quality issue</h3>
+<p>Code gets written and as it changes (in most cases) it rottens also. In many projects/products changing and adding functionality  means having a larger codebase. And the bigger it gets the more difficult it becomes to improve the overall code quality picture:</p>
+<ul>
+<li>Motivation of developers decreases to keep code clean. In the end code gets worse and worse, just have a look<br />
+at the &#8216;Broken windows&#8217; chapter of &#8216;The Pragmatic Programmer&#8217; for details</li>
+<li>Efforts to clean up increases, more code needs to be maintained. Even if we are highly motivated to write &#8216;good&#8217; code, it is often difficult to know where to start.</li>
+</ul>
+<h3>Solution: Improve what you change</h3>
+<p>There are two ways to tackle the problem: Big Bang or continous code improval. With BigBang you dedicate armies of developers who touch code just for the sake of making the code &#8216;better&#8217;. This approach has its drawbacks: You still don&#8217;t know where to start, it is difficult to sell to the product owners (feature stop) and further more it gets really boring (ever tried to tidy up your flat for a whole week without doing anything else?). An approach which worked better for team members and me was to introduce a kind of continous code improvement. It is important not to say that we get from 10000 warnings to 0, but to make a commitment that the warnings never ever get higher and must decrease after constantly. Here you improve your code quality in parallel to feature development and you only improve what you change. This much better sells to the product owner, you even don&#8217;t need to mention it, because it is part of your daily effort and should be transparent for non-techies.<br />
+Furhter more incremental work-items can be managed better and focusing on certain artifacts also reduces overall efforts. In my view the best &#8220;quality-gate&#8221; for such an improve-what-you-change workflow is the source control commit or checkin phase. You changed code and now you want to ensure that checked-in sources provide a certain code-quality level.</p>
+<p>Source control dialog IntelliJ:</p>
+<p style="text-align: center;"><img class="size-full wp-image-126" title="commit-phase" src="http://www.aldana-online.de/wp-content/uploads/2009/02/commit-phase.png" alt="" width="500" height="451" /></p>
+<h3>IntelliJ approach to continous code quality improvement</h3>
+<p>The real problem is the tooling support: Humans are very bad at automating repeatable tasks. For instance when I am using Eclipse IDE and commiting sources to for instance Subversion, I often forget to reformat source code, remove unused imports or am just overlooking bad code snippets. IntelliJ (tested on version 8.1) goes a much better way: It provides actions (auto-formatting, auto-importing) while commiting and besides that can run static code analysis. For this code analysis it includes the so called &#8216;Inspections&#8217;, which are numerous and sensible (<a href="http://www.jetbrains.com/idea/features/code_inspection.html" target="_blank"></a>). For some cases it even provides an automated correction of the code flaw and the corresponding code snippet (pressing Alt+Enter). All these actions and checks are performed for the items you are about to commit only. This way IntelliJ mandates the successful approach to improve what you change or touch.</p>
+<p>Dialog to review inspections and inspection results after pressing &#8216;Review button&#8217; :<br />
+<img class="alignnone size-medium wp-image-125 alignleft" style="float: left;" title="checkresult" src="http://www.aldana-online.de/wp-content/uploads/2009/02/checkresult.png" alt="" width="265" height="140" /><br />
+<img class="size-full wp-image-127" title="resultdetails" src="http://www.aldana-online.de/wp-content/uploads/2009/02/resultdetails.png" alt="" width="500" height="285" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2009/02/18/continous-code-improvement-with-intellij/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</title>
+		<link>http://www.aldana-online.de/2008/05/21/eclipse-vs-intellij/</link>
+		<comments>http://www.aldana-online.de/2008/05/21/eclipse-vs-intellij/#comments</comments>
+		<pubDate>Wed, 21 May 2008 17:38:18 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[intellij best ide]]></category>
+		<category><![CDATA[intellij vs. eclipse]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/2008/05/21/considerations-eclipse-332-vs-intellij-idea-7x/</guid>
+		<description><![CDATA[To master frameworks (Spring, Hibernate, EJB, Struts etc.) and language-systems (Java, PHP, Groovy, C++) you need your &#8220;big&#8221; handy IDE tool which is used for many reasons: Inclusions of third party libs (dependency-management), trigger automatic compiles (if neccessary), automatic/safe refactorings, browsing code, debug, execute tests etc. (the list goes on forever). For that central IDE-tool [...]]]></description>
+			<content:encoded><![CDATA[<p>To master frameworks (Spring, Hibernate, EJB, Struts etc.) and language-systems (Java, PHP, Groovy, C++) you need your &#8220;big&#8221; handy IDE tool which is used for many reasons: Inclusions of third party libs (dependency-management), trigger automatic compiles (if neccessary), automatic/safe refactorings, browsing code, debug, execute tests etc. (the list goes on forever). For that central IDE-tool you should try to use the best one on the market. A few months ago I was interested how my implementation and design work would &#8220;feel&#8221; with a different IDE, so as a long-time Eclipse user I gave IntelliJ a chance. Following article gives an overview of my impressions on trying out a different IDE. My reference IDEs had been <a href="http://www.eclipse.org/ ">Eclipse 3.3.2</a> and <a href="http://www.jetbrains.com/idea/ ">IntelliJ 7.0.3</a>.</p>
+<h3>Download/Installation IntelliJ</h3>
+<p>Though IntelliJ costs a bit you get a free evaluation license for a month. Download and installation is straightforward and easy. First noticed difference is the general workspace layout. In IntelliJ the eclipse-workspace is a project and a eclipse-project is a module. Further more IntelliJ configures things globally in your home directory and most settings are read from there no matter where you got your IntelliJ working directory with all your projects/modules. This is quite different to Eclipse where all workspaces are configured inside themselves in .metadata/ folder, and opening this workspace is completely uncoupled from any user-settings outside the workspace. It&#8217;s different, but is difficult to say which strategy to prefer, both got pros and cons, so I want to dig deeper what advantages exist inside IDE.</p>
+<h3>IntelliJ taking ahead</h3>
+<p>Following things I would emphasize when it comes to advantages of IntelliJ:</p>
+<h4>Clear IDE Layout</h4>
+<p>Generally the IntelliJ IDE layout and the look-and-feel is more tidied up and clear. You don&#8217;t have the millions of perspectives and views as in Eclipse. There is only one perspective with the main editor at center. On left, right and bottom you can find the so called &#8216;Tool-Windows&#8217; (can be compared to Eclipse views). Also you can focus Tool-Windows better and discard them again: Alt+F1 jumps to respective window, pressing Alt+F1 closes it again. This way you tend to only have the Tool-Windows open, which you currently use. In eclipse I often end up with many opened up views, which I am not interested in. Further more you can change opened files in tab-bar very quickly by hitting Strg-Right/Left. When being in project view it is possible that a file gets opened in editor as soon as you focuse a file (in Eclipse this is only possible if file is already opened in a tab). To summarize I like the general IDE navigation much better in comparison to Eclipse.</p>
+<h4>Change History</h4>
+<p>This one is a real delight! In Eclipse I always found the Local-History, where you can track changes very clumsy and difficult to follow. In IntelliJ this is a big feature, you can follow your changes very well and can label them locally, so reverting is just a wink of an eye. This is very handy if you got a bigger refactoring or feature task, which includes certain steps. In Eclipse I tend to check-in many little changes to version control in a short (minutes-scale) time though I would like to commit only complete tasks (which other team members are interested in only). This is possible with IntelliJ: with the great change history feature I am still commiting in short iterations but at the same time only complete things. Last but not least the diff-view is much better as in Eclipse.</p>
+<h4>Dependency Matrix/General analyzations</h4>
+<p>IntelliJ 7.x version introduced the dependency matrix, where you can analyze dependencies between packages and thus can identify coupling problems of subsystems. Generally the analyzations of your project is better as in Eclipse. With Alt+F7 you can quickly see all incoming dependencies. The analyzation-syntax-highlighting is very helpful to concentrate on the essential code bits, too. For instance when pressing Strg+Shift+F7 over a variable, read (blue-color) and write (pink color) access are highligthed. This can come very hand when refactoring large methods. Eclipse got this grey highlighter when you got your caret over a text-bit, but it vanishes as soon as your cursor moved somewhere else and you can highlight only one thing at one time.</p>
+<h4>Intentions</h4>
+<p>Intentions are a way to save you work from doing things manually though a certain context should offer you this task done automatically. Example: When placing the caret over an interface just press Alt+Enter and you are offered to create an implementing class with method-skeletons. When just typing a method call which does not exist, you get offered to create a method-body with respective signature. Since Eclipse 3.3.2 this feature is partly also introduced but not in such a good way as with IntelliJ.</p>
+<h4>Auto-Save of changes</h4>
+<p>In Eclipse I am constantly pressing Strg+S to save my changes. This can be very annoying, because I do a save very often straight after editing before executing a test case or starting the application. IntelliJ takes off this burden and does an auto-save behind the scenes. I really wonder why Eclipse isn&#8217;t doing the same, maybe it could be a performance issue, because recompile is done after each save. IntelliJ seems to handle this auto-compile very good, if errors occur you get to know the compile problem instantly.</p>
+<h4>Plugin installation</h4>
+<p>Though standard IntelliJ comes with enough functionality, for some special things you still need to get some plugins (e.g. Jetbrains groovy/grails plugin). Never the less I found the search and installation much more straightforward as with Eclipse where you really can get headaches especially if there are some transitive plugin dependencies. Further more you are informed if an update got released.</p>
+<h4>Little things, big impact&#8230;</h4>
+<p>Generally little things make a big difference. In IntelliJ there are so many that I cannot list all of them, but here a some which quickly come into my mind:</p>
+<ul>
+<li>When searching for a type (Ctrl+N) you can add a shortcut name of a type: Entering VQTB would quickly pop up (VeryQuickTypeBrowsing), this saves a lot of typing. You can further more quickly decide whether to include only own project types or dependency projects/third-party libs, too. This way you don&#8217;t get overhelmed by the millions of classpath-artifacts.</li>
+<li>Unit-testing: If you are inside a JUnit test-class, pressing Strg+Shift+F10 outside a test method (or F9 for debug mode) executes all test-cases, if you are inside a test-method with your caret and press same shortcut only this single test-case is run. This is very handy because I often only work with one test-case if I debug or add a feature. For regression then I like to run the whole test-class or the whole package for subsystem-tests, so I step outside the test-method for class-run or go to package in project explorer to run a package-test. Shift+F10 opens a Run-dialog  with last executions, so you can choose between last run test sets very quickly.</li>
+<li>Actions on commit: In Subversion commit-dialog you can choose &#8216;Organize imports&#8217;, &#8216;Format code&#8217; or &#8216;Run inspections&#8217; so you can do some actions on the code you would normally forget often (at least I do so). This way you get a better state in version control, where all imports and the code formatting is alright. Annoying diffs where you only see changes in different formatted code or unused imports should be vanished then.</li>
+<li>Tip of the day: If actions need some time (e.g. building project) you see a little dialog, where some nice shortcuts or general IDE tips are presented. This way without explicitly reading the online help, you learn a lot while just working normally with the IDE day by day.</li>
+</ul>
+<h3>Eclipse taking ahead</h3>
+<p>Of course there are some advantages of Eclipse, when compared to IntelliJ:</p>
+<h4>OSGi support</h4>
+<p>Eclipse migrated their former proprietary plugin architecture to standard OSGi platform to master the complexity of all these plugin dependencies and general plugin startup issues, which works great. Through the direct support of OSGi writing applications for the OSGi platform goes very well. OSGi Plugin for IntelliJ exists, but is far not as good as Eclipse with its equinox runtime and PDE environment.</p>
+<h4>Mylyn</h4>
+<p>I think Mylyn is a big plus for Eclipse, because it takes team collaboration with tracking-tools as a first child. With Mylyn you integrate common ticket-tools and can connect tickets with certain artifacts (packages, classes, other files etc.). There are many of mature Mylyn connectors (Bugzilla, trac, JIRA), which work very well. For IntelliJ you can choose from some ticket-tool integration plugins, but I did not perceive them as good as the Mylyn solution.</p>
+<h4>Eclipse Modeling Project</h4>
+<p>The <a href="http://www.eclipse.org/modeling/" target="_blank">Eclipse Modeling Project</a> for doing MDSD looks very promising (though I must admit I only read articles about it, but haven&#8217;t tried it out yet). After searching on the web I could not find an equally mature MDSD platform or plugin (like the one from <a href="http://www.openarchitectureware.org/" target="_blank">oaw</a>) for IntelliJ.</p>
+<h3>IDE synchronization</h3>
+<p>IntelliJ offers a simple eclipse project files export (.project, .classpath meta-data), so checked in Intellij modules can be used by Eclipse. Still I must admit that I did not elaborate enough, whether the IDE bridge/export between Eclipse and IntelliJ could generally work in a bigger team. Especially the synchronization of plugin metadata (like maven2, AspectJ) should not work without problems.</p>
+<h3>Summary</h3>
+<p>There is no size-fits-all IDE. On top of it is often difficult to say which IDE is better, because the quality and functionality also depends on the released plugins (e.g. maven2 eclipse plugin is better with Eclipse, groovy/grails plugin is better with IntelliJ). The automatic and safe refactorings, which I heard was always a big plus of IntelliJ are in my perception equally mature to the ones of Eclipse. In my view IntelliJ has other very nice points. Apart from the ones I mentioned above, there are many other little things which added together make the real IDE difference, where you are always close to the keyboard got control over so many things. In my view in many circumstances (when not developing for OSGi platform, RCP-apps or because of other plugin-show stoppers) IntelliJ is definetely worth the money and can increase productivity if your are willing to invest some time to switch. The pricing is moderate and as an Open Source developer it is for free.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/05/21/eclipse-vs-intellij/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Wordpress setup</title>
+		<link>http://www.aldana-online.de/2008/01/30/wordpress-setup/</link>
+		<comments>http://www.aldana-online.de/2008/01/30/wordpress-setup/#comments</comments>
+		<pubDate>Wed, 30 Jan 2008 19:43:55 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[wordpress setup]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/2008/01/30/wordpress-setup/</guid>
+		<description><![CDATA[I managed my content from my former website with my own built content management system CMS4_aldana. Reason was that I needed something simple which fulfilled my simple needs. But at the time where I am starting my blog I looked for respective capabilities. With this Wordpress already made a good impression on other sites I [...]]]></description>
+			<content:encoded><![CDATA[<p>I managed my content from my former website with my own built content management system <a href="http://www.aldana-online.de/open-source/cms4_aldana/" target="_blank" >CMS4_aldana</a>. Reason was that I needed something simple which fulfilled my simple needs. But at the time where I am starting my blog I looked for respective capabilities. With this Wordpress already made a good impression on other sites I have seen. So I gave it a try and did a migration from CMS4_aldana to wordpress 2.3. The following text gets a bit more in detail what was good about setting up wordpress and which things made some problems.</p>
+<p>Download and installation was very simple. Just downloaded the archive and simple extracted it to htdocs folder. As webserver and neccessary Mysql database I used the bundle <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> which fits perfect when testing your installation locally.</p>
+<p>Next step was the look and feel of the site. Good thing is that you can orientate yourself on the many existing templates. Further more it is quite simple to reverse engineer and get to know which CSS-styles are used by the site parts. The litte confusing bit was that wordpress organizes the whole look and feel through template bits (archive, footer, header etc.) and not on one big template like for instance Joomla CMS. Never the less playing around with CSS is quick and you get immediate feedback by just simply reloading the page with the browser. For the interpetation of CSS is not very restricitive (nearly all browsers hardly moan about not wellformed stylesheets) I used <a href="http://jigsaw.w3.org/css-validator/">online CSS-validator</a> to test my stylesheets so chances are big that many browsers can live with it and display is more or less similar.</p>
+<p>Next thing was the migration of my old content. Fortunately CMS4_aldana content is organized on file system so there was no database-ETL (extract, load, transform) nightmare neccessary, a simple copy/paste of text made the trick. Uploading things (mp3, images, etc.) was quite obvious, but wordpress&#8217; standard editors where just a pain, especially the linefeeds (which usually are ignored from the view of HTML) had been included by the editor, so searching for and getting rid of them took a lot of time. I had a look for a better plain-text Wiki-Style editor but no success&#8230; Further more linking to other pages/post from the same site was not very nice either. You had to hardcode the whole URL as links, so after changing the host and activating rewrite rules for nicer URLs would have broken all links. Fortunately <a href="http://www.blograndom.com/blog/extras/rb-internal-links-plugin/" target="_blank">Internal-links Plugin</a> made the save. The rest of the configuration (categories, blogroll, url-rewrite etc.) was done quickly because available options had been layouted very well inside the administration area.</p>
+<p>Besided I installed other third party plugins which solved some shortcomings of standard wordpress:</p>
+<ul>
+<li><a href="http://akismet.com/">Aksimet</a>: Checks comments against a spam database. I tried to make it as easy as possible to enter comments, so no registration or similar is required. Let&#8217;s see whether the spam filter works. If not I mostly will have a look for captchas.</li>
+<li><a href="http://srinig.com/wordpress/plugins/flexi-pages/">Flexi-Pages</a>: Makes folding and unfolding of categories and sub-categories possible.</li>
+<li><a href="http://www.internetofficer.com/wordpress/search-pages/">Search Pages</a>: Extends Search capability to Pages.</li>
+<li><a href="http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/">Sitemaps generator</a>: Generates sitemaps so site is easier to index and getting all content links is obvious.</li>
+</ul>
+<p>After all, apart from some mentioned shortcomings, the setup and migration to wordpress was successfully done. The plugin world is wide, you can get ideas by the many existing templates and the configuration is easy. Just the editor is a weakness, they really should have included a wikistyle editor like it is used in Wikipedia (which uses <a href="http://www.mediawiki.org/wiki/MediaWiki">WikiMedia</a>). Never the less wordpress is great, you get so much without doing all the framework stuff yourself and it is very stable and mature. Or what do you think, have you had similar impressions when setting up wordpress?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/01/30/wordpress-setup/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Bashing the refactoring criticism</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Bashing the refactoring criticism Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Fluent interfaces for code comprehensability' href='../../../03/31/fluent-interfaces-for-code-comprehensability/index.html' />
+<link rel='next' title='Improving weak automatic test-suites incrementally' href='../../../05/13/improving-weak-automatic-test-suites-incrementally/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../05/13/improving-weak-automatic-test-suites-incrementally/index.html">Improving weak automatic test-suites incrementally</a> </div>
+	<div class="older"> <a href="../../../03/31/fluent-interfaces-for-code-comprehensability/index.html">Fluent interfaces for code comprehensability</a> &gt; </div>
+</div>
+					
+			<h4>April 17th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Bashing the refactoring criticism</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/04/17/bashing-the-refactoring-fears-practice-refactorings/&amp;title=Bashing+the+refactoring+criticism&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Refactoring (changing design of existing code while preserving behaviour) is a cruicial daily software engineering practice to make your system able to adapt for typical maintenance tasks like fixing bugs or feature enhancements. Still I perceive that refactoring still is not commonly done. This article presents the most common arguments against practicing refactorings and show why most of them are wrong.</p>
+<h3>Emphasis on outside visible behaviour</h3>
+<p><u>Criticism:</u><br />
+Software enginners are paid to create or adapt a system which offers some direct business value, in this means you are claimed to fix a critical bug as quick as possible (hotfix), to add an eye opening feature or to eliminate a performance bottleneck. All these adaptions obviously focus on outside visible behaviour, and they are the real reason (well, lets ignore the political decisions for now&#8230;) why customers use software and pay for it. So the customer is right when not spending money directly on software maintenance.<br />
+<u>Disproof:</u><br />
+Simply put: The customer is completely right! It should not be his business to know the insights of how we develop software. In the end the system should work as wanted and he must feel that the system is making his life easier. Never the less that does not mean that we should ignore maintainability. With keeping our design and code clean with refactorings we can react on customers needs much more quickly. If he wants a new feature or a quick bug-fix we are in the very good position to offer a new release after a short time, because the code and design is clean and thus code changes do not need ages. Here we got two advantages: The customer will be more pleased to get a new release soon and we software engineers get more resources to improve the functionality of the system.</p>
+<h3>The perfect all-solving upfront designed software</h3>
+<p><u>Criticism: </u><br />
+I do not need to refactor because my software is designed perfectly in the first place. It regards all extensions from the beginning on and thus can react quickly to changing business needs.<br />
+<u>Disproof:</u><br />
+Well, I doubt that&#8230; Above assertion claims that you can look into the future where you know all market changes and upcoming requirements. This is quite unrealistic except you believe in crystal balls&#8230; The other way to make your software ready for the future is that you try to make your design ready for all possible changes. This won&#8217;t work because you are speculating and you are paying the speculation fee with an overly complex system. This harms maintainability because the system contains loads of code which will be never used/run (dead code) and the design is much more difficult to understand. Further more you are wasting resources to make your system pseudo-future ready.</p>
+<h3>Technology constraints</h3>
+<p><u>Criticism: </u><br />
+Refactoring is only doable with statically typed languages like Java or C#. The refactoring tools of respective IDEs (IntelliJ, Eclipse, VisualStudio etc.) are making refactorings possible.<br />
+<u>Disproof:</u><br />
+Refactoring is a concept and not based on technologies! It is a way to keep software maintainable. Of course it is correct that especially static typed languages (like Java without use of reflection api) make refactorings easier as dynamic language constructs (Java reflection api, Python, PHP etc.). The meta-data inside your code makes refactorings safer and tool support can be more powerful. Never the less you can refactor with any technology as long as you know your tools well and can overlook the side-effects your refactorings steps can cause.</p>
+<h3>Blurry view of &#8220;good&#8221; design</h3>
+<p><u>Criticism: </u><br />
+In contrast to real world architecture where you are constrained by physic laws (otherwise your building will collapse somehow) the software-solution set for solving problems is much broader. There are innumerable ways to implement requirements and the judging whether it was done well or not is often quite subjective. Though you can find some objective metrics to measure software structure (lines of code per class/method) they still cannot express all aspects of maintainable software. How the heck could a computed metric tell you whether your namings are good, or if the relation between classes/packages well expresses the domain or requirements? So design generally is too subjective to get all developers under the hood.<br />
+<u>Disproof:</u><br />
+Yes, software design and code quality in many ways is quite subjective, never the less there are common agreements what good design is and what principles should be followed: inversion of control, design for testability, open/close principle, encapsulation, maximize cohesion etc.. Some code quality bits can be subjectively measured and be integrated as quality metrics, like a method must not exceed a certain number of method lines of code (MLOC) or cyclomatic complexity should be under 10. But you&#8217;re right that metrics themselves will never express the complexity of software as a whole. That&#8217;s why design and manual code reviews should be carried out to spread design/code knowledge and to find out areas which should be improved. To summarize: You more or less can &#8220;measure&#8221; good design/code quality by both using subjective (metrics) and objective (manual review) practices.</p>
+<h3>System is too big to refactor</h3>
+<p><u>Criticism:</u><br />
+We realize that refactoring is a good practice but our system is just to big and we would need to spend just too much effort to make it noticeably better.<br />
+<u>Disproof:</u><br />
+It is true that you can feel overhelmed by a big muddle of mud system but improving systems can be done in an incremental way. You could start with little code bits, for instance by refactoring code areas you are touching often. Think it like a desert: There is a lot to do but you can create some little oases which after a while getting bigger and one day will connect each other to form big green forests.</p>
+<h3>Refactorings are causing performance bottlenecks</h3>
+<p><u>Criticism:</u><br />
+When going towards refactoring you often end up with many little classes and methods with mostly little blocks (<15 MLOC). This is having an impact on performance because (to use Java as example) the JVM has to load many classes. The little methods are also causing performance problems because of the delegating calls through stack pop/push operations behind the scenes.<br />
+<u>Disproof:</u><br />
+Performance is a very important non-functional criteria, but it is always tricky to speculate what can cause the bottlenecks and to generally write less maintainable code (monster classes, monster methods) for the performance sake. With powerful hardware nowadays in most cases performance problems have other reasons (like database or network calls). This is different compared to former times, where main memory was rare and performance could be hit on language level, too. Today we got better development environment and should focus on developing maintainable code in the first place. If we experience performance issues this should be surrounded by a profiler-test to be able to draw the right conclusions.</p>
+<h3>Untested legacy Code</h3>
+<p><u>Criticism: </u><br />
+In practice you hardly will find green-field projects, where you can follow refactoring practices from the beginning. Generally you start up with a bunch of existing code which you need to adapt. Often test coverage of the system (which is a symptom of legacy code) is not high enough to do manual refactoring steps. There is always the danger that you are unknowingly breaking existing behaviour. Especially refactoring beginners trying to dig into this topic often have to deal with the hardest untested legacy code issues, where usually you need well experienced software engineers to successful accomplish bigger refactorings. Thus the learning curve for refactoring &#8220;real world systems&#8221; is quite steep and is frustrating.<br />
+<u>Disproof:</u><br />
+Well, this is a very hard one in my opinion quite true in reality (so the disproof is a bit misplaced here&#8230;). The only solution for that is to face the devil, practicing and reading a lot! For example start to refactor little private projects you coded a few years ago or just get some code being written by others (regarding this the open-source world is like paradise). After a while you get accustomed and refactoring gets a good habit in your daily job. I know the first steps will be hard, but give it some time and you will ask yourself how you could develop software without the refactoring concept. My favorite book talking about doing refactorings with untested legacy code is magnificent book <a href="http://www.amazon.de/Working-Effectively-Legacy-Robert-Martin/dp/0131177052/ref=sr_1_1?ie=UTF8&amp;s=books-intl-de&amp;qid=1208463377&amp;sr=8-1" target="_blank">by Michael Feathers</a>. Apart from that one I highly recommend <a href="http://www.amazon.de/Refactoring-Large-Software-Projects-Restructurings/dp/0470858923/ref=sr_1_1?ie=UTF8&amp;s=books-intl-de&amp;qid=1208464950&amp;sr=8-1" target="_blank">Refactoring in large projects</a> and <a href="http://www.amazon.de/Refactoring-Patterns-Joshua-Kerievsky/dp/0321213351/ref=sr_1_6?ie=UTF8&amp;s=books-intl-de&amp;qid=1208464855&amp;sr=8-6" target="_blank">Refactoring to patterns</a>.</p>
+<h3>Summary</h3>
+<p>I presented some issues why many people are sceptical against practicing refactoring. I discussed why respective arguments are non-issues and think that in every organization refactoring should be emphasized. I know getting accustomed to new habits is often uncomfy, never the less give it a chance and believe me that preserving and restructuring existing systems can be a very creative work, you feel much better about your software and after all it&#8217;s big fun.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../05/13/improving-weak-automatic-test-suites-incrementally/index.html">Improving weak automatic test-suites incrementally</a> </div>
+	<div class="older"> <a href="../../../03/31/fluent-interfaces-for-code-comprehensability/index.html">Fluent interfaces for code comprehensability</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F04%252F17%252Fbashing-the-refactoring-fears-practice-refactorings%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Manuel Aldana &#187; Software Maintenance</title>
+	<atom:link href="http://www.aldana-online.de/category/software-engineering/software-maintenance/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.aldana-online.de</link>
+	<description>Software Engineering: blog &#38; .lessons_learned</description>
+	<lastBuildDate>Wed, 30 May 2018 18:51:07 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Complexity drivers of Software-Systems</title>
+		<link>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/</link>
+		<comments>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/#comments</comments>
+		<pubDate>Fri, 30 Sep 2011 15:24:38 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[complexity]]></category>
+		<category><![CDATA[lead-time]]></category>
+		<category><![CDATA[lean]]></category>
+		<category><![CDATA[software]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=332</guid>
+		<description><![CDATA[More complex software-systems correlate with higher lead-time (time-to-market of initial idea to user-available software) and fragility. They also tend to have negative influence on usability. Therefore it must be a goal to reduce following complexity factors to a lowest possible degree.
+Codebase size
+Independant of what the codebase does it incorporates maintenance-efforts: On big codebases it takes [...]]]></description>
+			<content:encoded><![CDATA[<p>More complex software-systems correlate with higher lead-time (time-to-market of initial idea to user-available software) and fragility. They also tend to have negative influence on usability. Therefore it must be a goal to reduce following complexity factors to a lowest possible degree.</p>
+<h3>Codebase size</h3>
+<p>Independant of what the codebase does it incorporates maintenance-efforts: On big codebases it takes longer to implement changes, more code needs to be read/comprehended. Codebase size also correlates with longer builds, deployment processes and startup times, which means a latency-increase of feedback loops. Encapsulation/Modularizaton can be applied, but it only weakens the impact: You won&#8217;t be able to reduce efforts of a 100M codebase compared to a 10K one by just having good code-quality.</p>
+<h3>Codebase quality</h3>
+<p>Decent code-quality is important for implementing changes quickly (readable code, separation of concerns, DRY etc.). Good quality also includes test-coverage so regression-bugs are better caught and there is a safety-net during refactorings. Though business often neglects less visibile code-quality, it is essential to reduce lead-time. In severe cases you&#8217;re at a dead end: code is such in a bad shape, that it is impossible to evolve (changes are too side-effect-risky and/or too expensive).</p>
+<h3>Tools/technology diversity</h3>
+<p>Itself diversity of tools (programming-languages, frameworks, hardware etc.) is good because you can choose the right one to solve your specific problem. But it also increases risk: single-person-know-how, legacy-tech, learning-curves, beta/buggy-stability, upgrade/patching-efforts, transitive dependencies (see .dll, .jar nightmares).</p>
+<h3>Integration points</h3>
+<p>Though distributed systems are necessary (scaleability, reliability, modularization, partner-integrations) they are more fragile: Monitoring and deployment efforts increase and security breaches are more likely. Also tracing, debugging and testing efforts are higher.</p>
+<h3>Organization Size</h3>
+<p>One of the biggest factors is the size of your organization because efforts increase squarely (see also <a target="_blank" href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month#The_mythical_man-month">Mythical Man Month</a>). Bigger organizations try to fight this by introducing hierachies and heavy-weight processes, but this structure can have negative impact on &#8220;short/quick&#8221; decisions and slows down speed. In some scenarios political-games emerge, which block progress considerably.</p>
+<h3>External partners</h3>
+<p>External-partner-integrations (most likely over APIs, batch processing) need more investment: Different release cycles need to be taken into account, compatibility must be offered and dedicated monitoring needs to be setup. Also communication is less direct (fixed calls, meetings, travelling).</p>
+<h3>User-Base + Traffic</h3>
+<p>A bigger User-Base means you have to spend more effort on support. Because of the mass statistically more edge-cases come up and need to be handled by software. Also scalability requirements need to be implemented by more sophisticated production environments. Popular systems also attract criminal activity, which you need to respond with higher security-investments, which again make the system less usable. Big applications also produce more data, which needs to be maintained (compatibility, migrations, analyzation).</p>
+<h3>Being Complexity aware</h3>
+<p>Above factors cannot be reduced to Zero (you will always meet an Inherent Complexity), but you should fight back:</p>
+<ul>
+<li>Prioritize, prioritize, prioritize: Featuritis has bad impact on usability and codebase-size. Implement important features only. Remove unneeded features and cleanup code.</li>
+<li>Consolidate technologies: Don&#8217;t introduce a new technology just because it was praised in the last magazine. Evaluate it and maybe use it privately first.</li>
+<li>Take Fowler&#8217;s advice serious: &#8220;Don&#8217;t distribute, if you don&#8217;t have to&#8221; </li>
+<li>Don&#8217;t always increase team-size, rather have a small team with A-players.</li>
+<li>Quantify: Use metrics for business success, code-quality and production stability. Especially for bigger systems gut-feeling isn&#8217;t enough.</li>
+<li>&#8230;</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Unit-Testing: Situations when NOT to do it</title>
+		<link>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/</link>
+		<comments>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/#comments</comments>
+		<pubDate>Sun, 06 Feb 2011 11:45:03 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=262</guid>
+		<description><![CDATA[I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.
+The presented sections go along with my favorite test-smells:
+
+Brittle tests: Though functionality hasn&#8217;t been changed the test fails. [...]]]></description>
+			<content:encoded><![CDATA[<p>I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.</p>
+<p>The presented sections go along with my favorite test-smells:</p>
+<ol>
+<li>Brittle tests: Though functionality hasn&#8217;t been changed the test fails. Test should show green but in fact shows red (false positive).</li>
+<li>Inefficient tests: The effort of writing automated tests doesn&#8217;t pay out at all. The benefit/cost ratio (short + long term) is extremely low.</li>
+</ol>
+<h3>Unit-Test little scripts/tools</h3>
+<p>There is often no sense to write unit-tests for little scripts or tools, which are one or two-liners. The script content is already so &#8220;declaritive&#8221;, short and compact that the code is too simple to break. Further more often stubbing or mocking the dependencies is tough (e.g. writing to stdout/file, shutdown machine, doing an HTTP call). You can end up writing a external system emulator which is overkill in this situation. Surely testing is important but for that I go the manual way (executing script, and smoke-test sanity check the outcome).</p>
+<h3>Unit-Test high level orchestration services</h3>
+<p>Orchestration services have many dependencies and chain-call lower services. The effort of writing such unit-tests is very high:  Stubbing/Mocking all these outgoing dependencies is tough, test setup logic can get very complex and make your test-code hard to read and  understand. Further more these tests tend to be very brittle, e.g. minor refactoring changes to production code will break them. Main reason is that inside test-code you have to put a lot of implementation detail knowledge to make stubbing/mocking work. You can argue having many fan-out/outgoing dependencies is a bad smell and you should refactor from start on. This is true in some cases but higher order service often have the nature to orchestrate lower ones, so refactoring won&#8217;t change/simplify much and make design even more complicated. In the end for such high level services I much prefer to let test-cover them by automated or non-automated acceptance tests.</p>
+<h3>Test-first during unclear Macro-Design</h3>
+<p>When implementing a feature or something from scratch often the macro-design is blurry, I like to call this &#8220;diving-in&#8221;. For diving-in development or quick prototyping you get a feeling which design fits or not. During this phase class structures/interactions change a lot, sometimes even big chunks of code are thrown away and you restart again. Such wide code changes/deletions often will break your tests  and you have to adapt or even delete them. In these situations test-first approach doesn&#8217;t work for me, writing test-code even distracts me and slows me down. Yes, unit-tests and test-first approach can and should guide your design but I experienced this counts more when the bigger design decisions have been settled.</p>
+<h3>100% Code-Coverage</h3>
+<p>I can&#8217;t overstate this: Code-Coverage != Test-Coverage. The Code-Coverage of unit-tests is a nice metric to see untested spots, but it is by far not enough. It just tells you that the code has been executed and simply misses the assert part of your test. Without proper asserts, which check the side-effect of your production code and expected behaviour, the test gives zero value. You can reach 100% code-coverage without having tested anything at all. In the end this wrong feeling of security is much worse as having no test at all! Further more 100% code-coverage is  inefficient because you will test a lot of code, which is &#8220;too simple to break&#8221; (e.g. getters/setters, simple constructors + factory-methods).</p>
+<h3>Summary</h3>
+<p>Above points shouldn&#8217;t give you the impression that I do speak against automated unit-tests, I think they are great: They can guide you to write incremental changes and help you to focus, you get affinity for green colors ;), they are cheap to execute and regression testing gives you security of not breaking things and more courage to refactor. Still going with the attitude that you have to go for 100% code-coverage and to test every code snippet will kill testing culture and end up in Red-Green color blindness.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Static typed programming/languages won&#8217;t die!</title>
+		<link>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/</link>
+		<comments>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/#comments</comments>
+		<pubDate>Sun, 09 Jan 2011 18:27:44 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[languages]]></category>
+		<category><![CDATA[maintenance]]></category>
+		<category><![CDATA[productivity]]></category>
+		<category><![CDATA[static typed]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=253</guid>
+		<description><![CDATA[In recent years dynamic typed languages like Ruby, Groovy, JavaScript or Python rightly gained more popularity. Some even said they will soon replace their static typed counterparts. Though I am a big fan of dynamic typed and intepreted languages (for smaller tools/tasks they make life so much easier) my current bet is that the language-future [...]]]></description>
+			<content:encoded><![CDATA[<p>In recent years dynamic typed languages like Ruby, Groovy, JavaScript or Python rightly gained more popularity. Some even said they will soon replace their static typed counterparts. Though I am a big fan of dynamic typed and intepreted languages (for smaller tools/tasks they make life so much easier) my current bet is that the language-future it is not a question of either/or but a gain of diversity of your toolset. Static typed languages just have this big diverse plus when it comes to maintainability of big codebases.</p>
+<h3>Overview of differences</h3>
+<p>Because there still is some confusion about dynamic vs. static typing here a short overview of my perception:</p>
+<ol>
+<li>Dynamic typed programming: The types or variables are bound during runtime. This happens if you use languages which have dynamic typing in their core design (PHP, Ruby, Python). Be aware that you can still do dynamic typing with languages focusing more on static typing (like C# or Java): Simply have a look at the reflection APIs&#8230; Further more type saftey is deferred to runtime, if a programmer introduces typing errors they will pop up during runtime  (e.g. ClassCastException,  MethodNotFoundException, TypeError).</li>
+<li>Static typed programming: The types are resolved/bound during compile time. For this check to be possible your code needs to have typing information (e.g. when defining a variable or method signature). If you have obvious type errors in your code the compilation result will catch it and inform you.</li>
+</ol>
+<h3>Pros dynamic typing</h3>
+<p>If designed correctly into the language, dynamic typing offers a lot of advantages:</p>
+<ul>
+<li>Code is much more compact. Small tools and scripts are a charm to write and some nice syntactic sugar constructs are possible. Programmers need less time to understand and extend code. Further more the proportion of functionality vs. lines-of-code is greater, you need to produce less code to solve a problem. Smaller codebases are a plus for maintenance.</li>
+<li>Sometimes dynamic typing is a necessity of solving a problem (e.g. the calculated return value is dependant on the parameter&#8217;s type, which can differ for every caller).</li>
+<li>Development feedback cycle tends to be shorter. Most languages offering dynamic typing are intepreted and a simple &#8216;Save file&#8217; will do. In most cases you instantly will see the effect. For bigger server applications less restarts of the server are necessary.</li>
+</ul>
+<h3>Pros static typing: Maintainability</h3>
+<p>Above I mentioned compactness of code as a maintenance plus for dynamic typing. Still, on the same topic static typing scores significantly.</p>
+<h4>Analyzation of codebases</h4>
+<p>Typing information bloats code but also serves documentation. In many cases explicit typing helps a lot in reasoning the code&#8217;s semantics. Also the IDE can help to easily jump throughout the codebase. It doesn&#8217;t have to reason or guess but can directly guide you to the target code. Explicit typing information also does help tools like Structure101 or JDepend to automatically show you relationships, which can point to design or layering flaws.</p>
+<h4>Feedback of errors</h4>
+<p>You get faster feedback when you did a typing related coding-error, e.g. wrongly related a function/method or did a typo. The compliation phase does this for granted. Some argue that you anyway should do cover anything by automated tests and therefore can instantly catch typing related programming errors. This theoretically is true but in practice doesn&#8217;t hold, I&#8217;ve never seen convincing test suites which execute every code-path instantly uncovering such errors. Often you get such errors later by accident, in testing phase or worse during production. Compile time type safety is nothing to be neglected&#8230;</p>
+<h4>Safe refactorings/tooling</h4>
+<p>It is the &#8220;nature&#8221; of dynamic typing that you can&#8217;t find out typing just looking at the structure of the code. The opposite is true for static typing, therefore you can create tools for safe and automated refactorings (e.g. Rename method/function, Add/Remove parameters, general restructuring of classes/modules). If many refactorings wouldn&#8217;t be automated I would lose a lot(!) of time. Being able to refactor codebases in an efficient sensible time is a must have for me. The greater the codebase the greater the cost for unsupported automated/unsafe refactorings. Some people again argue that 100% test-coverage safety-net would suffice, for my point of view see above ;)</p>
+<p>I purposely discarded the old performance comparison. It states that compiled binary-code is faster as interpreted code. It may have been true in older times, but nowadays, also with all the JIT compiling features, I haven&#8217;t seen convincing benchmarks that static typed languages binaries are better in performance in general. This doesn&#8217;t imply that you won&#8217;t hit scaling problems which are indeed bound to a language (see also <a href="http://www.infoq.com/presentations/Scale-at-Facebook" target="_blank" rel="nofollow">podcast</a> about facebook getting problems with PHP at some point)!</p>
+<h3>Summary</h3>
+<p>Dynamic typed languages are great but for bigger codebases I still would go for languages like Java or C# (haven&#8217;t tried out yet, but Scala seems to be a new alternative here). For very specific modules solving highly generic/dynamic problems you still can code in the &#8220;right&#8221; language. Modern runtime environments (like JVM or CLR) give you possibility to deploy common-libraries/APIs, which are written in dynamic typed language.</p>
+<p>If you have case studies or other resources investigating dynamic vs. static typing and overall productivity or providing different opinions please comment.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Inside-Out Modularization</title>
+		<link>http://www.aldana-online.de/2010/05/30/inside-out-modularization/</link>
+		<comments>http://www.aldana-online.de/2010/05/30/inside-out-modularization/#comments</comments>
+		<pubDate>Sun, 30 May 2010 13:57:52 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=166</guid>
+		<description><![CDATA[A appropriate modularization of your codebase is important. It has positive side-effects in many directions (testability, code comprehensability, build-speed etc.). Still there are different levels of modularization. These levels can be categorized from fine-grained to coarse grained.
+Note: For simplicty throughout the post I will use java terms (class, method, package). Of course this can be [...]]]></description>
+			<content:encoded><![CDATA[<p>A appropriate modularization of your codebase is important. It has positive side-effects in many directions (testability, code comprehensability, build-speed etc.). Still there are different levels of modularization. These levels can be categorized from fine-grained to coarse grained.</p>
+<p><em>Note: For simplicty throughout the post I will use java terms (class, method, package). Of course this can be mapped to other languages constructs like functions, file-includes or plain-script statements.</em></p>
+<p style="text-align: center">
+<img class="size-full wp-image-167  aligncenter" title="inside-out" src="http://www.aldana-online.de/wp-content/uploads/2010/05/inside-out.png" alt="" width="350" height="151" /></p>
+<p>Advantage of more fine grained modularization:</p>
+<ul>
+<li>Maintaining less artifacts (e.g. files, packages, libraries) makes the build/deployment-lifecyle easier.</li>
+<li>For simple features code browsing gets easier (&#8220;You see all stuff with one eye-sight&#8221;)</li>
+</ul>
+<p>The drawback is that the fine grained approach doesn&#8217;t scale: The bigger the codebase gets the more difficult it is to &#8220;see&#8221; any modularization or separatation of concerns. The coarse grained modularization gives you advantage here:</p>
+<ul>
+<li>Bigger systems are easier to comprehend if the &#8220;split&#8221; is done on package or library level.</li>
+<li>Refactorings are getting easier because inside the modules the direct numbers of dependencies get less (submodules only import dependencies they need).</li>
+<li>Unit-test setup gets easier (for reason see Refactoring)</li>
+</ul>
+<h3>Where to start?</h3>
+<p>The question is at which modularization level you should start. There are two major antipatterns, either developers sticked on too fine level (e.g. 6000 LOC inside one single file) or they started on a too coarse level (e.g. each of the many packages only contains one or two classes). The too coarse pattern often occurs if you overengineer solution.</p>
+<h4>Code from scratch</h4>
+<p>To avoid the too fine/coarse pitfall I follow the Inside-Out modularization approach:</p>
+<ol>
+<li>Start to edit a single file. Implement the highest priority requirements of feature inside the most fine grained &#8220;module&#8221; your language can you offer (e.g. class-method).</li>
+<li> When code inside a method gets bigger and you lose overview try to cluster statements (e.g. by speparating them with line-breaks).</li>
+<li>When code statement clusters get too many and you see duplications, extract these section to a new method.</li>
+<li>When there are too many methods and the lines of code inside the single file are very high, cluster your methods by problem domain and extract them to a new class in the same package.</li>
+<li>When there are too many classes inside on package, either create a subpackage or sibling-package which fit to the problem domain (separation of concerns).</li>
+<li>When a package hierachy/tree gets too deep and wide, create a new package hierachy (e.g. com.foo becomes com.foo.system1 and com.foo.system2)</li>
+<li>When there are too many package hierachies inside one library (like .jar), create another library-project (e.g. Maven project/module).</li>
+</ol>
+<h4>Integrate changes in existing code</h4>
+<p>Above is a more or less complete list when starting with code from scratch. But how does it apply to existing code and integrating changes? The main principle is the same but you would start your Inside-Out modularization on a different level. As Example: If you have to add code inside a class and see it you feature-adding would result in too many methods you start off with step number four (extracting class).</p>
+<h3>At which step to level up?</h3>
+<p>It is always the question, when to level up from a fine to a more coarse grained modularization. It is very difficult to have a thumb of a rule, because this highly matters on code-style taste, on density of <em>&#8216;if/else&#8217;</em> logic and also on the problem-domain you are trying to solve. A very good test is either ask colleagues for review whether the modularization is intuitive or take another look the next day or a week after to get a fresh view.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/05/30/inside-out-modularization/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Codebase size implications on Software development</title>
+		<link>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/</link>
+		<comments>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/#comments</comments>
+		<pubDate>Sun, 09 May 2010 19:17:59 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=158</guid>
+		<description><![CDATA[Following discusses the implications of big codebases. Codebase size can be measured with the well known &#8216;lines of code&#8217; (LOC) metric. 
+The following codebase size and LOC metric scope is not fine grained on function or class level but for complete codebase or at least on subcomponent level.
+Bad (anti-pattern): Codebase size as progress metric
+Sometimes (though [...]]]></description>
+			<content:encoded><![CDATA[<p>Following discusses the implications of big codebases. Codebase size can be measured with the well known &#8216;lines of code&#8217; (LOC) metric. </p>
+<p>The following codebase size and LOC metric scope is not fine grained on function or class level but for complete codebase or at least on subcomponent level.</p>
+<h3>Bad (anti-pattern): Codebase size as progress metric</h3>
+<p>Sometimes (though fortunately rarely) QA or project management is taking codebase size and LOC as a progress metric to see what the project&#8217;s state is. The more lines of code have been written the closer the project is seen to have been completed. This is a definite anti-pattern for following reasons:</p>
+<ul>
+<li>It is extremely difficult to estimate, how much code will be necessary for a certain scope or a set of requirements. This implies that project or product management cannot know, how much code is missing to mark the requirements as done.</li>
+<li>It is more about quality as of quantity of code. Well structured code with avoidance of duplication tends to have less lines of code.</li>
+<li>It is very important and valuable to throw away dead code (code which isn&#8217;t used or executed anywhere). Using lines of code as a progress metric would mean this important refactoring will cause a negative project progress.</li>
+</ul>
+<h3>Good: Codebase size as compexity metric</h3>
+<p>With a higher LOC metric you are likely to face following problems:</p>
+<ul>
+<li>Increase of feeback time: It takes longer to build deployable artifacts, to startup application and to verify implementation behaviour (this both applies to local development and CI servers).</li>
+<li>Tougher requirements on development tools: Working on large codebases makes the IDE often run less smoothly (e.g. while doing refactorings, using several debugging techniques).</li>
+<li>Code comprehension: More time has to be spent for reverse engineering or reading/understanding documentation. Code comprehension is vital to integrate changes and debugging.</li>
+<li>More complex test-setup: Bigger codebases tend to have more complicated test-setup. This includes setting up external components (like databases, containers, message-queues) and also defining test-data (the domain model is likely to be rich).</li>
+<li>Fixing bugs: First of all exposing a bug is harder (see test-setup). Further more localization of bug is tougher, because more code has to be narrowed down. Potentially more theories exist to have causes the bug.</li>
+<li>Breaking code: New requirements are more difficult to implement and integrate without breaking existing functionality.</li>
+<li>Product knowledge leakage: Bigger codebases tend to cover more functionality. The danger increases, that at some point the organization loses knowledge which functionality the software supports. This blindness has very bad implications on defining further requirements or strategies.
+<li>Compatibility efforts: The larger a codebase the more likely it is that it already has a long lifetime (codebases tend to grow over the years). Along the age of software down-compatibility is a constant requirement, which increases (a lot of) effort.</li>
+<li>Team size + fluctuation: Bigger codebases tend to have been touched by a big size of developers, which can cause knowledge leakage. Due to communication complexity, each developer only knows just a little part of the system and does not distribute it. Even worse due to team-size fluctuation is likely to be higher and knowledge gets completely lost for company.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Quantification of LOC impact is hard</h3>
+<p>Above statements are more qualitative and are not quantifiyable, because the exact mapping of a certain LOC number to a magic complexity number is unfeasible. For instance there are other criterias which have an impact on the complexity of a software system, which are independent of LOC:</p>
+<ul>
+<li>Choice of programming language/system: Maintaining 1.000 LOC of assembly is a complete different story as doing it with 1.000 of Java code.</li>
+<li>Problem domain: Complex algorithms (e.g. to be found in AI or image processing) tend to have less lines of code but still are complicated.</li>
+<li>Heterogenity of chosen technology in your complete source-code ecosystem: E.g. using 10 different frameworks and/or programming-languages and making them integrate to the overall system harder as concentrating on one  framework.</li>
+<li>Quality and existence of documentation: E.g. Api-interfaces aren&#8217;t documented or motivations for major design decision are unknown. From developers point of view such a system is effectively more complex because a lot of effort has to be spent in reverse engineering.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Conclusion</h3>
+<p>The metric LOC representing codebase size has a big impact on your whole software development cycle. Therefore it should be measured, observed and tracked over time (also by subcomponent). Apart from showing you the current state and evolution of your codebase from historical point of view you can also use it proactively for future:</p>
+<ul>
+<li>Estimation/planning: When estimating features take the LOC metric has influence criteria. The higher the LOC the more complicated it will be to integrate feature.</li>
+<li>YAGNI: Take YAGNI (&#8220;you ain&#8217;t gonna need it&#8221;) principle to the extreme. Only implement really necessary features. Do not make your software over-extensible and as simple as possible.</li>
+<li>Refactor out dead code: Being aware of LOC as a complexity metric, you can create a culture of dead-code awareness. Throw away as much unused code away as you can.</li>
+<li>Refactor out dead functionality: Software products often are unneccessarily overcomplex. Also push business towards are more simple product strategy and throw away unused features and achieve a smaller codebase.</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

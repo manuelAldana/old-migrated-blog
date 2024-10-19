@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Tests: Why code coverage is not enough</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Tests: Why code coverage is not enough Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='The keyboard rules!' href='../../11/the-keyboard-rules/index.html' />
+<link rel='next' title='Fluent interfaces for code comprehensability' href='../../31/fluent-interfaces-for-code-comprehensability/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../31/fluent-interfaces-for-code-comprehensability/index.html">Fluent interfaces for code comprehensability</a> </div>
+	<div class="older"> <a href="../../11/the-keyboard-rules/index.html">The keyboard rules!</a> &gt; </div>
+</div>
+					
+			<h4>March 18th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Tests: Why code coverage is not enough</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/03/18/ensure-test-suite-quality-and-beware-of-the-green-bar/&amp;title=Tests%3A+Why+code+coverage+is+not+enough&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>To benefit from the principle of Continous Integration you need a good testing suite which includes both regression and new-feature tests. Regressions tests focus on testing features which are already implemented and shouldn&#8217;t be changed or influenced by latest commited changes. When software evolves such regression tests play a major role for the set of &#8220;old&#8221; features is far bigger compared to the new ones. One of Continous Integration&#8217;s key features is to run test automatically and reporting the results to us, so we are notified when something has been broken and we can react on this quickly. This article discusses what dangers can occur when relying too much on the green bar of your test-suite results.</p>
+<p>Common Continous Integration tools (e.g. Cruise-Control, Continumm) are running unit and integration tests and reporting the outcome (error, failure, success) with a push mechanism like E-Mail, Messenger client. As a developer usually you only prick up your ears when you see a red bar. When a green bar shows up or the reporting tool even filters success outcomes we could get into a very severe problem: We think everything is alright for  all tests passed but in fact we stepped into a false negative trap and part of the system is broken. As such the test-suite quality isn&#8217;t as good as we thought and software quality decreases invisibly. Usually organisation tries to proove test-suite&#8217;s quality by using a coverage tool like Cobertura or Clover. They are quite a help for seeking new test cases, never the less it exposes a big problem.</p>
+<p>Regarding the <a href="http://xunitpatterns.com/Four%20Phase%20Test.html" target="_blank">Four-Phase test pattern</a> (explained in superb book xUnit Test Patterns by Gerard Meszaros), code coverage shows us that certain parts of production code are executed in Setup, Exercise and Tear-Down phase of test.  Considering this code coverage clearly misses to adress the &#8220;quality&#8221; of the Verify part of the test. Thus when using  code coverage as test-suite quality metric only, we still can have a bad test quality: Though our tests are walking through wide areas of production code  in fact they don&#8217;t tell us what we really expect from it, which is usually done with assertions.</p>
+<p style="text-align: center"><img src="../../../../wp-content/uploads/2008/03/testcoverage.png" alt="fourPhaseTest" /></p>
+<h3>Bad Test Smells</h3>
+<p>To get a better feeling what can go wrong within the Verify part of a test case have a look at following three (common) test smell examples:</p>
+<p><strong>Exception ignorance:</strong><br />
+Especially in Java you often are forced to catch checked exceptions. This can be quite annoying especially in tests. Now, instead of attaching the exception one isn&#8217;t interested in to the method signature (like <em>void testSomething()throws Exception{&#8230;} </em>) many people are inserting try/catch blocks inside the test method and leave the catch-block empty. Not only this makes reading tests more difficult but can cause severe false negatives too because assertions you defined can be skipped. There we go and we could see green bar though the test failed.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// 1) do loads of stuff</span><br />
+&nbsp; &nbsp; <span class="co1">// 2)some assertions at the end</span><br />
+&nbsp; <span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> e<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// 3) do Nothing -&gt;&nbsp; unexpected exception does not get reported to test runner</span><br />
+&nbsp; &nbsp; <span class="co1">//defined assertions from above could be skipped</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p><strong>Uninterested debugging test:</strong><br />
+Production code is called, but no assertions are used at all. Often you find logging-outputs spread around (logger, stdout, stderr). Such test cases often aren&#8217;t meaningful because they don&#8217;t notify the test runner in case something goes wrong, in fact they are nearly always showing a green bar. Thus the test running is done automatically but the reporting is not, which taken together forms a non-automatic test. Instead human interference comes into play and analyzation of test results is done by staring at the logging-output. In many cases such test cases are used to debug production code in the first place instead of writing a &#8220;real&#8221; automatic test case in a way of test driven development.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; <span class="co1">// 1) long List of statements</span><br />
+&nbsp; <span class="co1">// 2) logging output spread around (stdout/stderr)</span><br />
+&nbsp; <span class="co1">// 3) no assertions at all</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p><strong>Imprecise assertion:</strong><br />
+Assertions are used but they are very general and do not ask more from production code as values only not being null. Such unspecific assertions do not claim much and verification often is weak. This way real bugs which should have been investigated by test could still result to a green bar.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="co1">// 1) long List of statements</span><br />
+&nbsp; <span class="co1">// 2) only and single assertion</span><br />
+&nbsp; assertNotNull<span class="br0">&#40;</span>returnValue<span class="br0">&#41;</span>; <span class="co1">//very imprecise assertion</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<h3>Approaches for test quality assurance</h3>
+<p>It is quite a tough job to find out whether your test-suite is strong or not, especially when it comes to writing the correct verifications/asserts. The right approach always has to be determined between efficiency and effectiveness forces. Manual i.e. human interaction like review of test cases is very powerful for you are reasoning directly as a developer. With that you can point out semantics in the way what assertions make sense, which ones are missing or whether custom assertions could be used. Of course this takes some time (review-meeting, manual code browsing etc.) and thus cannot be done for the whole testing code-base. Still it is not only a good way to get to know the test code base and investigate problematic test cases but more to spread knowledge about good test verification habits.</p>
+<p>The less expensive and less time consuming (i.e. efficient) variant could be a code structure analyzer, which scans test code. As an example you can extend http://checkstyle.sourceforge.net/ (Checkstyle) with custom checks. For instance working with regular expressions could make a check possible that at least one single assert statement must be used inside a test or an assertNotNull() is followed by another more specific assertion. Further more you could set up a rule that try-catch blocks need to contain a fail() assertion to verify proper exception-handling in production code.</p>
+<p>A third option which I can think of is to test your test-suite&#8217;s strength by using <a href="http://en.wikipedia.org/wiki/Mutation_testing" target="_blank">Mutation Testing</a>. It works in that way that it injects errors (mutants) into the production code base and checks whether tests would catch them by reporting a failure or error. I remember having used this approach with <a href="http://jester.sourceforge.net/" target="-blank">Jester</a> in a seminar in my university times. We perceived it quite powerful when injecting mutation operators for conditional logic, arithmetic expressions or numeric values for little programs. But when it came down to many other error-prone bits it often fell short (examples abbreviated): Calling different instance methods of input parameters, changing Exception handling, String operations etc.. Further more we did not succeed setting up Jester for integration tests, especially setting-up and tearing down things to a defined state was tricky. Looking out these days for an alternative other mutation testing framework for Java ended up to find a single tool <a href="http://www.cs.gmu.edu/~offutt/mujava/" target="_blank">MuJava</a>, where at its core (apart from eclipse plugin) the last update is a bit old from 2005. Never the less it looks promising for it offers more mutation operators especially for object oriented programs. Unfortunately it does not offer a maven report plugin for decent reports. Never the less I guess I&#8217;ll give it a try soon.</p>
+<h3>Summary</h3>
+<p>Testing is inevitably important when developing software. Either for prooving that new features work or that old features did not get broken by code changes. Looking at the green bar of testing outcome and relying on code coverage is a very good first step but often is not enough and other actions have to be done (test code review, static code analysis, mutation testing). Mutation testing as a concept looks very promising but does not seem to have been common practice.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts in Continous Integration" rel="category tag">Continous Integration</a> &middot;  <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../31/fluent-interfaces-for-code-comprehensability/index.html">Fluent interfaces for code comprehensability</a> </div>
+	<div class="older"> <a href="../../11/the-keyboard-rules/index.html">The keyboard rules!</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F03%252F18%252Fensure-test-suite-quality-and-beware-of-the-green-bar%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

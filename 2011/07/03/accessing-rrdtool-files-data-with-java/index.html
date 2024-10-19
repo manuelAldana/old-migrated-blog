@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Accessing rrdtool-files Data with Java / Scala</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Accessing rrdtool-files Data with Java / Scala Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../../2008/01/30/wordpress-setup/index.html' />
+<link rel='prev' title='&#8216;Embrace Failure&#8217; approaches in Software Development' href='../../../05/15/embracing-failure-softwareapproaches/index.html' />
+<link rel='next' title='Complexity drivers of Software-Systems' href='../../../09/30/complexity-drivers-of-software-systems/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../09/30/complexity-drivers-of-software-systems/index.html">Complexity drivers of Software-Systems</a> </div>
+	<div class="older"> <a href="../../../05/15/embracing-failure-softwareapproaches/index.html">&#8216;Embrace Failure&#8217; approaches in Software Development</a> &gt; </div>
+</div>
+					
+			<h4>July 3rd, 2011<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Accessing rrdtool-files Data with Java / Scala</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/&amp;title=Accessing+rrdtool-files+Data+with+Java+%2F+Scala&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Though <a href="http://www.mrtg.org/rrdtool/" target="_blank">rrdtool</a> is widely used especially for monitoring, it took me a while to find a simple and compatible bridge for reading data of rrd-files with Java. Following hopefully helps others to save some time and to workaround some pitfalls.</p>
+<p>My requirement was:</p>
+<ul>
+<li>Monitoring website showing trends of metrics, i.e. compare current with past values, both absolute and relative (hour over hour, day over day, etc.).</li>
+<li>Data backed is round-robin-database. The rrd-files are generated by munin (with under the hood rrdtool). Data should be accessed read-only.</li>
+<li>Website&#8217;s technology stack is Java based (<a href="http://www.playframework.org/" target="_blank">Play! framework</a> with <a href="http://scala.playframework.org/" target="_blank">Scala integration</a>).</li>
+</ul>
+<p>Because I use Play! framework I needed a way to access rrd-files with Java-Technology. My first look at <a href="http://code.google.com/p/rrd4j/" target="_blank">rrd4j</a> looked promising but failed, because rrd4j is a port and cannot read rrd-files created by original rrdtool. After some time-consuming research and Google-digging I finally stepped over  <a href="http://oss.stamfest.net/java-rrd-hg/" target="_blank">java-rrd</a>.</p>
+<h3>Installation Steps java-rrd</h3>
+<p>I couldn&#8217;t find the library built and distributed in any Maven-repository, so you have to download + build yourself:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># download + unpack</span><br />
+wget http://oss.stamfest.net/java-rrd-hg/archive/tip.tar.gz<br />
+tar xfz &lt;downloaded-tarball.tar.gz&gt;<br />
+<span class="co1"># build .jar library with Maven</span><br />
+<span class="kw3">cd</span> &lt;untarred-directory&gt;<br />
+mvn package<br />
+cp target/*.jar &lt;your-target-lib-folder&gt;</div>
+</div>
+<p>Instead of dump-copying and to be more clean with your build-system you might want to deploy the .jar file to a repository like Nexus.</p>
+<h3>Read-Access Usage java-rrd</h3>
+<p>As I use Play! framework with Scala integration, Scala was the integration way:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd._</span><br />
+&#8230;.<br />
+<span class="me1">val</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span><br />
+val command = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#41;</span><br />
+val result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span></p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span><br />
+<span class="kw1">else</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span></div>
+</div>
+<p>For completeness another snippet in Java source language:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd.CommandResult;</span><br />
+<span class="co2">import net.stamfest.rrd.RRDp;</span><br />
+&#8230;.<br />
+<span class="me1">RRDp</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span>;<br />
+<a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> command = <span class="br0">&#123;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#125;</span>;<br />
+CommandResult result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span>;</p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span>;<br />
+<span class="kw1">else</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span>;</div>
+</div>
+<p>With java-rrd you can also access rrdtool over sockets/network. </p>
+<h3>Parsing rrdtool output</h3>
+<p>rrdtool output after fetch is plain text, something like:</p>
+<div class="codesnip-container" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed<br />
+<br/><br />
+ 920804700: nan<br />
+ 920805000: 4.0000000000e+02<br />
+ 920805300: 2.0000000000e+03<br />
+ 920805600: 0.0000000000e+00<br />
+ 920806800: 3.3333333333e+01</div>
+<p>Above needs to be processed further to be &#8220;structured enough&#8221; for your code. For example do following (I only show Scala, I skipped Java iterating syntax hell&#8230;, did I mention that I love passing functions ;):</p>
+<div class="codesnip-container" >
+<div class="codesnip">def outputToNumberPairs<span class="br0">&#40;</span>rrdFetchOutput: <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#41;</span> = <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// filtering unneeded + empty lines</span><br />
+&nbsp; &nbsp; val list = rrdFetchOutput.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;<span class="es0">\n</span>&#8220;</span><span class="br0">&#41;</span>.<span class="me1">filter</span><span class="br0">&#40;</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> =&gt; n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span> &amp;&amp; !n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;nan&#8221;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <span class="co1">// parsing strings to numeric values and combine to pair</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i &lt;- list<span class="br0">&#41;</span> yield i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toLong</span> -&gt; i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toFloat</span>.<span class="me1">round</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+GIVES BACK:<br />
+===<br />
+res34: <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#91;</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3ALong+java.sun.com&#038;bntl=1"><span class="kw3">Long</span></a>, Int<span class="br0">&#41;</span><span class="br0">&#93;</span> = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">920805000</span>,<span class="nu0">400</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805300</span>,<span class="nu0">2000</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805600</span>,<span class="nu0">0</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920806800</span>,<span class="nu0">33</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div>
+</div>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts in Technologies/Tools" rel="category tag">Technologies/Tools</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../09/30/complexity-drivers-of-software-systems/index.html">Complexity drivers of Software-Systems</a> </div>
+	<div class="older"> <a href="../../../05/15/embracing-failure-softwareapproaches/index.html">&#8216;Embrace Failure&#8217; approaches in Software Development</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2011%252F07%252F03%252Faccessing-rrdtool-files-data-with-java%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

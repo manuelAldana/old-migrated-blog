@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Codebase size implications on Software development</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Codebase size implications on Software development Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../../2008/01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Tomcat JDBC-Realm in digest mode' href='../../../04/05/tomcat-jdbc-realm-in-digest-mode/index.html' />
+<link rel='next' title='Inside-Out Modularization' href='../../30/inside-out-modularization/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../30/inside-out-modularization/index.html">Inside-Out Modularization</a> </div>
+	<div class="older"> <a href="../../../04/05/tomcat-jdbc-realm-in-digest-mode/index.html">Tomcat JDBC-Realm in digest mode</a> &gt; </div>
+</div>
+					
+			<h4>May 9th, 2010<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Codebase size implications on Software development</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/&amp;title=Codebase+size+implications+on+Software+development&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Following discusses the implications of big codebases. Codebase size can be measured with the well known &#8216;lines of code&#8217; (LOC) metric. </p>
+<p>The following codebase size and LOC metric scope is not fine grained on function or class level but for complete codebase or at least on subcomponent level.</p>
+<h3>Bad (anti-pattern): Codebase size as progress metric</h3>
+<p>Sometimes (though fortunately rarely) QA or project management is taking codebase size and LOC as a progress metric to see what the project&#8217;s state is. The more lines of code have been written the closer the project is seen to have been completed. This is a definite anti-pattern for following reasons:</p>
+<ul>
+<li>It is extremely difficult to estimate, how much code will be necessary for a certain scope or a set of requirements. This implies that project or product management cannot know, how much code is missing to mark the requirements as done.</li>
+<li>It is more about quality as of quantity of code. Well structured code with avoidance of duplication tends to have less lines of code.</li>
+<li>It is very important and valuable to throw away dead code (code which isn&#8217;t used or executed anywhere). Using lines of code as a progress metric would mean this important refactoring will cause a negative project progress.</li>
+</ul>
+<h3>Good: Codebase size as compexity metric</h3>
+<p>With a higher LOC metric you are likely to face following problems:</p>
+<ul>
+<li>Increase of feeback time: It takes longer to build deployable artifacts, to startup application and to verify implementation behaviour (this both applies to local development and CI servers).</li>
+<li>Tougher requirements on development tools: Working on large codebases makes the IDE often run less smoothly (e.g. while doing refactorings, using several debugging techniques).</li>
+<li>Code comprehension: More time has to be spent for reverse engineering or reading/understanding documentation. Code comprehension is vital to integrate changes and debugging.</li>
+<li>More complex test-setup: Bigger codebases tend to have more complicated test-setup. This includes setting up external components (like databases, containers, message-queues) and also defining test-data (the domain model is likely to be rich).</li>
+<li>Fixing bugs: First of all exposing a bug is harder (see test-setup). Further more localization of bug is tougher, because more code has to be narrowed down. Potentially more theories exist to have causes the bug.</li>
+<li>Breaking code: New requirements are more difficult to implement and integrate without breaking existing functionality.</li>
+<li>Product knowledge leakage: Bigger codebases tend to cover more functionality. The danger increases, that at some point the organization loses knowledge which functionality the software supports. This blindness has very bad implications on defining further requirements or strategies.
+<li>Compatibility efforts: The larger a codebase the more likely it is that it already has a long lifetime (codebases tend to grow over the years). Along the age of software down-compatibility is a constant requirement, which increases (a lot of) effort.</li>
+<li>Team size + fluctuation: Bigger codebases tend to have been touched by a big size of developers, which can cause knowledge leakage. Due to communication complexity, each developer only knows just a little part of the system and does not distribute it. Even worse due to team-size fluctuation is likely to be higher and knowledge gets completely lost for company.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Quantification of LOC impact is hard</h3>
+<p>Above statements are more qualitative and are not quantifiyable, because the exact mapping of a certain LOC number to a magic complexity number is unfeasible. For instance there are other criterias which have an impact on the complexity of a software system, which are independent of LOC:</p>
+<ul>
+<li>Choice of programming language/system: Maintaining 1.000 LOC of assembly is a complete different story as doing it with 1.000 of Java code.</li>
+<li>Problem domain: Complex algorithms (e.g. to be found in AI or image processing) tend to have less lines of code but still are complicated.</li>
+<li>Heterogenity of chosen technology in your complete source-code ecosystem: E.g. using 10 different frameworks and/or programming-languages and making them integrate to the overall system harder as concentrating on one  framework.</li>
+<li>Quality and existence of documentation: E.g. Api-interfaces aren&#8217;t documented or motivations for major design decision are unknown. From developers point of view such a system is effectively more complex because a lot of effort has to be spent in reverse engineering.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Conclusion</h3>
+<p>The metric LOC representing codebase size has a big impact on your whole software development cycle. Therefore it should be measured, observed and tracked over time (also by subcomponent). Apart from showing you the current state and evolution of your codebase from historical point of view you can also use it proactively for future:</p>
+<ul>
+<li>Estimation/planning: When estimating features take the LOC metric has influence criteria. The higher the LOC the more complicated it will be to integrate feature.</li>
+<li>YAGNI: Take YAGNI (&#8220;you ain&#8217;t gonna need it&#8221;) principle to the extreme. Only implement really necessary features. Do not make your software over-extensible and as simple as possible.</li>
+<li>Refactor out dead code: Being aware of LOC as a complexity metric, you can create a culture of dead-code awareness. Throw away as much unused code away as you can.</li>
+<li>Refactor out dead functionality: Software products often are unneccessarily overcomplex. Also push business towards are more simple product strategy and throw away unused features and achieve a smaller codebase.</li>
+</ul>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a> &middot;  <a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts in Software Maintenance" rel="category tag">Software Maintenance</a> &middot;  <a href="../../../../category/uncategorized/index.html" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../30/inside-out-modularization/index.html">Inside-Out Modularization</a> </div>
+	<div class="older"> <a href="../../../04/05/tomcat-jdbc-realm-in-digest-mode/index.html">Tomcat JDBC-Realm in digest mode</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2010%252F05%252F09%252Fprocess-implications-of-metric-lines-of-code-loc%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

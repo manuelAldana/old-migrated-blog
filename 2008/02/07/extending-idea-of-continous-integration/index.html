@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Extending the idea of Continous Integration</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Extending the idea of Continous Integration Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='next' title='The keyboard rules!' href='../../../03/11/the-keyboard-rules/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../03/11/the-keyboard-rules/index.html">The keyboard rules!</a> </div>
+	<div class="older"> <a href="../../../01/30/wordpress-setup/index.html">Wordpress setup</a> &gt; </div>
+</div>
+					
+			<h4>February 7th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Extending the idea of Continous Integration</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/02/07/extending-idea-of-continous-integration/&amp;title=Extending+the+idea+of+Continous+Integration&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>With Continous Integration you send your work to a central place and a checking is being done which tells you if your stuff still works for itself and together with the other parts of the system. This kind of check should be done quick and often (to keep the feedback loop short) so it is mostly done automatically by tools. Martin Fowler already gives a good <a href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">introduction</a> to this practice, and this <a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords=continous%20integration&amp;tag=privatehom0d0-21&amp;index=blended&amp;linkCode=ur2&amp;camp=1638&amp;creative=6742" target="_blank">book</a> gives even more detailed information, so I won&#8217;t cover already discussed topics. For myself  I found the idea of Continous Integration so universal, that it can even be applied to other work bits which aren&#8217;t directly connected to source code. This way quality of other work artifacts can be enhanced.</p>
+<p>As a example just think of the important documentations snippets you are working on (I hope you do&#8230;), wouldn&#8217;t it be nice if the was a kind of checker which would help you to keep spellings or consistencies right without you manually scrolling the whole document back and forth? This way you would save an often unexpected (difficult to estimate) pig pile of work which usually appears at the release deadline when document needs to be finished. You could argue that if the tool wouldn&#8217;t offer such a check you could extend it by a self written plugin yourself to get a very close integration. On the other hand this is often not feasible: Either the tool is not meant to be extended, it is closed source or the effort to be spent for writing a plugin is just too high to equal the cost. You again could argue that faced with such problems a switch to a better tool should be done, but this is even more doubtful: First of all in very many cases a switch of a tool is connected with high effort (total cost of ownership: training, migration of data, evaluation etc.), and further more you generally will hardly (if even never) find a tool which fulfills all your needs to 100% anways. So a more lightweight approach could be a better alternative: Integration of little self written tools which connect to interfaces of your main one. In the case of Continous Integration this would happen by creating a little checker/reporting-tool which in turn scans users input for lurking errors and runs on a regular basis. Thus the feedback loop is short (iteration is one of the keys of software engineering) and thus many errors/misbehaviour can be prevented from keeping too long inside the system and quality is ensured from the beginning on.</p>
+<p style="text-align: center"><img src="../../../../wp-content/uploads/2008/02/continousintegrationworkflow.png" alt="workflow continous integration" /></p>
+<p>Let&#8217;s head to another example: I recently used the concept of Continous Integration to improve the quality of my homepage: As you write content for the web you often write some html bits and use hyperlinks quite often. In wordpress&#8217; case you usually do that with not very edit-friendly built-in wordpress editor, which does not check the html bits you filled in. So just automatically quite a few broken links creeped in. With me this happened quite often (forgetting opening/closing tags, accidently omitting http://, completely mistyped links, etc.). The discovery + correction of these links had been quite annoying, boring and time consuming. Further more the discovery was more by coincidence as by a structured search. Whilst being bored searching for these sneaky links I came to the idea that this kind of scan could be easily, much better and quickly performed by a script. So I changed the direction and headed my way to an automatic scan: First of all a kind of enabling point was neccessary to easily get access to all pages of my homepage. For this the sitemap feature of wordpress got very handy, where you can get all pages of your site in a structured well parseable XML-document. Armed with this all pages and its hyperlinks could by retrieved easily. Having all existing hyperlinks of my homepage the assertion of the HTTP GET response code of respective link was even more obvious. For this tooling task I used Groovy for its short easy to read syntax and its missing compiling and low deploying neccessities (just guess what long and verbose source-code would have been need when it had been done in Java&#8230;).  Of course I do favor Java (static type check) when it comes to bigger systems for maintenance reasons but for everyday scripting tasks Groovy or other alternatives (Python, Ruby etc.) a really the best way to go.</p>
+<p>Just have a look at following code to see how straight forward it is to build a Continous Integration helper tool. You will notice that only the check part is done of following script (see the middle item of above picture). So what is still missing is a proper trigger (like cron-job for each day) and a better report functionality (like mail-notification instead of stdout print).</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1">//MAIN WORKFLOW</span><br />
+def <span class="kw4">static</span> HOMEPAGE=<span class="st0">&#8220;YOUR_WORDPRESS_HOMEPAGE&#8221;</span><br />
+<span class="co1">//for performance, only visit link once</span><br />
+def linksVisited=<span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+def index=<span class="nu0">0</span></p>
+<p>println <span class="st0">&#8220;Starting link check for $HOMEPAGE&#8221;</span><br />
+def urlset=<span class="kw2">new</span> XmlSlurper<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">parseText</span><span class="br0">&#40;</span><span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span><span class="st0">&#8220;http://$HOMEPAGE/sitemap.xml&#8221;</span><span class="br0">&#41;</span>.<span class="me1">text</span><span class="br0">&#41;</span><br />
+urlset.<span class="me1">url</span>.<span class="me1">each</span><span class="br0">&#123;</span> sitemapEntry -&gt;<br />
+&nbsp; def linkFrom=sitemapEntry.<span class="me1">loc</span>.<span class="me1">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; retrieveLinks<span class="br0">&#40;</span><span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>linkFrom<span class="br0">&#41;</span>.<span class="me1">text</span><span class="br0">&#41;</span>.<span class="me1">each</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; print <span class="st0">&#8220;${index++} &#8220;</span><br />
+&nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>!linksVisited.<span class="me1">contains</span><span class="br0">&#40;</span>it<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; checkLink<span class="br0">&#40;</span>it,linkFrom<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; linksVisited &lt;&lt; it<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></p>
+<p>def retrieveLinks<span class="br0">&#40;</span>html<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; def links=<span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; <span class="br0">&#40;</span>html =~ /href=<span class="st0">&#8220;(.*?)&#8221;</span>/<span class="br0">&#41;</span>.<span class="me1">each</span> <span class="br0">&#123;</span>&nbsp; whole, link -&amp;gt; links &amp;lt;&amp;lt; link <span class="br0">&#125;</span><br />
+&nbsp; <span class="kw2">return</span> links<br />
+<span class="br0">&#125;</span></p>
+<p>def isBrokenLink<span class="br0">&#40;</span>url<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; def responseCode=<span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>url<span class="br0">&#41;</span>.<span class="me1">openConnection</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">getResponseCode</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; responseCode.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span> =~ <span class="st0">&#8220;^(4|5)&#8221;</span><br />
+<span class="br0">&#125;</span></p>
+<p>def urlAlright<span class="br0">&#40;</span>url,closure<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp;<span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp;<span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>url<span class="br0">&#41;</span><br />
+&nbsp;<span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp;closure<span class="br0">&#40;</span>url<span class="br0">&#41;</span><br />
+&nbsp; &nbsp;<span class="kw2">return</span> <span class="kw2">false</span><br />
+&nbsp;<span class="br0">&#125;</span><br />
+&nbsp;<span class="kw2">return</span> <span class="kw2">true</span><br />
+<span class="br0">&#125;</span></p>
+<p>def checkLink<span class="br0">&#40;</span>linkTo,linkFrom<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>urlAlright<span class="br0">&#40;</span>linkTo,<span class="br0">&#123;</span>println <span class="st0">&#8220;Wrong URL Pattern: $linkTo inside $linkFrom&#8221;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>isBrokenLink<span class="br0">&#40;</span>linkTo<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp;println <span class="st0">&#8220;ERROR: BROKEN LINK $linkTo. Referenced from $linkFrom&#8221;</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>Of course this kind of broken link check is not restricted to a XML-sitemap. Another enabling point for quering your html content could be a direct database access, whereas you would need to know the database schema of wordpress in a more detailed way. I am running this kind of check each week and already found out quite a few broken links.</p>
+<p>Surely these automatic checks cannot reveal all errors inside a system (who the hell checks if my posts make sense at all&#8230;) but they definitely help to let people to concentrate on other things which cannot be achieved by computers so far (like sematics, comprehensibility, etc.).</p>
+<p>What about you, what kind of Continous Integration use cases are you employing?</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts in Continous Integration" rel="category tag">Continous Integration</a> &middot;  <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../03/11/the-keyboard-rules/index.html">The keyboard rules!</a> </div>
+	<div class="older"> <a href="../../../01/30/wordpress-setup/index.html">Wordpress setup</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F02%252F07%252Fextending-idea-of-continous-integration%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

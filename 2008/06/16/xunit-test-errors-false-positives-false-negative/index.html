@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Avoiding xUnit test-errors (false positives, false negatives)</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Avoiding xUnit test-errors (false positives, false negatives) Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)' href='../../../05/21/eclipse-vs-intellij/index.html' />
+<link rel='next' title='Getting rid of checked exceptions in Java' href='../../../07/28/getting-rid-of-checked-exceptions-in-java/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../07/28/getting-rid-of-checked-exceptions-in-java/index.html">Getting rid of checked exceptions in Java</a> </div>
+	<div class="older"> <a href="../../../05/21/eclipse-vs-intellij/index.html">Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</a> &gt; </div>
+</div>
+					
+			<h4>June 16th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Avoiding xUnit test-errors (false positives, false negatives)</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/06/16/xunit-test-errors-false-positives-false-negative/&amp;title=Avoiding+xUnit+test-errors+%28false+positives%2C+false+negatives%29&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>You are using unit-tests to ensure that production code works as defined or specified from the class-level view. This way you either get feedback that your implementation works as wanted (green-bar=success) or not (red-bar=fail). Unfortunately tests are also man-crafted work and can contain bugs.  Following article shows what kind of test-errors exist and what preventive actions can be done. </p>
+<h3>Annoyance of test-errors</h3>
+<p>Test-errors are very annoying because your tests should be the impartial authority saying your production works or not. And if you cannot rely on them and they are constantly lying to you, you quickly get the opinion that tests don&#8217;t help you but merely slow down your work tasks. In fact I noticed that many developers new to unit-tests are gettings frustrated by test-errors and thus are stopping to write them. This way they lose the advantages of a good test-suite and Test Driven Development which is a shame. Test-errors can roughly occur in two forms: false negatives and false positives. </p>
+<h4>False positive test</h4>
+<p>A false positive test gives you a failure, though the feature is behaving alright. You change or create some code, make everything compile but the corresponding test gives you a failure. After debugging for a while you see that the test made wrong expectations about the feature so that your test is inconsistent with the specified behaviour.</p>
+<p>Very simplified example:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">public</span> <span class="kw4">static</span> <span class="kw4">int</span> sum<span class="br0">&#40;</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">return</span> x+y;<br />
+<span class="br0">&#125;</span></p>
+<p><span class="kw2">public</span> <span class="kw4">void</span> testSum<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; assertTrue<span class="br0">&#40;</span><span class="nu0">3</span>,sum<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">//fails though class under test alright</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>I experience false positive tests sometimes when using mock-frameworks (like <a href="http://www.easymock.org/">EasyMock</a> ), because when injecting mocks to class under test you expose some bits of implementation details to the test by recording behaviour to the mock. After changing implementation of class under test slightly, the calling of your mocks could change also. Without changing your mocks correspondly your test most likely will fail.</p>
+<p>Another often occurring cause for a false positive is a wrong test setup, e.g. you could pass wrong or no instances at all to class under test, so it behaves different as expected from test case view. Example: You pass an implementation to class under test, which connects to a file-database and wants to read data. Database is not available and test fails. Here you made a test setup mistake: Actually you had to pass a  persistence stub, which returns appropriate values for the test.</p>
+<p>Further more your design could be too tightly coupled, where your class under test has many dependencies to other classes. Thus many other instances are called indirectly and it is difficult to isolate you &#8220;real&#8221; test case. A change of dependent classes makes the test fail, though class under test itself did not change and is still behaving fine.</p>
+<h4>False negative test</h4>
+<p>A false negative test reports you a success message that everything is alright but in fact it is broken. In this case all your test expectations (=asserts) are fine, but production code in fact has got a bug. </p>
+<p>Same simple example:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">public</span> <span class="kw4">static</span> <span class="kw4">int</span> sum<span class="br0">&#40;</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">return</span> x+<span class="nu0">1</span>;&nbsp; <br />
+<span class="br0">&#125;</span></p>
+<p><span class="kw2">public</span> <span class="kw4">void</span> testSum<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; assertTrue<span class="br0">&#40;</span><span class="nu0">2</span>,sum<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">//success though class under test has a bug</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>What I see often in false negative tests, is that assert statements are formulated too weak and claim not enough from class under test. In many test cases you find a very non-saying assertNotNull(returnObject) and the properties of returnObject are not checked more detailed.</p>
+<h4>Preference of test-error</h4>
+<p>The lesser evil test-error are definitely the false positives. Here I get instantly notified that there IS a test-error. Looking at a false negative test I don&#8217;t get notified at all and the overall &#8216;good&#8217; feeling that I got tests in place is very deceptive. You interpret more quality to your production code than there is.</p>
+<h3>What to do about test-errors</h3>
+<p>Awareness of both test-error categories is a good first step, but how can you avoid test-errors generally?</p>
+<h4>Suggestions to avoid false positives</h4>
+<p>An obvious cause for a false positive can be your test assert statements, maybe they are just plain wrong, requirements have been changed and class under test has been adjusted respectively. To avoid such assert statement mistakes you should develop test driven: When a requirement has been changed first look if feature has a corresponding test case and adjust it. After that change your production code. This way you avoid specification inconsistencies inside your test cases.</p>
+<p>When looking at your production code, maybe your design is too tightly coupled and your tests are covering just to many classes? With this you should consider to introduce dependency-injection to make passings of alternative test-implementations possible. Or maybe you got a monster method and thus &#8220;feature-isolation&#8221; is not possible either? Here you should consider to use extract refactorings (method, interface, class), to achieve isolation and loose coupling and make stub/mock injections possible.</p>
+<h4>Suggestions to avoid false negatives</h4>
+<p>Most likely your assert statements are too weak and you don&#8217;t use enough test-data. Consider to add asserts an invoke class under test with alternative input values. The assertNotNull(returnObject) assert is often a good start to check whether the returnObject has been initialized at all, but if so, more &#8220;stronger&#8221; asserts should follow. Always remember: Apart from your application throwing an unexpected Exception inside test-run your test case will only fail if one of your asserts will evaluate to false!</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts in Continous Integration" rel="category tag">Continous Integration</a> &middot;  <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../07/28/getting-rid-of-checked-exceptions-in-java/index.html">Getting rid of checked exceptions in Java</a> </div>
+	<div class="older"> <a href="../../../05/21/eclipse-vs-intellij/index.html">Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F06%252F16%252Fxunit-test-errors-false-positives-false-negative%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

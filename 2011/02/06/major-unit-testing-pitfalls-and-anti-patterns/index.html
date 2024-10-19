@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Unit-Testing: Situations when NOT to do it</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Unit-Testing: Situations when NOT to do it Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../../2008/01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Static typed programming/languages won&#8217;t die!' href='../../../01/09/static-typed-programminglanguages-wont-die/index.html' />
+<link rel='next' title='Top-Tools for Log-Analysis (CLI based)' href='../../../03/13/top-tools-for-logging-analysis-cli-based/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html">Top-Tools for Log-Analysis (CLI based)</a> </div>
+	<div class="older"> <a href="../../../01/09/static-typed-programminglanguages-wont-die/index.html">Static typed programming/languages won&#8217;t die!</a> &gt; </div>
+</div>
+					
+			<h4>February 6th, 2011<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Unit-Testing: Situations when NOT to do it</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/&amp;title=Unit-Testing%3A+Situations+when+NOT+to+do+it&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.</p>
+<p>The presented sections go along with my favorite test-smells:</p>
+<ol>
+<li>Brittle tests: Though functionality hasn&#8217;t been changed the test fails. Test should show green but in fact shows red (false positive).</li>
+<li>Inefficient tests: The effort of writing automated tests doesn&#8217;t pay out at all. The benefit/cost ratio (short + long term) is extremely low.</li>
+</ol>
+<h3>Unit-Test little scripts/tools</h3>
+<p>There is often no sense to write unit-tests for little scripts or tools, which are one or two-liners. The script content is already so &#8220;declaritive&#8221;, short and compact that the code is too simple to break. Further more often stubbing or mocking the dependencies is tough (e.g. writing to stdout/file, shutdown machine, doing an HTTP call). You can end up writing a external system emulator which is overkill in this situation. Surely testing is important but for that I go the manual way (executing script, and smoke-test sanity check the outcome).</p>
+<h3>Unit-Test high level orchestration services</h3>
+<p>Orchestration services have many dependencies and chain-call lower services. The effort of writing such unit-tests is very high:  Stubbing/Mocking all these outgoing dependencies is tough, test setup logic can get very complex and make your test-code hard to read and  understand. Further more these tests tend to be very brittle, e.g. minor refactoring changes to production code will break them. Main reason is that inside test-code you have to put a lot of implementation detail knowledge to make stubbing/mocking work. You can argue having many fan-out/outgoing dependencies is a bad smell and you should refactor from start on. This is true in some cases but higher order service often have the nature to orchestrate lower ones, so refactoring won&#8217;t change/simplify much and make design even more complicated. In the end for such high level services I much prefer to let test-cover them by automated or non-automated acceptance tests.</p>
+<h3>Test-first during unclear Macro-Design</h3>
+<p>When implementing a feature or something from scratch often the macro-design is blurry, I like to call this &#8220;diving-in&#8221;. For diving-in development or quick prototyping you get a feeling which design fits or not. During this phase class structures/interactions change a lot, sometimes even big chunks of code are thrown away and you restart again. Such wide code changes/deletions often will break your tests  and you have to adapt or even delete them. In these situations test-first approach doesn&#8217;t work for me, writing test-code even distracts me and slows me down. Yes, unit-tests and test-first approach can and should guide your design but I experienced this counts more when the bigger design decisions have been settled.</p>
+<h3>100% Code-Coverage</h3>
+<p>I can&#8217;t overstate this: Code-Coverage != Test-Coverage. The Code-Coverage of unit-tests is a nice metric to see untested spots, but it is by far not enough. It just tells you that the code has been executed and simply misses the assert part of your test. Without proper asserts, which check the side-effect of your production code and expected behaviour, the test gives zero value. You can reach 100% code-coverage without having tested anything at all. In the end this wrong feeling of security is much worse as having no test at all! Further more 100% code-coverage is  inefficient because you will test a lot of code, which is &#8220;too simple to break&#8221; (e.g. getters/setters, simple constructors + factory-methods).</p>
+<h3>Summary</h3>
+<p>Above points shouldn&#8217;t give you the impression that I do speak against automated unit-tests, I think they are great: They can guide you to write incremental changes and help you to focus, you get affinity for green colors ;), they are cheap to execute and regression testing gives you security of not breaking things and more courage to refactor. Still going with the attitude that you have to go for 100% code-coverage and to test every code snippet will kill testing culture and end up in Red-Green color blindness.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts in Continous Integration" rel="category tag">Continous Integration</a> &middot;  <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a> &middot;  <a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts in Software Maintenance" rel="category tag">Software Maintenance</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html">Top-Tools for Log-Analysis (CLI based)</a> </div>
+	<div class="older"> <a href="../../../01/09/static-typed-programminglanguages-wont-die/index.html">Static typed programming/languages won&#8217;t die!</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2011%252F02%252F06%252Fmajor-unit-testing-pitfalls-and-anti-patterns%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

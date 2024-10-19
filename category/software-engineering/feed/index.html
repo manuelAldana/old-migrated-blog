@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Manuel Aldana &#187; Software Engineering</title>
+	<atom:link href="http://www.aldana-online.de/category/software-engineering/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.aldana-online.de</link>
+	<description>Software Engineering: blog &#38; .lessons_learned</description>
+	<lastBuildDate>Wed, 30 May 2018 18:51:07 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>The evil path of Mobile-Apps (vs. Webstandards)&#8230;</title>
+		<link>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/</link>
+		<comments>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/#comments</comments>
+		<pubDate>Thu, 26 Jan 2012 00:06:13 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=341</guid>
+		<description><![CDATA[The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?
+Step backwards from Web-Standards
+I think web-standards like HTML, JavaScript, [...]]]></description>
+			<content:encoded><![CDATA[<p>The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?</p>
+<h3>Step backwards from Web-Standards</h3>
+<p>I think web-standards like HTML, JavaScript, CSS are key technologies for the Internet. The Webapp-Provider can develop in a very agile way as the application is released on servers and ready to be accessed by Webbrowser. The User on the other hand doesn’t need to install anything, the only “application-gate” is the Webbrowser, simply try out a website, toss it away or revisit. No installation/removal necessary. The URL is your application-hook.<br />
+On the Mobile App side big step backwards: I now face the pain that every website has its own app which basically doubles content. I need to go through the annoying search/install/upgrade/removal path to try out things. Instead of keeping simple URL-Bookmarks for several websites the Desktop now is packed with tons of distracting App-Icons and alarming Upgrading Notifications.</p>
+<h3>High Implementation Effort</h3>
+<p>On top of your HTML/Javascript based Webapplication and optional HTTP API you need to add effort to more apps. Your whole application setup gets fragmented and increases maintenance and developing efforts to a big extent. Today 2 major platforms exist (Android, iOS) and it seems that Windows Mobile platform will follow. Yes, on the Webapplication side you indirectly also need to support multiple Browsers (Safara, FF, IE, Chrome etc.) but this effort is much less as maintaining desktop-lik Mobile Apps.</p>
+<h3>App-Store Drawbacks</h3>
+<p>Smartphone Apps are typically distributed through App-Stores (like Apple’s App-Store or Google’s Android Market). These App-Stores and their review process do have their pros: They act as a single entry point for end-users, which can search/browse and rate apps which is really comfortable. Also the review-process and policies can kind of enforce a style guide which can positively influence usabilty. Besides malicious apps are easier to filter and kick-out from App-Store. On top it seems that users tend to be more willing to pay for certain apps in contrast to pay for a website content, which is good for the App-Providers.</p>
+<p>Never the less there are a lot of disadvantages which makes Software Development for Mobile-Apps tough:</p>
+<h4>Missing/Intransparent Auto-Upgrade</h4>
+<p>It can happen that your current installed app is inconsistent to the latest released one (I see this through circle icon top-left of app or App-Store icon) and isn&#8217;t upgraded on the fly. This causes headaches both on user and App-Provider side. The user is annoyed because he/she need to actively upgrade App-versions all the time and at some point will simply not do it. The App-Provider has to invest a lot of developing and testing resources to make all the backend (like APIs) compatible to very old App-releases as there is no guarantee that very old Apps aren’t “out there” any longer. Down compatiblity and supporting multiple application versions is in my view one of the biggest cost drivers in Software Industry.</p>
+<h4>Inefficient Packaging</h4>
+<p>When upgrading an App the whole binary package needs to be downloaded. This is extremely inefficient as usually between releases only a smaller part of App changes (source-code diff). Especially in areas where bandwith isn’t good downloading a 5MB upgrade is a big pain. A more sophisticated packaging build tool which makes binary diffs possible would ease a lot and come hand in hand with an Auto-Upgrade feature. To me it is a mistery why none of current App-Stores have such a feature&#8230;</p>
+<h4>Release/Rollout delay</h4>
+<p>Due to the app-review process there is a delay between your internal approval of app and the final downloadable app inside App-Store. This usual takes a week but also can take longer (e.g. during peak times when many app-providers are offering new apps or versions at the same time). Thinking of being agile and releasing software often (see Continous Delivery) this is a major drawback. You have to invest much more effort on testing your app-package as major production issues could cause an app being unusable without possibilty to react quickly as major bug fix releases need to go through review process again. In such an error-risk environment changes are done much more defensively and you also will meet all the other disadvantages of NOT RELEASING OFTEN.  </p>
+<h4>Distribution dependency</h4>
+<p>App-Store owners (Apple, Google) have full control whether an app is available or not. Apple even has policies disallowing apps which are implementing similar functions as preinstalled Apple ones (Email-Client, Webbrowser). You are dependent on the good will on the reviewers. These hard restriction aren’t found for typical Desktop or webapplications. In Desktop case you simply directly a bundled application-package. As webapplication provider you simply rollout you app and let users find you by the “application”-gate the Webbrowser.</p>
+<h3>Future-Hope</h3>
+<p>My bet and hope (esp. as a Software Developer) is the HTML 5 standard + Responsive-Web-Design movement. It keeps the highly flexible Webapplication oriented approach and offers a single point for both Desktop Webbrowsers and Mobile devices (frontend is “adapting” to end-device). My gut-feeling is undermined as big web-player Google also seems to go this way, e.g. there are hardly any dedicated Google Mobile Apps rather they try to tackle the Mobile Usability problem directly on the Webapplication side.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Complexity drivers of Software-Systems</title>
+		<link>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/</link>
+		<comments>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/#comments</comments>
+		<pubDate>Fri, 30 Sep 2011 15:24:38 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[complexity]]></category>
+		<category><![CDATA[lead-time]]></category>
+		<category><![CDATA[lean]]></category>
+		<category><![CDATA[software]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=332</guid>
+		<description><![CDATA[More complex software-systems correlate with higher lead-time (time-to-market of initial idea to user-available software) and fragility. They also tend to have negative influence on usability. Therefore it must be a goal to reduce following complexity factors to a lowest possible degree.
+Codebase size
+Independant of what the codebase does it incorporates maintenance-efforts: On big codebases it takes [...]]]></description>
+			<content:encoded><![CDATA[<p>More complex software-systems correlate with higher lead-time (time-to-market of initial idea to user-available software) and fragility. They also tend to have negative influence on usability. Therefore it must be a goal to reduce following complexity factors to a lowest possible degree.</p>
+<h3>Codebase size</h3>
+<p>Independant of what the codebase does it incorporates maintenance-efforts: On big codebases it takes longer to implement changes, more code needs to be read/comprehended. Codebase size also correlates with longer builds, deployment processes and startup times, which means a latency-increase of feedback loops. Encapsulation/Modularizaton can be applied, but it only weakens the impact: You won&#8217;t be able to reduce efforts of a 100M codebase compared to a 10K one by just having good code-quality.</p>
+<h3>Codebase quality</h3>
+<p>Decent code-quality is important for implementing changes quickly (readable code, separation of concerns, DRY etc.). Good quality also includes test-coverage so regression-bugs are better caught and there is a safety-net during refactorings. Though business often neglects less visibile code-quality, it is essential to reduce lead-time. In severe cases you&#8217;re at a dead end: code is such in a bad shape, that it is impossible to evolve (changes are too side-effect-risky and/or too expensive).</p>
+<h3>Tools/technology diversity</h3>
+<p>Itself diversity of tools (programming-languages, frameworks, hardware etc.) is good because you can choose the right one to solve your specific problem. But it also increases risk: single-person-know-how, legacy-tech, learning-curves, beta/buggy-stability, upgrade/patching-efforts, transitive dependencies (see .dll, .jar nightmares).</p>
+<h3>Integration points</h3>
+<p>Though distributed systems are necessary (scaleability, reliability, modularization, partner-integrations) they are more fragile: Monitoring and deployment efforts increase and security breaches are more likely. Also tracing, debugging and testing efforts are higher.</p>
+<h3>Organization Size</h3>
+<p>One of the biggest factors is the size of your organization because efforts increase squarely (see also <a target="_blank" href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month#The_mythical_man-month">Mythical Man Month</a>). Bigger organizations try to fight this by introducing hierachies and heavy-weight processes, but this structure can have negative impact on &#8220;short/quick&#8221; decisions and slows down speed. In some scenarios political-games emerge, which block progress considerably.</p>
+<h3>External partners</h3>
+<p>External-partner-integrations (most likely over APIs, batch processing) need more investment: Different release cycles need to be taken into account, compatibility must be offered and dedicated monitoring needs to be setup. Also communication is less direct (fixed calls, meetings, travelling).</p>
+<h3>User-Base + Traffic</h3>
+<p>A bigger User-Base means you have to spend more effort on support. Because of the mass statistically more edge-cases come up and need to be handled by software. Also scalability requirements need to be implemented by more sophisticated production environments. Popular systems also attract criminal activity, which you need to respond with higher security-investments, which again make the system less usable. Big applications also produce more data, which needs to be maintained (compatibility, migrations, analyzation).</p>
+<h3>Being Complexity aware</h3>
+<p>Above factors cannot be reduced to Zero (you will always meet an Inherent Complexity), but you should fight back:</p>
+<ul>
+<li>Prioritize, prioritize, prioritize: Featuritis has bad impact on usability and codebase-size. Implement important features only. Remove unneeded features and cleanup code.</li>
+<li>Consolidate technologies: Don&#8217;t introduce a new technology just because it was praised in the last magazine. Evaluate it and maybe use it privately first.</li>
+<li>Take Fowler&#8217;s advice serious: &#8220;Don&#8217;t distribute, if you don&#8217;t have to&#8221; </li>
+<li>Don&#8217;t always increase team-size, rather have a small team with A-players.</li>
+<li>Quantify: Use metrics for business success, code-quality and production stability. Especially for bigger systems gut-feeling isn&#8217;t enough.</li>
+<li>&#8230;</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/09/30/complexity-drivers-of-software-systems/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Accessing rrdtool-files Data with Java / Scala</title>
+		<link>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/</link>
+		<comments>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/#comments</comments>
+		<pubDate>Sun, 03 Jul 2011 10:52:36 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[java]]></category>
+		<category><![CDATA[monitoring]]></category>
+		<category><![CDATA[rrdtool]]></category>
+		<category><![CDATA[scala]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=315</guid>
+		<description><![CDATA[Though rrdtool is widely used especially for monitoring, it took me a while to find a simple and compatible bridge for reading data of rrd-files with Java. Following hopefully helps others to save some time and to workaround some pitfalls.
+My requirement was:
+
+Monitoring website showing trends of metrics, i.e. compare current with past values, both absolute [...]]]></description>
+			<content:encoded><![CDATA[<p>Though <a href="http://www.mrtg.org/rrdtool/" target="_blank">rrdtool</a> is widely used especially for monitoring, it took me a while to find a simple and compatible bridge for reading data of rrd-files with Java. Following hopefully helps others to save some time and to workaround some pitfalls.</p>
+<p>My requirement was:</p>
+<ul>
+<li>Monitoring website showing trends of metrics, i.e. compare current with past values, both absolute and relative (hour over hour, day over day, etc.).</li>
+<li>Data backed is round-robin-database. The rrd-files are generated by munin (with under the hood rrdtool). Data should be accessed read-only.</li>
+<li>Website&#8217;s technology stack is Java based (<a href="http://www.playframework.org/" target="_blank">Play! framework</a> with <a href="http://scala.playframework.org/" target="_blank">Scala integration</a>).</li>
+</ul>
+<p>Because I use Play! framework I needed a way to access rrd-files with Java-Technology. My first look at <a href="http://code.google.com/p/rrd4j/" target="_blank">rrd4j</a> looked promising but failed, because rrd4j is a port and cannot read rrd-files created by original rrdtool. After some time-consuming research and Google-digging I finally stepped over  <a href="http://oss.stamfest.net/java-rrd-hg/" target="_blank">java-rrd</a>.</p>
+<h3>Installation Steps java-rrd</h3>
+<p>I couldn&#8217;t find the library built and distributed in any Maven-repository, so you have to download + build yourself:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># download + unpack</span><br />
+wget http://oss.stamfest.net/java-rrd-hg/archive/tip.tar.gz<br />
+tar xfz &lt;downloaded-tarball.tar.gz&gt;<br />
+<span class="co1"># build .jar library with Maven</span><br />
+<span class="kw3">cd</span> &lt;untarred-directory&gt;<br />
+mvn package<br />
+cp target/*.jar &lt;your-target-lib-folder&gt;</div>
+</div>
+<p>Instead of dump-copying and to be more clean with your build-system you might want to deploy the .jar file to a repository like Nexus.</p>
+<h3>Read-Access Usage java-rrd</h3>
+<p>As I use Play! framework with Scala integration, Scala was the integration way:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd._</span><br />
+&#8230;.<br />
+<span class="me1">val</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span><br />
+val command = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#41;</span><br />
+val result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span></p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span><br />
+<span class="kw1">else</span><br />
+&nbsp; println<span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span></div>
+</div>
+<p>For completeness another snippet in Java source language:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co2">import net.stamfest.rrd.CommandResult;</span><br />
+<span class="co2">import net.stamfest.rrd.RRDp;</span><br />
+&#8230;.<br />
+<span class="me1">RRDp</span> rrd = <span class="kw2">new</span> RRDp<span class="br0">&#40;</span><span class="st0">&#8220;/tmp&#8221;</span>, <span class="st0">&#8220;55555&#8243;</span><span class="br0">&#41;</span>;<br />
+<a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span> command = <span class="br0">&#123;</span><span class="st0">&#8220;fetch&#8221;</span>, <span class="st0">&#8220;your-rrd-file.rrd&#8221;</span>, <span class="st0">&#8220;MAX&#8221;</span>, <span class="st0">&#8220;-r&#8221;</span>, <span class="st0">&#8220;1800&#8243;</span>, <span class="st0">&#8220;-s&#8221;</span>, <span class="st0">&#8220;-1d&#8221;</span><span class="br0">&#125;</span>;<br />
+CommandResult result = rrd.<span class="me1">command</span><span class="br0">&#40;</span>command<span class="br0">&#41;</span>;</p>
+<p><span class="kw1">if</span> <span class="br0">&#40;</span>!result.<span class="me1">ok</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">error</span><span class="br0">&#41;</span>;<br />
+<span class="kw1">else</span><br />
+&nbsp; &nbsp; <a href="http://www.google.com/search?q=allinurl%3ASystem+java.sun.com&#038;bntl=1"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">&#40;</span>result.<span class="me1">output</span><span class="br0">&#41;</span>;</div>
+</div>
+<p>With java-rrd you can also access rrdtool over sockets/network. </p>
+<h3>Parsing rrdtool output</h3>
+<p>rrdtool output after fetch is plain text, something like:</p>
+<div class="codesnip-container" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed<br />
+<br/><br />
+ 920804700: nan<br />
+ 920805000: 4.0000000000e+02<br />
+ 920805300: 2.0000000000e+03<br />
+ 920805600: 0.0000000000e+00<br />
+ 920806800: 3.3333333333e+01</div>
+<p>Above needs to be processed further to be &#8220;structured enough&#8221; for your code. For example do following (I only show Scala, I skipped Java iterating syntax hell&#8230;, did I mention that I love passing functions ;):</p>
+<div class="codesnip-container" >
+<div class="codesnip">def outputToNumberPairs<span class="br0">&#40;</span>rrdFetchOutput: <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a><span class="br0">&#41;</span> = <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// filtering unneeded + empty lines</span><br />
+&nbsp; &nbsp; val list = rrdFetchOutput.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;<span class="es0">\n</span>&#8220;</span><span class="br0">&#41;</span>.<span class="me1">filter</span><span class="br0">&#40;</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> =&gt; n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span> &amp;&amp; !n.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&#8220;nan&#8221;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; <span class="co1">// parsing strings to numeric values and combine to pair</span><br />
+&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i &lt;- list<span class="br0">&#41;</span> yield i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toLong</span> -&gt; i.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">&#8220;:&#8221;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>.<span class="me1">trim</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toFloat</span>.<span class="me1">round</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+GIVES BACK:<br />
+===<br />
+res34: <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#91;</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3ALong+java.sun.com&#038;bntl=1"><span class="kw3">Long</span></a>, Int<span class="br0">&#41;</span><span class="br0">&#93;</span> = <a href="http://www.google.com/search?q=allinurl%3AArray+java.sun.com&#038;bntl=1"><span class="kw3">Array</span></a><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">920805000</span>,<span class="nu0">400</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805300</span>,<span class="nu0">2000</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920805600</span>,<span class="nu0">0</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">920806800</span>,<span class="nu0">33</span><span class="br0">&#41;</span><span class="br0">&#41;</span></div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/07/03/accessing-rrdtool-files-data-with-java/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>&#8216;Embrace Failure&#8217; approaches in Software Development</title>
+		<link>http://www.aldana-online.de/2011/05/15/embracing-failure-softwareapproaches/</link>
+		<comments>http://www.aldana-online.de/2011/05/15/embracing-failure-softwareapproaches/#comments</comments>
+		<pubDate>Sun, 15 May 2011 17:22:22 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[agile]]></category>
+		<category><![CDATA[embrace failure]]></category>
+		<category><![CDATA[upgrade]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=301</guid>
+		<description><![CDATA[Software-Developers (and humans generally) must not try to be 100% perfect but should take the imperfection as granted and &#8220;embrace&#8221; it. Following gives some thoughts on how to approach the &#8216;Embracing failure&#8217; principle in the field of Software Development.
+Log thoughtfully
+Proper and insightful logging cannot be overstated, you will praise the developer who provides good logs, [...]]]></description>
+			<content:encoded><![CDATA[<p>Software-Developers (and humans generally) must not try to be 100% perfect but should take the imperfection as granted and &#8220;embrace&#8221; it. Following gives some thoughts on how to approach the &#8216;Embracing failure&#8217; principle in the field of Software Development.</p>
+<h3>Log thoughtfully</h3>
+<p>Proper and insightful logging cannot be overstated, you will praise the developer who provides good logs, i.e. you can easily search for problem-symptoms inside logs. Inside team find an appropriate logging convention for log-patterns + semantics of level. Some short and abbreviated ideas:</p>
+<ul>
+<li>DEBUG: Detailed information while going through integration points (like printing payload of XML for api call). Quantified information like statistics while refreshing/invalidating cache.</li>
+<li>INFO: Bootstrapping/startup information, initialization routines, reoccurring asynchronous actions (including elapsed time).</li>
+<li>WARN: Logging suspicious/errornous application state, where fallback is still possible and routine/call can be proceeded.</li>
+<li>ERROR: No fallback possible. For the user/customer this most likely means a crashed call/request (in HTTP jargon this would be a 500 status). Examples for such failures could be NullPointers or database unavailability.</li>
+</ul>
+<p>NEVER EVER swallow away Exceptions, I&#8217;ve seen several empty catch{} blocks which later caused major headaches during production, on user-level the system crashed on many calls but nothing could be seen inside logs. At topmost application layer log uncaught Exceptions as ERROR.</p>
+<p>Also have a look at a <a target="_blank" href="http://nurkiewicz.blogspot.com/2010/05/clean-code-clean-logs-use-appropriate.html">longer blog-entry</a> about appropriate logging.</p>
+<h3>Make deployment + upgrade easy</h3>
+<p>When a critical failure occurs you want to be able to react quickly. Reaction-time lasts between the time of knowing the issue until the deployment is finished and the customers sees the change. This includes getting the code (thank a fast SCM), understanding the problem, fixing/extending the code, verifying change on local and/or qa-environment and finally push to production. For building deployment package and executing deployment automate and speed up as much as possible. </p>
+<p>If you are lucky your app is a typical browser-server based webapp. It has the highest potential regarding instant deployment: As soon as the new app version has been rolled out to your server machine (or server farm, in case you scaled out) the upgrade is complete and will be instantly seen inside the client&#8217;s browser. Yes, webapp deployments have their own pitfalls (high traffic site&#8217;s rollout isn&#8217;t atomic, cache settings, browser state inside DOM or cookies), but other application classes like embedded-systems, desktop-app or mobile-apps have much tougher deployment requirements and upgrade process is more complicated. But Google&#8217;s Chrome Webbrowser</a> shows that even for these applications a <a target="_blank" href="http://www.codinghorror.com/blog/2011/05/the-infinite-version.html">well designed and transparent upgrade mechanism is possible</a>.</p>
+<h3>Monitor your application</h3>
+<p>At some point the system will fail, therefore you have to focus on notfications of respective problems. A typical and annoying scenario is a &#8216;false negative&#8217; production system: You think everything is alright but in fact the production behaviour is unstable and unreliable. Unstable production behaviour can be infrastructure or application related. Infrastructure problems include network problems, disk crashes, external-system/integration-points downtime or not enough capacity/resources to handle the load. Application related are more &#8220;real&#8221; usual application bugs like unchecked null-references, dead-locks, infinity-loops, thread-unsafety or simply wrong implemented requirements.</p>
+<p>To sense + sanity-check such problems you need system-hooks which deliver data (e.g. Servlet-Container built-in monitoring, JMX). Sometimes you will also write little extension to fulfill a specific monitoring requirement (e.g. ERROR log counter). Apart from data-provision you also need an entity which processes the numbers. To not hire monkeys you should use existing tools. For instance munin + rdd-tool tracks the data over time and plots nice graphs and Nagios alerts you actively in case of a peak of a metric and a potential incident.</p>
+<h3>Make it visible</h3>
+<p>We as humans are also far from perfect at number crunching and intepreting masses of detailed numeric data. Often application &#8220;health&#8221; degrades over time so you should deliver comparison of &#8216;now&#8217; to historic data (like hour over hour, day over day, week over week). Try to abstract away numbers behind meaningful graphs or charts. The signal light analogy (green, orange, red) also helps a lot to classify the criticality of numbers.</p>
+<h3>Enabling live diagnostics</h3>
+<p>Sometimes app behaviour isn&#8217;t well enough understood and you won&#8217;t be able to reproduce a scenario in local isolated environment. You then have to try to get more insight of production system. In case resources are the problem (like CPU, memory) several profilers support live production machine-instance attachements to get some metrics like running threads, heap-stats or garbage collector info. </p>
+<p>If you need more semantically application insights and followed log conventions, you should also make it possible to enable DEBUG or TRACE logs for a certain code sections. Make your logging-levels configurable during runtime. If you have to restart your app when changing log-settings you can wipe away the current application&#8217;s state you want to analyse (issues are often not reproducible straight after restart).</p>
+<p>Another helpful option is live debugging, where you debug remotely and direcetly on the problem-server instance. You can directly sense the concrete problem as is and don&#8217;t need to waste effort for local reproduction. One of your users will have bad luck and will hit a connection timeout, but the request anyway would have caused an error page.</p>
+<h3>Use Users/Customers as feedback provider</h3>
+<p>Even if you are running under a diagnostic friendly webapp (server is under app-provider&#8217;s control) you may end-up with very weird cases, which happen on the client&#8217;s side. Therefore make it very easy for customers to give you feedback, either provide free-phone-contact or a easy to find feedback form. In case you don&#8217;t run as webapp an option would also be that in case of an error the user just needs to click a button and some diagnostic data is sent to the server (I remember, when reporting a bug Ubuntu OS fetched a good deal of OS-configuration-data and attached it to the bug-report). Some embedded systems don&#8217;t need user action but automatically dump application-state to a persistent storage before a reset. This data then can be retrieved later from a mechanic inside a car repair-shop.</p>
+<h3>Conclusion</h3>
+<p>Your production system will fail at some point. You can try to fight this by getting your QA as close as possible to production and invest A LOT into testing. Still you have to find the sweet spot of cost/benefit ratio, because this effort increases exponentially (effort of providing same hardware, 100% test-coverage + test-data, simulate real-user behaviour, etc.). There are software-system classes where this effort must be pushed to the limits like in money + life critical intense systems, but most applications we are building aren&#8217;t that sensitive where damage cannot be tolerated or reversed. Therefore build in as many diagnostics as sensible and have good tooling + process around a quick alert/fix/deploy roundtrip.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/05/15/embracing-failure-softwareapproaches/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Unit-Testing: Situations when NOT to do it</title>
+		<link>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/</link>
+		<comments>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/#comments</comments>
+		<pubDate>Sun, 06 Feb 2011 11:45:03 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=262</guid>
+		<description><![CDATA[I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.
+The presented sections go along with my favorite test-smells:
+
+Brittle tests: Though functionality hasn&#8217;t been changed the test fails. [...]]]></description>
+			<content:encoded><![CDATA[<p>I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.</p>
+<p>The presented sections go along with my favorite test-smells:</p>
+<ol>
+<li>Brittle tests: Though functionality hasn&#8217;t been changed the test fails. Test should show green but in fact shows red (false positive).</li>
+<li>Inefficient tests: The effort of writing automated tests doesn&#8217;t pay out at all. The benefit/cost ratio (short + long term) is extremely low.</li>
+</ol>
+<h3>Unit-Test little scripts/tools</h3>
+<p>There is often no sense to write unit-tests for little scripts or tools, which are one or two-liners. The script content is already so &#8220;declaritive&#8221;, short and compact that the code is too simple to break. Further more often stubbing or mocking the dependencies is tough (e.g. writing to stdout/file, shutdown machine, doing an HTTP call). You can end up writing a external system emulator which is overkill in this situation. Surely testing is important but for that I go the manual way (executing script, and smoke-test sanity check the outcome).</p>
+<h3>Unit-Test high level orchestration services</h3>
+<p>Orchestration services have many dependencies and chain-call lower services. The effort of writing such unit-tests is very high:  Stubbing/Mocking all these outgoing dependencies is tough, test setup logic can get very complex and make your test-code hard to read and  understand. Further more these tests tend to be very brittle, e.g. minor refactoring changes to production code will break them. Main reason is that inside test-code you have to put a lot of implementation detail knowledge to make stubbing/mocking work. You can argue having many fan-out/outgoing dependencies is a bad smell and you should refactor from start on. This is true in some cases but higher order service often have the nature to orchestrate lower ones, so refactoring won&#8217;t change/simplify much and make design even more complicated. In the end for such high level services I much prefer to let test-cover them by automated or non-automated acceptance tests.</p>
+<h3>Test-first during unclear Macro-Design</h3>
+<p>When implementing a feature or something from scratch often the macro-design is blurry, I like to call this &#8220;diving-in&#8221;. For diving-in development or quick prototyping you get a feeling which design fits or not. During this phase class structures/interactions change a lot, sometimes even big chunks of code are thrown away and you restart again. Such wide code changes/deletions often will break your tests  and you have to adapt or even delete them. In these situations test-first approach doesn&#8217;t work for me, writing test-code even distracts me and slows me down. Yes, unit-tests and test-first approach can and should guide your design but I experienced this counts more when the bigger design decisions have been settled.</p>
+<h3>100% Code-Coverage</h3>
+<p>I can&#8217;t overstate this: Code-Coverage != Test-Coverage. The Code-Coverage of unit-tests is a nice metric to see untested spots, but it is by far not enough. It just tells you that the code has been executed and simply misses the assert part of your test. Without proper asserts, which check the side-effect of your production code and expected behaviour, the test gives zero value. You can reach 100% code-coverage without having tested anything at all. In the end this wrong feeling of security is much worse as having no test at all! Further more 100% code-coverage is  inefficient because you will test a lot of code, which is &#8220;too simple to break&#8221; (e.g. getters/setters, simple constructors + factory-methods).</p>
+<h3>Summary</h3>
+<p>Above points shouldn&#8217;t give you the impression that I do speak against automated unit-tests, I think they are great: They can guide you to write incremental changes and help you to focus, you get affinity for green colors ;), they are cheap to execute and regression testing gives you security of not breaking things and more courage to refactor. Still going with the attitude that you have to go for 100% code-coverage and to test every code snippet will kill testing culture and end up in Red-Green color blindness.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Static typed programming/languages won&#8217;t die!</title>
+		<link>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/</link>
+		<comments>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/#comments</comments>
+		<pubDate>Sun, 09 Jan 2011 18:27:44 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[languages]]></category>
+		<category><![CDATA[maintenance]]></category>
+		<category><![CDATA[productivity]]></category>
+		<category><![CDATA[static typed]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=253</guid>
+		<description><![CDATA[In recent years dynamic typed languages like Ruby, Groovy, JavaScript or Python rightly gained more popularity. Some even said they will soon replace their static typed counterparts. Though I am a big fan of dynamic typed and intepreted languages (for smaller tools/tasks they make life so much easier) my current bet is that the language-future [...]]]></description>
+			<content:encoded><![CDATA[<p>In recent years dynamic typed languages like Ruby, Groovy, JavaScript or Python rightly gained more popularity. Some even said they will soon replace their static typed counterparts. Though I am a big fan of dynamic typed and intepreted languages (for smaller tools/tasks they make life so much easier) my current bet is that the language-future it is not a question of either/or but a gain of diversity of your toolset. Static typed languages just have this big diverse plus when it comes to maintainability of big codebases.</p>
+<h3>Overview of differences</h3>
+<p>Because there still is some confusion about dynamic vs. static typing here a short overview of my perception:</p>
+<ol>
+<li>Dynamic typed programming: The types or variables are bound during runtime. This happens if you use languages which have dynamic typing in their core design (PHP, Ruby, Python). Be aware that you can still do dynamic typing with languages focusing more on static typing (like C# or Java): Simply have a look at the reflection APIs&#8230; Further more type saftey is deferred to runtime, if a programmer introduces typing errors they will pop up during runtime  (e.g. ClassCastException,  MethodNotFoundException, TypeError).</li>
+<li>Static typed programming: The types are resolved/bound during compile time. For this check to be possible your code needs to have typing information (e.g. when defining a variable or method signature). If you have obvious type errors in your code the compilation result will catch it and inform you.</li>
+</ol>
+<h3>Pros dynamic typing</h3>
+<p>If designed correctly into the language, dynamic typing offers a lot of advantages:</p>
+<ul>
+<li>Code is much more compact. Small tools and scripts are a charm to write and some nice syntactic sugar constructs are possible. Programmers need less time to understand and extend code. Further more the proportion of functionality vs. lines-of-code is greater, you need to produce less code to solve a problem. Smaller codebases are a plus for maintenance.</li>
+<li>Sometimes dynamic typing is a necessity of solving a problem (e.g. the calculated return value is dependant on the parameter&#8217;s type, which can differ for every caller).</li>
+<li>Development feedback cycle tends to be shorter. Most languages offering dynamic typing are intepreted and a simple &#8216;Save file&#8217; will do. In most cases you instantly will see the effect. For bigger server applications less restarts of the server are necessary.</li>
+</ul>
+<h3>Pros static typing: Maintainability</h3>
+<p>Above I mentioned compactness of code as a maintenance plus for dynamic typing. Still, on the same topic static typing scores significantly.</p>
+<h4>Analyzation of codebases</h4>
+<p>Typing information bloats code but also serves documentation. In many cases explicit typing helps a lot in reasoning the code&#8217;s semantics. Also the IDE can help to easily jump throughout the codebase. It doesn&#8217;t have to reason or guess but can directly guide you to the target code. Explicit typing information also does help tools like Structure101 or JDepend to automatically show you relationships, which can point to design or layering flaws.</p>
+<h4>Feedback of errors</h4>
+<p>You get faster feedback when you did a typing related coding-error, e.g. wrongly related a function/method or did a typo. The compliation phase does this for granted. Some argue that you anyway should do cover anything by automated tests and therefore can instantly catch typing related programming errors. This theoretically is true but in practice doesn&#8217;t hold, I&#8217;ve never seen convincing test suites which execute every code-path instantly uncovering such errors. Often you get such errors later by accident, in testing phase or worse during production. Compile time type safety is nothing to be neglected&#8230;</p>
+<h4>Safe refactorings/tooling</h4>
+<p>It is the &#8220;nature&#8221; of dynamic typing that you can&#8217;t find out typing just looking at the structure of the code. The opposite is true for static typing, therefore you can create tools for safe and automated refactorings (e.g. Rename method/function, Add/Remove parameters, general restructuring of classes/modules). If many refactorings wouldn&#8217;t be automated I would lose a lot(!) of time. Being able to refactor codebases in an efficient sensible time is a must have for me. The greater the codebase the greater the cost for unsupported automated/unsafe refactorings. Some people again argue that 100% test-coverage safety-net would suffice, for my point of view see above ;)</p>
+<p>I purposely discarded the old performance comparison. It states that compiled binary-code is faster as interpreted code. It may have been true in older times, but nowadays, also with all the JIT compiling features, I haven&#8217;t seen convincing benchmarks that static typed languages binaries are better in performance in general. This doesn&#8217;t imply that you won&#8217;t hit scaling problems which are indeed bound to a language (see also <a href="http://www.infoq.com/presentations/Scale-at-Facebook" target="_blank" rel="nofollow">podcast</a> about facebook getting problems with PHP at some point)!</p>
+<h3>Summary</h3>
+<p>Dynamic typed languages are great but for bigger codebases I still would go for languages like Java or C# (haven&#8217;t tried out yet, but Scala seems to be a new alternative here). For very specific modules solving highly generic/dynamic problems you still can code in the &#8220;right&#8221; language. Modern runtime environments (like JVM or CLR) give you possibility to deploy common-libraries/APIs, which are written in dynamic typed language.</p>
+<p>If you have case studies or other resources investigating dynamic vs. static typing and overall productivity or providing different opinions please comment.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/01/09/static-typed-programminglanguages-wont-die/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>IntelliJ IDEA rocks (revisited)!</title>
+		<link>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/</link>
+		<comments>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/#comments</comments>
+		<pubDate>Sun, 12 Dec 2010 11:41:32 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[ide]]></category>
+		<category><![CDATA[intellij]]></category>
+		<category><![CDATA[java-ide]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=235</guid>
+		<description><![CDATA[Many people ask me why I prefer IntelliJ over any other IDE. I switched to IntelliJ about 3 years ago so I cannot compare current IntelliJ 10 vs. other current IDEs Eclipse 3.6 or Netbeans 6.9. Still pair programming with colleagues who use different IDE and sometimes having to skip back to Eclipse I feel [...]]]></description>
+			<content:encoded><![CDATA[<p>Many people ask me why I prefer IntelliJ over any other IDE. I switched to IntelliJ about 3 years ago so I cannot compare current IntelliJ 10 vs. other current IDEs Eclipse 3.6 or Netbeans 6.9. Still pair programming with colleagues who use different IDE and sometimes having to skip back to Eclipse I feel confirmed that IntelliJ is best IDE on market (my opinion is primarily based on Java-Apps). IntelliJ has recently released version 10 and improved a lot of things.</p>
+<h3>Performance</h3>
+<p>IntelliJ strikes in performance. It keeps all the files in an index. Access to and searching through all files is extremely fast, also compilation is instant (you don&#8217;t even sense it). Only the initial indexing process sometimes feels a bit slow, but version 10 shows <a target="_blank" href="http://blogs.jetbrains.com/idea/2010/12/intellij-idea-10-rc-3-indexing-speed-improvements/">big performance improvements</a> on the initial index-process. I subjectively think that version 10 feels faster and UI is better responding.</p>
+<h3>Automatic in-memory compilation</h3>
+<p>Whereas for Eclipse you have to do a manual <Ctrl+S> for saving a file, IntelliJ is doing it for you. Some people say, that this is &#8220;just&#8221; another shortcut to press, but I remember that it was a big relief not to do it. It really makes your fingers faster to go on with another task.</p>
+<h3>Auto-Completion + Intentions</h3>
+<p>The autocompletions and intentions are very clever (general code improvement, refactorings, type-completion, varables names, refactorings etc.). I sometimes feel that they read my mind. Since version 10 another major improvement got live: Instant auto-completion, you get suggestions as you type. I like this very much on Microsoft Visual-Studio IDEs, now finally there for IntelliJ.</p>
+<h3>Refactoring Support</h3>
+<p>Codebases should be continously improved. Structural improvements impose a risk that you break code, therefore automatic safe refactorings are extremely important. Here IntelliJ has the best toolset. It also plays nice with SCM support, when moving around files or renaming packages.</p>
+<h3>Prepackaged tool support</h3>
+<p>On other IDEs you have to install many plugins manually. On IntelliJ the most important ones are already there (maven, nearly alls SCMs) and are integrated well. I can&#8217;t remember one case where plugins got conflicted with each other.</p>
+<h3>The small things&#8230;</h3>
+<p>IntelliJ shows many little gimmicks, which put together make &#8220;the&#8221; big difference. Here an excerpt:</p>
+<ul>
+<li>Run Unit-Tests on package basis (package focus in Project Window and &lt;Shift&gt;+&lt;Ctrl&gt;+F10)</li>
+<li>Instant code execution on breakpoint (Debug-Window &lt;Alt&gt;+F8)</li>
+<li>Instant copy file path so you can quickly jump to path on command-line (focus file/directory and &lt;Ctrl&gt;+C)</li>
+<li>File comparisons: Excellent Diff-View. Compare with clipboard. Compare with other branch.</li>
+<li>Coloring of files on tab and lines inside editor if they where changed by you without having committed. Instant notification inside editor, when file got out of synch with SCM repository (shows the commit-time and author of change).</li>
+<li>Show SCM history of selection/marked codelines.</li>
+<li>Working with resource-bundles. Inside code hover over a message-key and it shows you the translation instantly (like foo.bar.logout would give you little text-box &#8220;Logout&#8221;). Also refactoring the message-keys is safe (messages.properties gets upated). </li>
+<li>Quick jump to Run/Debug settings (&lt;Alt&gt;+&lt;Shift&gt;+F10).</li>
+<li>Automatic Code quality checks + report before SCM commit.</li>
+<li>Intention &#8216;Create Test-Class&#8217;</li>
+<li>Automatic files refresh. When switching to command line and doing SCM or maven actions, switching to IntelliJ back all files are refreshed automatically. No danger of stale data inside IDE.</li>
+<li>General search for plain text or structural search.</li>
+<li>Auto collapsing tool windows on losing focus. Very convenient on smaller notebook screens or generally increasing editor space.</li>
+<li>Stable editor, even for very large files, e.g. it can show 5MB large XML-docs and even diffs between them (Eclipse always crashed here).</li>
+<li>etc. (list goes on forever) &#8230;.</li>
+</ul>
+<h3>Minor annoyances</h3>
+<p>Of course with the praise from above there are still some drawbacks. I often had problems with SCM merging facilities (especially subversion), I now always do merging on command-line. When upgrading or changing plugins restart has to be done manually (at least on Linux version). Also some intentions could be added (when adding @Override above a method &lt;Ctrl&gt;+Enter, Pull-Up method, Extract Superclass or Introduce Interface should be suggested). For other IDE converts the different types of autocompletions are a bit confusing (&lt;Ctrl&gt;+Space, &lt;Ctrl&gt;+&lt;Shift&gt;+Space, &lt;Ctrl&gt;+&lt;Shift&gt;+&lt;Alt&gt;+Space).</p>
+<h3>Price considerations</h3>
+<p>The Community Edition is free. For Ultimate Edition which I use you have to pay some money, but regarding the productivity boosts this is simply peanuts. Budget people, please do the math: Depending New User vs. Upgrade (~1.50EUR vs. ~0.75EUR per day) how much does a developer cost an hour? Apart from making the developer happier you will also save money if only a fraction of the IDE related idle/waiting time is reduced.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/12/12/intellij-idea-rocks-revisted-for-10/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Top 4 Software-Metrics Antipatterns</title>
+		<link>http://www.aldana-online.de/2010/11/14/top-4-software-metrics-antipatterns/</link>
+		<comments>http://www.aldana-online.de/2010/11/14/top-4-software-metrics-antipatterns/#comments</comments>
+		<pubDate>Sun, 14 Nov 2010 18:14:37 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=227</guid>
+		<description><![CDATA[Metrics are a way to quantify a specific view of a system. They occur in several areas like in source-code (e.g. LOC), process (e.g. number of production issues) or business (e.g. website page-views). Followings lists my &#8220;most-favorite&#8221; Metrics Antipatterns.
+1. Wrong target audience
+Metrics don&#8217;t act as a feedback cycle for the people who produced the results, [...]]]></description>
+			<content:encoded><![CDATA[<p>Metrics are a way to quantify a specific view of a system. They occur in several areas like in source-code (e.g. LOC), process (e.g. number of production issues) or business (e.g. website page-views). Followings lists my &#8220;most-favorite&#8221; Metrics Antipatterns.</p>
+<h3>1. Wrong target audience</h3>
+<p>Metrics don&#8217;t act as a feedback cycle for the people who produced the results, but merely end up in top-management number crunching reports. These bottom-up-only metrics don&#8217;t add value because they don&#8217;t improve the work of the people who &#8220;produce&#8221; the results. Also unrelated metrics are presented, why should top management be interested in test-coverage? Test-coverage is important, but the related metric &#8220;number of regression bugs&#8221; would be much more helpful for management audience.</p>
+<h3>2. No Transparency/Agreement</h3>
+<p>Team doesn&#8217;t understand or hasn&#8217;t agreed on metrics setup. The team is controlled by numbers instead that they use them as guidance and feedback loop. Regarding this remember that software developers are specialists in workarounds! In most cases metrics can be bypassed, the number itself looks good but the truth is different, e.g. I can easily increase code-coverage by adding useless unit-tests only executing code without doing any asserts.</p>
+<h3>3. Holy numbers</h3>
+<p>All metrics are taken for granted and high and low peaks aren&#8217;t questioned. Everyone is panicking because the metrics look so bad. But they were never evaluated as being realistic and never plausible tested. It is not that seldom that numbers were plain wrong and caused not only number but also unnecessary adrenaline peaks&#8230;</p>
+<h3>4. Bad format/Data floods</h3>
+<p>The metrics aren&#8217;t presented well. Even if you have potentially interesting data the insights/implications are just flooded away. For instance instead of using signal-light colours or concentrating on the most-important metrics you are getting overwhelmed by the millions of bare numbers. In the end (as we are humans) everyone will ignore such reports.</p>
+<h3>Conclusion</h3>
+<p>Above points seem to be common sense, still in practice metrics are misused a lot. Some observations even lead to the conclusion, that this is done on purpose to fake good results or to give a wrong feeling of control. This bad reputation is a shame because many metrics implemented correctly are an objective, cost-effective and powerful part of your feedback-loop. They also can be highly motivating because you have a target of improvement (e.g. less code-structure warnings, lowering production bugs, increase test-coverage).</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/11/14/top-4-software-metrics-antipatterns/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Power of Checklists in Software Development</title>
+		<link>http://www.aldana-online.de/2010/09/25/power-of-checklists-in-software-development/</link>
+		<comments>http://www.aldana-online.de/2010/09/25/power-of-checklists-in-software-development/#comments</comments>
+		<pubDate>Sat, 25 Sep 2010 10:11:43 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=194</guid>
+		<description><![CDATA[To a big degree Software Development involves creative and non-reoccuring actions. On the other side for the repetitive tasks you want to save time and increase quality with automation tools (scripts, build-tool, reporting). These should be a key part of your development/deployment/production cycle (building software, running tests, monitoring etc.). Still you also have to cover [...]]]></description>
+			<content:encoded><![CDATA[<p>To a big degree Software Development involves creative and non-reoccuring actions. On the other side for the repetitive tasks you want to save time and increase quality with automation tools (scripts, build-tool, reporting). These should be a key part of your development/deployment/production cycle (building software, running tests, monitoring etc.). Still you also have to cover reoccuring tasks which are hard to automate and need human interaction, like:</p>
+<ul>
+<li>Rolling out releases (most often each release is unique and needs different changes in several orders on system environment).</li>
+<li>Implementing features, marking them as &#8216;done&#8217;.</li>
+<li>QA process, from testing to approval for production.</li>
+<li>Upgrading procedures.</li>
+<li>etc. &#8230;</li>
+</ul>
+<p>I&#8217;ve always found such repetitive tasks hard to remember (especially when they spawn over a wider range of time). The result was, that sometimes steps were missing or were executed in the wrong order. After all costly and annoying afterwork was necessary.</p>
+<h3>Good old-style Checklists</h3>
+<p>Even highly skilled professionals hardly memorize every detail of execution steps and order (humans tend to be very bad at fulfilling repetitive tasks 100% correctly). To follow better a proven procedure checklist can help a lot. Their setup is cheap and following them can avoid to miss steps.</p>
+<h4>Sample checklist: Marking feature &#8216;done&#8217;</h4>
+<p>General reminder, no fixed order:</p>
+<p style="text-align: center">
+<img class="size-full wp-image-197 aligncenter" title="unordered_checklist" src="http://www.aldana-online.de/wp-content/uploads/2010/09/unordered.png" alt="" width="402" height="268" />
+</p>
+<h4>Sample checklist: Merging Branch to Mainline</h4>
+<p>Sequential, fixed order:</p>
+<p style="text-align: center">
+<img class="size-full wp-image-195 aligncenter" title="ordered_checklist" src="http://www.aldana-online.de/wp-content/uploads/2010/09/ordered.png" alt="" width="481" height="264" /></p>
+<h3>Advantages</h3>
+<p>Checklists:</p>
+<ul>
+<li>They improve awareness and common understanding of process</li>
+<li>New team members can be introduced better to current process.</li>
+<li>Relieving poor human memory.</li>
+<li>Increase of both efficiency and quality (less afterwork of forgotten tasks).</li>
+<li>Good cost/benefit ratio.</li>
+</ul>
+<p>Of course it is important to not go overkill with checklists and list every milli-second step and fix the process (we&#8217;re not a car-factory dude!).</p>
+<h3>Lightweight Tooling</h3>
+<p>Checklists should be easy to to create, view, reset and follow (as foundation a wiki is perfect here). Often it is sufficient to have a simple table, because it lists all the steps sequentially and you can add notes to it. When there is a more complicated workflow an activity-diagram is better choice. Once you found a proven procedure, checklists tend to not change often, printing and pinning them up works also fine.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/09/25/power-of-checklists-in-software-development/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>From Java Easymock to Mockito</title>
+		<link>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/</link>
+		<comments>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/#comments</comments>
+		<pubDate>Sun, 27 Jun 2010 13:29:10 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=174</guid>
+		<description><![CDATA[While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with Mockito namespace. What I noticed was that the mocking test-code looked similar to easymock but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it [...]]]></description>
+			<content:encoded><![CDATA[<p>While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with <a href="http://mockito.org/" target="_blank">Mockito</a> namespace. What I noticed was that the mocking test-code looked similar to <a href="http://www.easymock.org/" target="_blank">easymock</a> but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it :).</p>
+<h3>Easymock before</h3>
+<p>Around 2005 there were several mocking frameworks available. The main reason I chose to work with easymock was that it was both powerful and refactoring friendly. It supports automatic safe refactorings well because the expectations on method calls aren&#8217;t setup as a loose string-snippet but on statically typed info (method call expectations are directly bound to the object-type).</p>
+<p>Though I found easymock great and made stubbing and mocking much easier as before, I found it had some drawbacks (speaking of version 2.5):</p>
+<ul>
+<li>The mocking/stubbing of interfaces vs. classes is not transparent. It is done through different Main-classes (EasyMock + classextension.EasyMock). This implied that mixing mocking both interfaces and classes inside one test-class followed in cluttered code and importing hell.</li>
+<li>The error messages of easymock are confusing sometimes. Often it is not clear whether the test-case has failed or easymock was used wrong (e.g. forgetting to call replay()).</li>
+<li>The mandatory call of replay() after having setup the mocked object always felt redundant and made test-case longer.</li>
+<li>The non-clear separation between setting up a mock and verifying it. Setting up a mock added also a verification on all expectations as soon as you called verify(). When writing + reading test-code this always confused me, because you already had to cope with verify logic in the setup part of the test-case.</li>
+</ul>
+<h3>Mockito after</h3>
+<p>The guys of <a href="http://mockito.org/" target="_blank">Mockito</a> say that they were inspired by Easymock and indeed you see its heritage. After having used it for about 3 months now so far the hands-on impressions are great and I now exclusively use Mockito for writing unit-tests.</p>
+<p>My positive experiences were:</p>
+<ul>
+<li>Test-code still is safe in regard of using static-typed based automatic refactorings.</li>
+<li>Transparency of classes vs. interfaces. In both cases you call Mockito.mock(MyInterface.class) or Mockito.mock(MyClass.class).</li>
+<li>Clear seperation between setting up a mock and verifiying it. This feels more intuitive and the clear setup/excercise/verify test-code order is preserved.</li>
+<li>Helpful error message, when an assertion wasn&#8217;t met or the tool guessed a framework usage error.</li>
+<li>The naming of methods is intuitive (like when(), thenReturn()).</li>
+<li>When earlier I used the real domain-objects as test-data (i.e. by filling data through setters/constructors), now I use mockito to stub them (i.e. stubbing the getters). Domain code logic has now much less impact on test-runs.</li>
+<li>Nice short, straightforward <a href="http://mockito.googlecode.com/svn/tags/latest/javadoc/org/mockito/Mockito.html" target="_blank">documentation</a>.</li>
+<li>A great name + logo ;)</li>
+</ul>
+<p>In summary: The mockito folks did a great job (they took the nice ideas from Easymock creator and improved its drawbacks). Now looking at old test-code using Easymock I subjectively need much more time to grasp what the intent of the test is. With Mockito the test-cases read more like a clear sequential &#8220;requirements story&#8221; like test-cases always should.</p>
+<h3>Migration of test-code</h3>
+<p>If you are already using easymock the tool switch is amazingly quick. Following migration path helped me:</p>
+<ol>
+<li>Give yourself and your colleagues around two weeks investing time to work with the tool and get comfortable with it. Write all your new test-classes with Mockito.</li>
+<li>If you like it make the switch: Explicitly communicate that using the old mocking framework is deprecated (if possible use static code analysis tools where you can mark severaly packages deprecated (org.easymock.*)). Now usage of Mockito for new test-classes should be mandatory.</li>
+<li>If you have already big test-codebase I do NOT recommend a big-bang test-code migration. Such migration work is time consuming and boring. Therefore taking the incremental approach is better: Only migrate Easymock code to Mockito in case you anyway touch the class, i.e. are modifying or adding test-cases.</li>
+</ol>
+<p>Looking at the test-migrations I did so far, migrating Easymock code to Mockito is quite straightforward. Get rid of all replay(), verify() calls and adjust to the slight API changes. The only thing you have to watch out for more are the explicit verification on mocked-calls. Easymock did implicitly verify all expectations when calling verify() on the mock-object, on Mockito side you explicitly have to call verifications on each method. The same counts for strict mocks. You have to add respective verifications.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Manuel Aldana &#187; Continous Integration</title>
+	<atom:link href="http://www.aldana-online.de/category/software-engineering/continous-integration/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.aldana-online.de</link>
+	<description>Software Engineering: blog &#38; .lessons_learned</description>
+	<lastBuildDate>Wed, 30 May 2018 18:51:07 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Unit-Testing: Situations when NOT to do it</title>
+		<link>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/</link>
+		<comments>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/#comments</comments>
+		<pubDate>Sun, 06 Feb 2011 11:45:03 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=262</guid>
+		<description><![CDATA[I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.
+The presented sections go along with my favorite test-smells:
+
+Brittle tests: Though functionality hasn&#8217;t been changed the test fails. [...]]]></description>
+			<content:encoded><![CDATA[<p>I am a big fan and practioner of automated unit-testing, but throughout the years I took my lessons. Starting with &#8220;everything has to be automated tested&#8221; throughout years I experienced situations where doing unit-testing is not optimum approach.</p>
+<p>The presented sections go along with my favorite test-smells:</p>
+<ol>
+<li>Brittle tests: Though functionality hasn&#8217;t been changed the test fails. Test should show green but in fact shows red (false positive).</li>
+<li>Inefficient tests: The effort of writing automated tests doesn&#8217;t pay out at all. The benefit/cost ratio (short + long term) is extremely low.</li>
+</ol>
+<h3>Unit-Test little scripts/tools</h3>
+<p>There is often no sense to write unit-tests for little scripts or tools, which are one or two-liners. The script content is already so &#8220;declaritive&#8221;, short and compact that the code is too simple to break. Further more often stubbing or mocking the dependencies is tough (e.g. writing to stdout/file, shutdown machine, doing an HTTP call). You can end up writing a external system emulator which is overkill in this situation. Surely testing is important but for that I go the manual way (executing script, and smoke-test sanity check the outcome).</p>
+<h3>Unit-Test high level orchestration services</h3>
+<p>Orchestration services have many dependencies and chain-call lower services. The effort of writing such unit-tests is very high:  Stubbing/Mocking all these outgoing dependencies is tough, test setup logic can get very complex and make your test-code hard to read and  understand. Further more these tests tend to be very brittle, e.g. minor refactoring changes to production code will break them. Main reason is that inside test-code you have to put a lot of implementation detail knowledge to make stubbing/mocking work. You can argue having many fan-out/outgoing dependencies is a bad smell and you should refactor from start on. This is true in some cases but higher order service often have the nature to orchestrate lower ones, so refactoring won&#8217;t change/simplify much and make design even more complicated. In the end for such high level services I much prefer to let test-cover them by automated or non-automated acceptance tests.</p>
+<h3>Test-first during unclear Macro-Design</h3>
+<p>When implementing a feature or something from scratch often the macro-design is blurry, I like to call this &#8220;diving-in&#8221;. For diving-in development or quick prototyping you get a feeling which design fits or not. During this phase class structures/interactions change a lot, sometimes even big chunks of code are thrown away and you restart again. Such wide code changes/deletions often will break your tests  and you have to adapt or even delete them. In these situations test-first approach doesn&#8217;t work for me, writing test-code even distracts me and slows me down. Yes, unit-tests and test-first approach can and should guide your design but I experienced this counts more when the bigger design decisions have been settled.</p>
+<h3>100% Code-Coverage</h3>
+<p>I can&#8217;t overstate this: Code-Coverage != Test-Coverage. The Code-Coverage of unit-tests is a nice metric to see untested spots, but it is by far not enough. It just tells you that the code has been executed and simply misses the assert part of your test. Without proper asserts, which check the side-effect of your production code and expected behaviour, the test gives zero value. You can reach 100% code-coverage without having tested anything at all. In the end this wrong feeling of security is much worse as having no test at all! Further more 100% code-coverage is  inefficient because you will test a lot of code, which is &#8220;too simple to break&#8221; (e.g. getters/setters, simple constructors + factory-methods).</p>
+<h3>Summary</h3>
+<p>Above points shouldn&#8217;t give you the impression that I do speak against automated unit-tests, I think they are great: They can guide you to write incremental changes and help you to focus, you get affinity for green colors ;), they are cheap to execute and regression testing gives you security of not breaking things and more courage to refactor. Still going with the attitude that you have to go for 100% code-coverage and to test every code snippet will kill testing culture and end up in Red-Green color blindness.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/02/06/major-unit-testing-pitfalls-and-anti-patterns/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>From Java Easymock to Mockito</title>
+		<link>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/</link>
+		<comments>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/#comments</comments>
+		<pubDate>Sun, 27 Jun 2010 13:29:10 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=174</guid>
+		<description><![CDATA[While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with Mockito namespace. What I noticed was that the mocking test-code looked similar to easymock but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it [...]]]></description>
+			<content:encoded><![CDATA[<p>While browsing through open-source project sonar&#8217;s test-code I noticed that they had package imports with <a href="http://mockito.org/" target="_blank">Mockito</a> namespace. What I noticed was that the mocking test-code looked similar to <a href="http://www.easymock.org/" target="_blank">easymock</a> but less cluttered and better readable. So I gave Mockito (version was 1.8.3 back then) a try when implementing new test-cases and did not regret it :).</p>
+<h3>Easymock before</h3>
+<p>Around 2005 there were several mocking frameworks available. The main reason I chose to work with easymock was that it was both powerful and refactoring friendly. It supports automatic safe refactorings well because the expectations on method calls aren&#8217;t setup as a loose string-snippet but on statically typed info (method call expectations are directly bound to the object-type).</p>
+<p>Though I found easymock great and made stubbing and mocking much easier as before, I found it had some drawbacks (speaking of version 2.5):</p>
+<ul>
+<li>The mocking/stubbing of interfaces vs. classes is not transparent. It is done through different Main-classes (EasyMock + classextension.EasyMock). This implied that mixing mocking both interfaces and classes inside one test-class followed in cluttered code and importing hell.</li>
+<li>The error messages of easymock are confusing sometimes. Often it is not clear whether the test-case has failed or easymock was used wrong (e.g. forgetting to call replay()).</li>
+<li>The mandatory call of replay() after having setup the mocked object always felt redundant and made test-case longer.</li>
+<li>The non-clear separation between setting up a mock and verifying it. Setting up a mock added also a verification on all expectations as soon as you called verify(). When writing + reading test-code this always confused me, because you already had to cope with verify logic in the setup part of the test-case.</li>
+</ul>
+<h3>Mockito after</h3>
+<p>The guys of <a href="http://mockito.org/" target="_blank">Mockito</a> say that they were inspired by Easymock and indeed you see its heritage. After having used it for about 3 months now so far the hands-on impressions are great and I now exclusively use Mockito for writing unit-tests.</p>
+<p>My positive experiences were:</p>
+<ul>
+<li>Test-code still is safe in regard of using static-typed based automatic refactorings.</li>
+<li>Transparency of classes vs. interfaces. In both cases you call Mockito.mock(MyInterface.class) or Mockito.mock(MyClass.class).</li>
+<li>Clear seperation between setting up a mock and verifiying it. This feels more intuitive and the clear setup/excercise/verify test-code order is preserved.</li>
+<li>Helpful error message, when an assertion wasn&#8217;t met or the tool guessed a framework usage error.</li>
+<li>The naming of methods is intuitive (like when(), thenReturn()).</li>
+<li>When earlier I used the real domain-objects as test-data (i.e. by filling data through setters/constructors), now I use mockito to stub them (i.e. stubbing the getters). Domain code logic has now much less impact on test-runs.</li>
+<li>Nice short, straightforward <a href="http://mockito.googlecode.com/svn/tags/latest/javadoc/org/mockito/Mockito.html" target="_blank">documentation</a>.</li>
+<li>A great name + logo ;)</li>
+</ul>
+<p>In summary: The mockito folks did a great job (they took the nice ideas from Easymock creator and improved its drawbacks). Now looking at old test-code using Easymock I subjectively need much more time to grasp what the intent of the test is. With Mockito the test-cases read more like a clear sequential &#8220;requirements story&#8221; like test-cases always should.</p>
+<h3>Migration of test-code</h3>
+<p>If you are already using easymock the tool switch is amazingly quick. Following migration path helped me:</p>
+<ol>
+<li>Give yourself and your colleagues around two weeks investing time to work with the tool and get comfortable with it. Write all your new test-classes with Mockito.</li>
+<li>If you like it make the switch: Explicitly communicate that using the old mocking framework is deprecated (if possible use static code analysis tools where you can mark severaly packages deprecated (org.easymock.*)). Now usage of Mockito for new test-classes should be mandatory.</li>
+<li>If you have already big test-codebase I do NOT recommend a big-bang test-code migration. Such migration work is time consuming and boring. Therefore taking the incremental approach is better: Only migrate Easymock code to Mockito in case you anyway touch the class, i.e. are modifying or adding test-cases.</li>
+</ol>
+<p>Looking at the test-migrations I did so far, migrating Easymock code to Mockito is quite straightforward. Get rid of all replay(), verify() calls and adjust to the slight API changes. The only thing you have to watch out for more are the explicit verification on mocked-calls. Easymock did implicitly verify all expectations when calling verify() on the mock-object, on Mockito side you explicitly have to call verifications on each method. The same counts for strict mocks. You have to add respective verifications.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/06/27/from-java-easymock-to-mockito/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Parameterized test-methods with TestNG</title>
+		<link>http://www.aldana-online.de/2009/04/19/parameterized-test-methods-with-testng/</link>
+		<comments>http://www.aldana-online.de/2009/04/19/parameterized-test-methods-with-testng/#comments</comments>
+		<pubDate>Sun, 19 Apr 2009 10:08:10 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[parameterized test case]]></category>
+		<category><![CDATA[test-ng]]></category>
+		<category><![CDATA[unit testing]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=131</guid>
+		<description><![CDATA[ TestNG offers many great features and is definitely more capable as JUnit to build a strong automated Test-Suite. When writing test-cases one important factor is the handling of test-data. With JUnit it is cumbersome to feed different test-data to the same test-code. TestNG solves this much better.
+Let&#8217;s look at a very simple example. When [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://testng.org/doc/index.html" target="_blank"> TestNG</a> offers many great features and is definitely more capable as JUnit to build a strong automated Test-Suite. When writing test-cases one important factor is the handling of test-data. With JUnit it is cumbersome to feed different test-data to the same test-code. TestNG solves this much better.</p>
+<p>Let&#8217;s look at a very simple example. When trying to test an exception with JUnit 4 with different test-data I would need to write something like:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">class</span> MyTest<span class="br0">&#123;</span></p>
+<p>&nbsp; @Test<br />
+&nbsp; <span class="kw2">public</span> <span class="kw4">void</span> throw_exception_if_wrong_input<span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw2">try</span><br />
+&nbsp; &nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw2">new</span> Foo<span class="br0">&#40;</span><span class="st0">&#8220;test-data1&#8243;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; fail<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AIllegalArgumentException+java.sun.com&#038;bntl=1"><span class="kw3">IllegalArgumentException</span></a> iae<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span class="kw2">try</span><br />
+&nbsp; &nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw2">new</span> Foo<span class="br0">&#40;</span><span class="st0">&#8220;test-data2&#8243;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; fail<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AIllegalArgumentException+java.sun.com&#038;bntl=1"><span class="kw3">IllegalArgumentException</span></a> iae<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span><br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp; <span class="kw2">try</span><br />
+&nbsp; &nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; <span class="kw2">new</span> Foo<span class="br0">&#40;</span><span class="st0">&#8220;test-data3&#8243;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; fail<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AIllegalArgumentException+java.sun.com&#038;bntl=1"><span class="kw3">IllegalArgumentException</span></a> iae<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span>&nbsp; &nbsp; <br />
+&nbsp; <span class="br0">&#125;</span></p>
+<p><span class="br0">&#125;</span></div>
+</div>
+<p>This code has essential problems:</p>
+<ol>
+<li> Because I want to avoid to write two more test-methods (essentialy the same production code is triggered), I am putting three test-cases into one test-method, which is bad practice. This is because test cases aren&#8217;t using the tearDown and setUp facilities and cannot guarantee isolation. That is also the reason that I could not use the excpectedException parameter inside the JUnit 4 @Test annotation. Alternative is to really use three test-methods, but code readability then suffers.
+</li>
+<li> Even though above example is very simplified (only <em>new Foo()</em> is called) the test-code is not expressive. Surely you could improve this by extracting method and giving a good name. But still it is a bit blurry, why we do so and that it is just for using different test-data.
+</li>
+</ol>
+<h3>TestNG parameterized test-methods</h3>
+<p>TestNG does it better and builds the &#8220;test-case differs only in test-data&#8221; situation into its framework. This is done by building a DataProvider and passing parameters to the test-method. This way code gets more expressive and each different test-data set is executed as an isolated test-case also. Here an example of the TestNG version of above test-cases (I followed the code centric way, you can also configure your DataProvider through an XML file):</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">class</span> MyTest<span class="br0">&#123;</span></p>
+<p>&nbsp; @DataProvider<span class="br0">&#40;</span>name = <span class="st0">&#8220;wrong_input&#8221;</span><span class="br0">&#41;</span><br />
+&nbsp; <span class="kw2">public</span> <a href="http://www.google.com/search?q=allinurl%3AObject+java.sun.com&#038;bntl=1"><span class="kw3">Object</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#93;</span> createData<span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">//2 dimensions</span><br />
+&nbsp; &nbsp; <span class="co1">// x: data-set for one test-case</span><br />
+&nbsp; &nbsp; <span class="co1">// y: set of parameters (test-method can contain multiple parameters)</span><br />
+&nbsp; &nbsp; <span class="kw2">return</span> <span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AObject+java.sun.com&#038;bntl=1"><span class="kw3">Object</span></a><span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#123;</span><span class="st0">&#8220;test-data-1&#8243;</span><span class="br0">&#125;</span>,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#123;</span><span class="st0">&#8220;test-data-2&#8243;</span><span class="br0">&#125;</span>,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#123;</span><span class="st0">&#8220;test-data-3&#8243;</span><span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span>;<br />
+&nbsp;<span class="br0">&#125;</span></p>
+<p>&nbsp;@Test<span class="br0">&#40;</span>expectedExceptions = <a href="http://www.google.com/search?q=allinurl%3AIllegalArgumentException+java.sun.com&#038;bntl=1"><span class="kw3">IllegalArgumentException</span></a>.<span class="kw2">class</span>, <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataProvider = <span class="st0">&#8220;wrong_input&#8221;</span><span class="br0">&#41;</span><br />
+&nbsp;<span class="kw2">public</span> <span class="kw4">void</span> throw_exception_if_bad_input<span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> input<span class="br0">&#41;</span><br />
+&nbsp;<span class="br0">&#123;</span><br />
+&nbsp; &nbsp;<span class="kw2">new</span> Foo<span class="br0">&#40;</span>input<span class="br0">&#41;</span><br />
+&nbsp;<span class="br0">&#125;</span><br />
+&nbsp;<br />
+<span class="br0">&#125;</span></div>
+</div>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2009/04/19/parameterized-test-methods-with-testng/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Avoiding xUnit test-errors (false positives, false negatives)</title>
+		<link>http://www.aldana-online.de/2008/06/16/xunit-test-errors-false-positives-false-negative/</link>
+		<comments>http://www.aldana-online.de/2008/06/16/xunit-test-errors-false-positives-false-negative/#comments</comments>
+		<pubDate>Mon, 16 Jun 2008 18:20:30 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=118</guid>
+		<description><![CDATA[You are using unit-tests to ensure that production code works as defined or specified from the class-level view. This way you either get feedback that your implementation works as wanted (green-bar=success) or not (red-bar=fail). Unfortunately tests are also man-crafted work and can contain bugs.  Following article shows what kind of test-errors exist and what [...]]]></description>
+			<content:encoded><![CDATA[<p>You are using unit-tests to ensure that production code works as defined or specified from the class-level view. This way you either get feedback that your implementation works as wanted (green-bar=success) or not (red-bar=fail). Unfortunately tests are also man-crafted work and can contain bugs.  Following article shows what kind of test-errors exist and what preventive actions can be done. </p>
+<h3>Annoyance of test-errors</h3>
+<p>Test-errors are very annoying because your tests should be the impartial authority saying your production works or not. And if you cannot rely on them and they are constantly lying to you, you quickly get the opinion that tests don&#8217;t help you but merely slow down your work tasks. In fact I noticed that many developers new to unit-tests are gettings frustrated by test-errors and thus are stopping to write them. This way they lose the advantages of a good test-suite and Test Driven Development which is a shame. Test-errors can roughly occur in two forms: false negatives and false positives. </p>
+<h4>False positive test</h4>
+<p>A false positive test gives you a failure, though the feature is behaving alright. You change or create some code, make everything compile but the corresponding test gives you a failure. After debugging for a while you see that the test made wrong expectations about the feature so that your test is inconsistent with the specified behaviour.</p>
+<p>Very simplified example:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">public</span> <span class="kw4">static</span> <span class="kw4">int</span> sum<span class="br0">&#40;</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">return</span> x+y;<br />
+<span class="br0">&#125;</span></p>
+<p><span class="kw2">public</span> <span class="kw4">void</span> testSum<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; assertTrue<span class="br0">&#40;</span><span class="nu0">3</span>,sum<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">//fails though class under test alright</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>I experience false positive tests sometimes when using mock-frameworks (like <a href="http://www.easymock.org/">EasyMock</a> ), because when injecting mocks to class under test you expose some bits of implementation details to the test by recording behaviour to the mock. After changing implementation of class under test slightly, the calling of your mocks could change also. Without changing your mocks correspondly your test most likely will fail.</p>
+<p>Another often occurring cause for a false positive is a wrong test setup, e.g. you could pass wrong or no instances at all to class under test, so it behaves different as expected from test case view. Example: You pass an implementation to class under test, which connects to a file-database and wants to read data. Database is not available and test fails. Here you made a test setup mistake: Actually you had to pass a  persistence stub, which returns appropriate values for the test.</p>
+<p>Further more your design could be too tightly coupled, where your class under test has many dependencies to other classes. Thus many other instances are called indirectly and it is difficult to isolate you &#8220;real&#8221; test case. A change of dependent classes makes the test fail, though class under test itself did not change and is still behaving fine.</p>
+<h4>False negative test</h4>
+<p>A false negative test reports you a success message that everything is alright but in fact it is broken. In this case all your test expectations (=asserts) are fine, but production code in fact has got a bug. </p>
+<p>Same simple example:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">public</span> <span class="kw4">static</span> <span class="kw4">int</span> sum<span class="br0">&#40;</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">return</span> x+<span class="nu0">1</span>;&nbsp; <br />
+<span class="br0">&#125;</span></p>
+<p><span class="kw2">public</span> <span class="kw4">void</span> testSum<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; assertTrue<span class="br0">&#40;</span><span class="nu0">2</span>,sum<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">//success though class under test has a bug</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>What I see often in false negative tests, is that assert statements are formulated too weak and claim not enough from class under test. In many test cases you find a very non-saying assertNotNull(returnObject) and the properties of returnObject are not checked more detailed.</p>
+<h4>Preference of test-error</h4>
+<p>The lesser evil test-error are definitely the false positives. Here I get instantly notified that there IS a test-error. Looking at a false negative test I don&#8217;t get notified at all and the overall &#8216;good&#8217; feeling that I got tests in place is very deceptive. You interpret more quality to your production code than there is.</p>
+<h3>What to do about test-errors</h3>
+<p>Awareness of both test-error categories is a good first step, but how can you avoid test-errors generally?</p>
+<h4>Suggestions to avoid false positives</h4>
+<p>An obvious cause for a false positive can be your test assert statements, maybe they are just plain wrong, requirements have been changed and class under test has been adjusted respectively. To avoid such assert statement mistakes you should develop test driven: When a requirement has been changed first look if feature has a corresponding test case and adjust it. After that change your production code. This way you avoid specification inconsistencies inside your test cases.</p>
+<p>When looking at your production code, maybe your design is too tightly coupled and your tests are covering just to many classes? With this you should consider to introduce dependency-injection to make passings of alternative test-implementations possible. Or maybe you got a monster method and thus &#8220;feature-isolation&#8221; is not possible either? Here you should consider to use extract refactorings (method, interface, class), to achieve isolation and loose coupling and make stub/mock injections possible.</p>
+<h4>Suggestions to avoid false negatives</h4>
+<p>Most likely your assert statements are too weak and you don&#8217;t use enough test-data. Consider to add asserts an invoke class under test with alternative input values. The assertNotNull(returnObject) assert is often a good start to check whether the returnObject has been initialized at all, but if so, more &#8220;stronger&#8221; asserts should follow. Always remember: Apart from your application throwing an unexpected Exception inside test-run your test case will only fail if one of your asserts will evaluate to false!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/06/16/xunit-test-errors-false-positives-false-negative/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Improving weak automatic test-suites incrementally</title>
+		<link>http://www.aldana-online.de/2008/05/13/improving-weak-automatic-test-suites-incrementally/</link>
+		<comments>http://www.aldana-online.de/2008/05/13/improving-weak-automatic-test-suites-incrementally/#comments</comments>
+		<pubDate>Mon, 12 May 2008 23:32:11 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/2008/05/13/improving-weak-automatic-run-test-suites-incrementally/</guid>
+		<description><![CDATA[A key element for good quality software is a good automatic run test-suite, which contains both unit and integration tests. As Frederic P. Brooks already mentions in his book &#8216;The Mythical Man-Month&#8217;, developers (as other humans, too) are far away from being perfect. As software from the outside view often needs to be written 100% [...]]]></description>
+			<content:encoded><![CDATA[<p>A key element for good quality software is a good automatic run test-suite, which contains both unit and integration tests. As Frederic P. Brooks already mentions in his book &#8216;The Mythical Man-Month&#8217;, developers (as other humans, too) are far away from being perfect. As software from the outside view often needs to be written 100% correctly (only one missing or wrong statement in the whole execution path can make a feature to be buggy), we need to have a reliable way to get quick feedback whether something works or has been broken. A powerful way to accomplish this is by checking the behaviour with automatic running test-cases. Though this practice is already state of the art, you often find systems with a weak test-suite. This article shows why the feedback-loop is so important to how improve your test suite by getting a testing culture and to introduce test-cases step by step.</p>
+<h3>Tests give you invaluable feedback</h3>
+<p>In following situations the feedback of tests is very helpful or even essential:</p>
+<ul>
+<li>Existing tests tell you that you didn&#8217;t break existing behaviour after doing adaptions. These regression tests show you a green bar if a code change did not affect working features.</li>
+<li>Tests help you to introduce new features. Writings new tests is done in parallel when touching production code. This way you can concentrate on this single feature and you further more get a quick response, whether the feature is implemented correctly (green bar) or not (red bar).</li>
+<li>Tests help you to reproduce a bug. You write a new test case which shows you a the bug as a red bar. With this you have a very good starting point to debug and fix it. When fixed you get a positive response (green bar shows up).</li>
+</ul>
+<h3>The dilemma of weak test-suites</h3>
+<p>Of course one single test-case won&#8217;t do the catch. Your aim should be have many test-cases which summed up represent your whole strong test suite. Unfortunately test suites are often weak, especially when changing code they don&#8217;t give you a red bar if something has been broken. The reason why a test suite is weak can be manifold:</p>
+<h4>No practice of testing, too few tests</h4>
+<p>The view of tests as central &#8220;development-drivers&#8221; is not practiced. Things are implemented and after that roughly tested in a manual way. There is no coding of automatic tests which prove that bug-fixes are done correctly or features work like specified. Testcode is seen as not-so-important stuff, because it does not show up in the production code and this way does not give real additional value to the customer.</p>
+<h4>Tests aren&#8217;t executed regularly</h4>
+<p>Tests which are part of the test suite exist, but their execution is not part of the build. Thus they are hardly executed and are triggered manually. Often this is the case because the tests need human intervention and cannot be run automatically by a build server or similar. It also can be that in fact you have a completely automatic test suite but is just not common that it is executed often. If tests aren&#8217;t executed regularly (e.g. once a day, after each commit), you lose the advantage of quick feedback. With this running the tests after a week/month or so, you don&#8217;t know what code change caused the test failures or errors. After a while developers will get reluctant about tests, they will be getting used to red bars and simply put will just ignore them at some point. In the end tests won&#8217;t be maintained and your test code gets more a burden than a help. Finally your test-code decays to dead code.</p>
+<h4>Missing or very expensive tools</h4>
+<p>For test automation the proper tools are very important. Nowadays you get a lot of good open-source test tools (Fit, xUnit-frameworks). Never the less for some special areas it is not trivial how to automate some testing steps, especially in integration testing (e.g. setting up and validating smart-cards contents, or testing message-oriented/asynchronous systems in general). Some vendors sometimes provide some more advanced testing tools but these are either very expensive or/and cannot be extended for special problems.</p>
+<h3>The dilemma solution</h3>
+<p>Above mentioned constraints to get a good test-suite are often hard but can be tackled. First of all everyone in the team needs to understand that tests aren&#8217;t given to the customer but are inherent important to the development process. Well, you don&#8217;t include you favorite IDE to the customer, never the less you couldn&#8217;t create software without it, could you? Testing continously needs to be a new habit, so give the team some more time to dig into this, like planning trainings for JUnit or test automation in general. If the team starts to value tests there still could be the problem that there are hardly any automated tests, which can be very demotivating (&#8216;The where to start&#8230;?&#8217; issue). Never the less you can start up by writing tests for all new features you want to implement or for areas you want to refactor. When knowing a bug always reproduce a bug with a test case initially. After doing this for a while you will see how your backing safety-net will grow bigger and bigger. Of course the test cases of the test division won&#8217;t be replaced by newly introduced test cases of the developers. There still are many tests which are difficult or cannot be automated at all (like user acceptance or GUI tests). So see developer-testing as supplements and not replacements for the &#8220;traditional&#8221; tests. Of course the testers could also help to improve the automated integration tests, because they are more black box focused. In a very mature test focused process a tester for instance would attach a reproducing integration test to a bug report.</p>
+<p>As mentioned not executed tests some day will end up as dead code. To avoid this introduce certain triggers (e.g. nightly, after each commit) to run your test suite. See the test runnings as part of the software build itself. This view is very powerful and is also recommended by the Continous Integration concept. If run very regularly developers will soon start to appreciate the tests and will have &#8220;fun&#8221; with extending test-suite. Looking at the visible green bar or getting rid of a red one can be very motivating.</p>
+<p>In former times test tools often had been something more for the people in the test division. The picture has changed a lot. Automated tests created directly from the developers is state of the art and is supported by many useful and open-source tools (Fitness, xUnit, db-unit, Mock-Frameworks, soap-ui etc.). They are extensible and can be combined to get an even more powerful testing tool. Further more Continous Integration servers for running and triggering tests are mature, free and can be extended (CruiseControl, Continuum, Hudson etc.).</p>
+<h3>Summary</h3>
+<p>Generally the view of tests from the developers side has changed a lot. Especially since the rise of Unit-testing, some new integration test-tools and the concept of Continous Integration, test-creation by developers is much more common. Even if your organization has not introduced this practice you can do so by building up your test-suite incrementally and executing it regularly. The harder part will be to get the developers to a testing routine/culture but this effort will far be outweighed by the benefits.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/05/13/improving-weak-automatic-test-suites-incrementally/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tests: Why code coverage is not enough</title>
+		<link>http://www.aldana-online.de/2008/03/18/ensure-test-suite-quality-and-beware-of-the-green-bar/</link>
+		<comments>http://www.aldana-online.de/2008/03/18/ensure-test-suite-quality-and-beware-of-the-green-bar/#comments</comments>
+		<pubDate>Tue, 18 Mar 2008 20:01:59 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[code coverage]]></category>
+		<category><![CDATA[mutation testing]]></category>
+		<category><![CDATA[test code smells]]></category>
+		<category><![CDATA[test driven development]]></category>
+		<category><![CDATA[test suite quality]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/2008/03/18/ensure-test-suite-quality-and-beware-of-the-green-bar/</guid>
+		<description><![CDATA[To benefit from the principle of Continous Integration you need a good testing suite which includes both regression and new-feature tests. Regressions tests focus on testing features which are already implemented and shouldn&#8217;t be changed or influenced by latest commited changes. When software evolves such regression tests play a major role for the set of [...]]]></description>
+			<content:encoded><![CDATA[<p>To benefit from the principle of Continous Integration you need a good testing suite which includes both regression and new-feature tests. Regressions tests focus on testing features which are already implemented and shouldn&#8217;t be changed or influenced by latest commited changes. When software evolves such regression tests play a major role for the set of &#8220;old&#8221; features is far bigger compared to the new ones. One of Continous Integration&#8217;s key features is to run test automatically and reporting the results to us, so we are notified when something has been broken and we can react on this quickly. This article discusses what dangers can occur when relying too much on the green bar of your test-suite results.</p>
+<p>Common Continous Integration tools (e.g. Cruise-Control, Continumm) are running unit and integration tests and reporting the outcome (error, failure, success) with a push mechanism like E-Mail, Messenger client. As a developer usually you only prick up your ears when you see a red bar. When a green bar shows up or the reporting tool even filters success outcomes we could get into a very severe problem: We think everything is alright for  all tests passed but in fact we stepped into a false negative trap and part of the system is broken. As such the test-suite quality isn&#8217;t as good as we thought and software quality decreases invisibly. Usually organisation tries to proove test-suite&#8217;s quality by using a coverage tool like Cobertura or Clover. They are quite a help for seeking new test cases, never the less it exposes a big problem.</p>
+<p>Regarding the <a href="http://xunitpatterns.com/Four%20Phase%20Test.html" target="_blank">Four-Phase test pattern</a> (explained in superb book xUnit Test Patterns by Gerard Meszaros), code coverage shows us that certain parts of production code are executed in Setup, Exercise and Tear-Down phase of test.  Considering this code coverage clearly misses to adress the &#8220;quality&#8221; of the Verify part of the test. Thus when using  code coverage as test-suite quality metric only, we still can have a bad test quality: Though our tests are walking through wide areas of production code  in fact they don&#8217;t tell us what we really expect from it, which is usually done with assertions.</p>
+<p style="text-align: center"><img src="http://www.aldana-online.de/wp-content/uploads/2008/03/testcoverage.png" alt="fourPhaseTest" /></p>
+<h3>Bad Test Smells</h3>
+<p>To get a better feeling what can go wrong within the Verify part of a test case have a look at following three (common) test smell examples:</p>
+<p><strong>Exception ignorance:</strong><br />
+Especially in Java you often are forced to catch checked exceptions. This can be quite annoying especially in tests. Now, instead of attaching the exception one isn&#8217;t interested in to the method signature (like <em>void testSomething()throws Exception{&#8230;} </em>) many people are inserting try/catch blocks inside the test method and leave the catch-block empty. Not only this makes reading tests more difficult but can cause severe false negatives too because assertions you defined can be skipped. There we go and we could see green bar though the test failed.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// 1) do loads of stuff</span><br />
+&nbsp; &nbsp; <span class="co1">// 2)some assertions at the end</span><br />
+&nbsp; <span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> e<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="co1">// 3) do Nothing -&gt;&nbsp; unexpected exception does not get reported to test runner</span><br />
+&nbsp; &nbsp; <span class="co1">//defined assertions from above could be skipped</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p><strong>Uninterested debugging test:</strong><br />
+Production code is called, but no assertions are used at all. Often you find logging-outputs spread around (logger, stdout, stderr). Such test cases often aren&#8217;t meaningful because they don&#8217;t notify the test runner in case something goes wrong, in fact they are nearly always showing a green bar. Thus the test running is done automatically but the reporting is not, which taken together forms a non-automatic test. Instead human interference comes into play and analyzation of test results is done by staring at the logging-output. In many cases such test cases are used to debug production code in the first place instead of writing a &#8220;real&#8221; automatic test case in a way of test driven development.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; <span class="co1">// 1) long List of statements</span><br />
+&nbsp; <span class="co1">// 2) logging output spread around (stdout/stderr)</span><br />
+&nbsp; <span class="co1">// 3) no assertions at all</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p><strong>Imprecise assertion:</strong><br />
+Assertions are used but they are very general and do not ask more from production code as values only not being null. Such unspecific assertions do not claim much and verification often is weak. This way real bugs which should have been investigated by test could still result to a green bar.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw4">void</span> testSomething<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="co1">// 1) long List of statements</span><br />
+&nbsp; <span class="co1">// 2) only and single assertion</span><br />
+&nbsp; assertNotNull<span class="br0">&#40;</span>returnValue<span class="br0">&#41;</span>; <span class="co1">//very imprecise assertion</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<h3>Approaches for test quality assurance</h3>
+<p>It is quite a tough job to find out whether your test-suite is strong or not, especially when it comes to writing the correct verifications/asserts. The right approach always has to be determined between efficiency and effectiveness forces. Manual i.e. human interaction like review of test cases is very powerful for you are reasoning directly as a developer. With that you can point out semantics in the way what assertions make sense, which ones are missing or whether custom assertions could be used. Of course this takes some time (review-meeting, manual code browsing etc.) and thus cannot be done for the whole testing code-base. Still it is not only a good way to get to know the test code base and investigate problematic test cases but more to spread knowledge about good test verification habits.</p>
+<p>The less expensive and less time consuming (i.e. efficient) variant could be a code structure analyzer, which scans test code. As an example you can extend http://checkstyle.sourceforge.net/ (Checkstyle) with custom checks. For instance working with regular expressions could make a check possible that at least one single assert statement must be used inside a test or an assertNotNull() is followed by another more specific assertion. Further more you could set up a rule that try-catch blocks need to contain a fail() assertion to verify proper exception-handling in production code.</p>
+<p>A third option which I can think of is to test your test-suite&#8217;s strength by using <a href="http://en.wikipedia.org/wiki/Mutation_testing" target="_blank">Mutation Testing</a>. It works in that way that it injects errors (mutants) into the production code base and checks whether tests would catch them by reporting a failure or error. I remember having used this approach with <a href="http://jester.sourceforge.net/" target="-blank">Jester</a> in a seminar in my university times. We perceived it quite powerful when injecting mutation operators for conditional logic, arithmetic expressions or numeric values for little programs. But when it came down to many other error-prone bits it often fell short (examples abbreviated): Calling different instance methods of input parameters, changing Exception handling, String operations etc.. Further more we did not succeed setting up Jester for integration tests, especially setting-up and tearing down things to a defined state was tricky. Looking out these days for an alternative other mutation testing framework for Java ended up to find a single tool <a href="http://www.cs.gmu.edu/~offutt/mujava/" target="_blank">MuJava</a>, where at its core (apart from eclipse plugin) the last update is a bit old from 2005. Never the less it looks promising for it offers more mutation operators especially for object oriented programs. Unfortunately it does not offer a maven report plugin for decent reports. Never the less I guess I&#8217;ll give it a try soon.</p>
+<h3>Summary</h3>
+<p>Testing is inevitably important when developing software. Either for prooving that new features work or that old features did not get broken by code changes. Looking at the green bar of testing outcome and relying on code coverage is a very good first step but often is not enough and other actions have to be done (test code review, static code analysis, mutation testing). Mutation testing as a concept looks very promising but does not seem to have been common practice.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/03/18/ensure-test-suite-quality-and-beware-of-the-green-bar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Extending the idea of Continous Integration</title>
+		<link>http://www.aldana-online.de/2008/02/07/extending-idea-of-continous-integration/</link>
+		<comments>http://www.aldana-online.de/2008/02/07/extending-idea-of-continous-integration/#comments</comments>
+		<pubDate>Thu, 07 Feb 2008 21:33:44 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Continous Integration]]></category>
+		<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[groovy continous integration]]></category>
+		<category><![CDATA[wordpress link check]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/2008/02/07/extending-idea-of-continous-integration/</guid>
+		<description><![CDATA[With Continous Integration you send your work to a central place and a checking is being done which tells you if your stuff still works for itself and together with the other parts of the system. This kind of check should be done quick and often (to keep the feedback loop short) so it is [...]]]></description>
+			<content:encoded><![CDATA[<p>With Continous Integration you send your work to a central place and a checking is being done which tells you if your stuff still works for itself and together with the other parts of the system. This kind of check should be done quick and often (to keep the feedback loop short) so it is mostly done automatically by tools. Martin Fowler already gives a good <a href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">introduction</a> to this practice, and this <a href="http://www.amazon.de/gp/search?ie=UTF8&amp;keywords=continous%20integration&amp;tag=privatehom0d0-21&amp;index=blended&amp;linkCode=ur2&amp;camp=1638&amp;creative=6742" target="_blank">book</a> gives even more detailed information, so I won&#8217;t cover already discussed topics. For myself  I found the idea of Continous Integration so universal, that it can even be applied to other work bits which aren&#8217;t directly connected to source code. This way quality of other work artifacts can be enhanced.</p>
+<p>As a example just think of the important documentations snippets you are working on (I hope you do&#8230;), wouldn&#8217;t it be nice if the was a kind of checker which would help you to keep spellings or consistencies right without you manually scrolling the whole document back and forth? This way you would save an often unexpected (difficult to estimate) pig pile of work which usually appears at the release deadline when document needs to be finished. You could argue that if the tool wouldn&#8217;t offer such a check you could extend it by a self written plugin yourself to get a very close integration. On the other hand this is often not feasible: Either the tool is not meant to be extended, it is closed source or the effort to be spent for writing a plugin is just too high to equal the cost. You again could argue that faced with such problems a switch to a better tool should be done, but this is even more doubtful: First of all in very many cases a switch of a tool is connected with high effort (total cost of ownership: training, migration of data, evaluation etc.), and further more you generally will hardly (if even never) find a tool which fulfills all your needs to 100% anways. So a more lightweight approach could be a better alternative: Integration of little self written tools which connect to interfaces of your main one. In the case of Continous Integration this would happen by creating a little checker/reporting-tool which in turn scans users input for lurking errors and runs on a regular basis. Thus the feedback loop is short (iteration is one of the keys of software engineering) and thus many errors/misbehaviour can be prevented from keeping too long inside the system and quality is ensured from the beginning on.</p>
+<p style="text-align: center"><img src="http://www.aldana-online.de/wp-content/uploads/2008/02/continousintegrationworkflow.png" alt="workflow continous integration" /></p>
+<p>Let&#8217;s head to another example: I recently used the concept of Continous Integration to improve the quality of my homepage: As you write content for the web you often write some html bits and use hyperlinks quite often. In wordpress&#8217; case you usually do that with not very edit-friendly built-in wordpress editor, which does not check the html bits you filled in. So just automatically quite a few broken links creeped in. With me this happened quite often (forgetting opening/closing tags, accidently omitting http://, completely mistyped links, etc.). The discovery + correction of these links had been quite annoying, boring and time consuming. Further more the discovery was more by coincidence as by a structured search. Whilst being bored searching for these sneaky links I came to the idea that this kind of scan could be easily, much better and quickly performed by a script. So I changed the direction and headed my way to an automatic scan: First of all a kind of enabling point was neccessary to easily get access to all pages of my homepage. For this the sitemap feature of wordpress got very handy, where you can get all pages of your site in a structured well parseable XML-document. Armed with this all pages and its hyperlinks could by retrieved easily. Having all existing hyperlinks of my homepage the assertion of the HTTP GET response code of respective link was even more obvious. For this tooling task I used Groovy for its short easy to read syntax and its missing compiling and low deploying neccessities (just guess what long and verbose source-code would have been need when it had been done in Java&#8230;).  Of course I do favor Java (static type check) when it comes to bigger systems for maintenance reasons but for everyday scripting tasks Groovy or other alternatives (Python, Ruby etc.) a really the best way to go.</p>
+<p>Just have a look at following code to see how straight forward it is to build a Continous Integration helper tool. You will notice that only the check part is done of following script (see the middle item of above picture). So what is still missing is a proper trigger (like cron-job for each day) and a better report functionality (like mail-notification instead of stdout print).</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1">//MAIN WORKFLOW</span><br />
+def <span class="kw4">static</span> HOMEPAGE=<span class="st0">&#8220;YOUR_WORDPRESS_HOMEPAGE&#8221;</span><br />
+<span class="co1">//for performance, only visit link once</span><br />
+def linksVisited=<span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+def index=<span class="nu0">0</span></p>
+<p>println <span class="st0">&#8220;Starting link check for $HOMEPAGE&#8221;</span><br />
+def urlset=<span class="kw2">new</span> XmlSlurper<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">parseText</span><span class="br0">&#40;</span><span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span><span class="st0">&#8220;http://$HOMEPAGE/sitemap.xml&#8221;</span><span class="br0">&#41;</span>.<span class="me1">text</span><span class="br0">&#41;</span><br />
+urlset.<span class="me1">url</span>.<span class="me1">each</span><span class="br0">&#123;</span> sitemapEntry -&gt;<br />
+&nbsp; def linkFrom=sitemapEntry.<span class="me1">loc</span>.<span class="me1">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; retrieveLinks<span class="br0">&#40;</span><span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>linkFrom<span class="br0">&#41;</span>.<span class="me1">text</span><span class="br0">&#41;</span>.<span class="me1">each</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; print <span class="st0">&#8220;${index++} &#8220;</span><br />
+&nbsp; &nbsp; <span class="kw1">if</span><span class="br0">&#40;</span>!linksVisited.<span class="me1">contains</span><span class="br0">&#40;</span>it<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; checkLink<span class="br0">&#40;</span>it,linkFrom<span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp; linksVisited &lt;&lt; it<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span><br />
+<span class="br0">&#125;</span></p>
+<p>def retrieveLinks<span class="br0">&#40;</span>html<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; def links=<span class="br0">&#91;</span><span class="br0">&#93;</span><br />
+&nbsp; <span class="br0">&#40;</span>html =~ /href=<span class="st0">&#8220;(.*?)&#8221;</span>/<span class="br0">&#41;</span>.<span class="me1">each</span> <span class="br0">&#123;</span>&nbsp; whole, link -&amp;gt; links &amp;lt;&amp;lt; link <span class="br0">&#125;</span><br />
+&nbsp; <span class="kw2">return</span> links<br />
+<span class="br0">&#125;</span></p>
+<p>def isBrokenLink<span class="br0">&#40;</span>url<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; def responseCode=<span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>url<span class="br0">&#41;</span>.<span class="me1">openConnection</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">getResponseCode</span><span class="br0">&#40;</span><span class="br0">&#41;</span><br />
+&nbsp; responseCode.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span> =~ <span class="st0">&#8220;^(4|5)&#8221;</span><br />
+<span class="br0">&#125;</span></p>
+<p>def urlAlright<span class="br0">&#40;</span>url,closure<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp;<span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp;<span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3AURL+java.sun.com&#038;bntl=1"><span class="kw3">URL</span></a><span class="br0">&#40;</span>url<span class="br0">&#41;</span><br />
+&nbsp;<span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a><span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; &nbsp;closure<span class="br0">&#40;</span>url<span class="br0">&#41;</span><br />
+&nbsp; &nbsp;<span class="kw2">return</span> <span class="kw2">false</span><br />
+&nbsp;<span class="br0">&#125;</span><br />
+&nbsp;<span class="kw2">return</span> <span class="kw2">true</span><br />
+<span class="br0">&#125;</span></p>
+<p>def checkLink<span class="br0">&#40;</span>linkTo,linkFrom<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>urlAlright<span class="br0">&#40;</span>linkTo,<span class="br0">&#123;</span>println <span class="st0">&#8220;Wrong URL Pattern: $linkTo inside $linkFrom&#8221;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp;<span class="kw1">if</span><span class="br0">&#40;</span>isBrokenLink<span class="br0">&#40;</span>linkTo<span class="br0">&#41;</span><span class="br0">&#41;</span><br />
+&nbsp; &nbsp; &nbsp;println <span class="st0">&#8220;ERROR: BROKEN LINK $linkTo. Referenced from $linkFrom&#8221;</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>Of course this kind of broken link check is not restricted to a XML-sitemap. Another enabling point for quering your html content could be a direct database access, whereas you would need to know the database schema of wordpress in a more detailed way. I am running this kind of check each week and already found out quite a few broken links.</p>
+<p>Surely these automatic checks cannot reveal all errors inside a system (who the hell checks if my posts make sense at all&#8230;) but they definitely help to let people to concentrate on other things which cannot be achieved by computers so far (like sematics, comprehensibility, etc.).</p>
+<p>What about you, what kind of Continous Integration use cases are you employing?</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2008/02/07/extending-idea-of-continous-integration/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

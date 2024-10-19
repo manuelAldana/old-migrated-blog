@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Getting rid of checked exceptions in Java</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Getting rid of checked exceptions in Java Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Avoiding xUnit test-errors (false positives, false negatives)' href='../../../06/16/xunit-test-errors-false-positives-false-negative/index.html' />
+<link rel='next' title='Continous code improvement with IntelliJ scm-integration' href='../../../../2009/02/18/continous-code-improvement-with-intellij/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../../2009/02/18/continous-code-improvement-with-intellij/index.html">Continous code improvement with IntelliJ scm-integration</a> </div>
+	<div class="older"> <a href="../../../06/16/xunit-test-errors-false-positives-false-negative/index.html">Avoiding xUnit test-errors (false positives, false negatives)</a> &gt; </div>
+</div>
+					
+			<h4>July 28th, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Getting rid of checked exceptions in Java</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/07/28/getting-rid-of-checked-exceptions-in-java/&amp;title=Getting+rid+of+checked+exceptions+in+Java&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Exception constructs in modern languages have replaced the way to map an error condition by a return value (like for instance in C). If used properly analyzation of error conditions and their handling can be performed very well. Never the less in Java, the so called checked exceptions are annoying since long (as a side note: C# seemed to have learned from this early language-design mistake because it supports unchecked exceptions only). This article discusses further why checked exceptions should be avoided.</p>
+<p>This topic was already <a href="http://www.mindview.net/Etc/Discussions/CheckedExceptions" target="_blank">discussed</a> by clever Bruce Eckel, who is also thinking that checked exceptions aren&#8217;t such a good idea. To his reasoning one thing I would like to add is the &#8220;blurry assumption of api-interface&#8221; problem.</p>
+<h3>Anticipation of incoming dependencies not possible</h3>
+<p>Officially <a href="http://java.sun.com/docs/books/tutorial/essential/exceptions/runtime.html">Sun mentions</a> that checked exceptions should be used in case of &#8220;expected&#8221; exceptions, where clients still could react. In contrast unchecked exception should be used if programming erros occur, where a reaction is hardly possible (e.g. NullPointerException,  AssertionError).</p>
+<p>In case of checked exception client code can decide whether to react to it directly (try/catch) or to delegate and pass it in the throws clause. In practice many checked exceptions aren&#8217;t interesting to client code, therefore you start to pass it to the throws clause. After a while spreading exceptions between different class-collaborations they are getting piled up and code-distraction is king and developers are constantly typing irrelevant code.</p>
+<p>I&#8217;ve often seen code where developers got fed up with this pass-through of exceptions, workarounded this  with a bad exception handling coding style. So, in theory checked exceptions should increase code quality but in practice I perceived the opposite. This is bad, because a programming language design should help you to write good code and not constrain your work. Following workaround code snippets are quite common:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &#8230;<br />
+<span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span>AnyCheckedException ace<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="co1">//no handling code</span><br />
+&nbsp; <span class="co1">//swallowed away nirvana exception</span><br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>Above is evil: Though exception should somehow be reported in lower area of method call stack, this try/catch just makes any error handling impossible. Such &#8220;nirvana&#8221; exceptions can make your life  really hard when locating defects.</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">try</span><span class="br0">&#123;</span><br />
+&nbsp; &#8230;<br />
+<span class="br0">&#125;</span><span class="kw2">catch</span><span class="br0">&#40;</span>AnyCheckedException ace<span class="br0">&#41;</span><span class="br0">&#123;</span><br />
+&nbsp; <span class="kw2">throw</span> <span class="kw2">new</span> <a href="http://www.google.com/search?q=allinurl%3ARuntimeException+java.sun.com&#038;bntl=1"><span class="kw3">RuntimeException</span></a><span class="br0">&#40;</span><span class="st0">&#8220;Error I don&#8217;t know what to do with. Got fed up with<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throws clause in all my method declarations!&#8221;</span><span class="br0">&#41;</span>;<br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>Problem is that above newly thrown RuntimeException is too general and analyzation of certain error-conditions is hard. Often the causing checked exception isn&#8217;t even passed to the RuntimeException constructor so finding the root cause of a failure is also difficult.</p>
+<p>To summarize: If client code cannot handle the exception, in practice checked exceptions aren&#8217;t passed to throws clause of method declaration. Indeed you can get really crazy if you need to pass the exception the whole method call-stack. Especially when doing bigger refactorings such millions of checked exceptions in the throws declarations are extremely annoying. Looking at this shortcoming developers often go for an improper exception handling. The difficulty of api-designers is that they cannot anticipate the exception-interpretation of incoming dependencies and thus the use of a checked exception can lead to bad exception handling code. They just don&#8217;t know, if a handling of an exception makes sense or not, see following examples:</p>
+<h4><u>Example checked IOException</u></h4>
+<p><strong>Trigger:</strong> IOException from java.io api gets thrown because a file under given pathname cannot be found.<br />
+<strong>Handling appropriate:</strong> My client-code represents a file system manager, where I am searching for a file. The information &#8220;File not found&#8221; is directly relevant and file system manager could proceed to look in other directories.<br />
+<strong>Handling not appropriate:</strong> I got a general app, where a property file should be loaded. Then the app should crash early/instantly, most likely I set a wrong path (Programming error).</p>
+<h4><u>Example checked RemoteException</u></h4>
+<p><strong>Trigger:</strong> RemoteException gets thrown, because network connection for RMI communication is broken.<br />
+<strong>Handling appropriate:</strong> My client-code is a network monitoring tool and such information should be logged down for server downtime analyzation. Thus exception should be directly handled.<br />
+<strong>Handling not appropriate:</strong> I got two application components which are communicating with RMI. The defect is a misconfiguration of the firewall. Application itself cannot react on this, it is a plain network setup defect.</p>
+<p>Now Sun&#8217;s exception convention gets into problems: They told that Programming-Errors should always be mapped to unchecked exceptions&#8230; As shown above this does not work out, in some contexts the root cause of IOException is a Programming error (property-file loading) in some not (file-manager).</p>
+<h3>Way out of checked exceptions</h3>
+<p>Most likely Java standard won&#8217;t change this exception design-flaw, especially for backward compatibility reasons. But there is still a solution: When you are forced to handle checked exceptions constantly you can wrap them in custom unchecked exceptions (-&gt; extending an own custom exception hierachy from RuntimeException). This way other client code does not need to bother to look at non-interesting exception. The implication of mentioned points could also be that your api-design should only offer unchecked exceptions in method declarations.</p>
+<p>Following this clients are not distracted by always doing this try/catch duet and code further more gets much better readable. Of course you should not just shove all checked exceptions directly into a RuntimeException (one of the workaround I explained above), you should be more concrete and build up a deeper exception type-hierachy to make further handling easier. Besides you should chain checked exception and pass it to the unchecked exception&#8217;s constructor to later find out root causes better.</p>
+<p>Of course at one point such unchecked exceptions need to be handled at the outmost layer latest to make a proper report possible (e.g notifying monitoring/logging, sending back a user-friendly error HTML-message). You really don&#8217;t want to spill the whole stack-trace to a HTML or SOAP response or make your application to completely always shutdown.</p>
+<h3>Conclusion</h3>
+<p>Java introduced checked exceptions, which seemed to be a good idea in the first place to enforce clients to &#8220;have to know&#8221; about certain error conditions. But in practice developers do not pass &#8220;uninteresting&#8221; exceptions in throws clause, because code gets crowded and diffult to understand. They merely tend to workaround with inappropraite exception handling. Further more the view on exceptions, wheter they are worth the be catched or not, is context based and cannot be anticipated. To avoid this problem api-designers or client code generally should go for unchecked exception and a custom unchecked exception type-hierachy.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../../2009/02/18/continous-code-improvement-with-intellij/index.html">Continous code improvement with IntelliJ scm-integration</a> </div>
+	<div class="older"> <a href="../../../06/16/xunit-test-errors-false-positives-false-negative/index.html">Avoiding xUnit test-errors (false positives, false negatives)</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F07%252F28%252Fgetting-rid-of-checked-exceptions-in-java%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

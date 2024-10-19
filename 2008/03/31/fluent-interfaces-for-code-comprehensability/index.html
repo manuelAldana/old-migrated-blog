@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Fluent interfaces for code comprehensability</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="stylesheet" href="../../../../wp-content/plugins/codesnippet/codesnippet.css" type="text/css" />
+<style type="text/css">
+.codesnip-container  {border:1px solid #ccc; background:#eee; padding: 5px;margin:10px;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Fluent interfaces for code comprehensability Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Tests: Why code coverage is not enough' href='../../18/ensure-test-suite-quality-and-beware-of-the-green-bar/index.html' />
+<link rel='next' title='Bashing the refactoring criticism' href='../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html">Bashing the refactoring criticism</a> </div>
+	<div class="older"> <a href="../../18/ensure-test-suite-quality-and-beware-of-the-green-bar/index.html">Tests: Why code coverage is not enough</a> &gt; </div>
+</div>
+					
+			<h4>March 31st, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Fluent interfaces for code comprehensability</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/03/31/fluent-interfaces-for-code-comprehensability/&amp;title=Fluent+interfaces+for+code+comprehensability&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Fluent interfaces is a concept that your api is closely designed to the problem area it solves and is written in the target programming language (internal DSL), so there is no language barrier from the view of client code. The goal is to make code more concise, better readable and thus easier to grasp or understand. Martin Fowler already discusses this principle in his <a href="http://martinfowler.com/bliki/FluentInterface.html" target="_blank">blog-entry</a> . For my side I found this principle especially helpful in unit test cases to make test code much more comprehensible and easier to maintain. This entry shows a simple concrete real world example how a fluent interface could look like.</p>
+<p>The following example of a fluent api is a little builder to create up directed graphs from the <a href="http://jung.sourceforge.net/" target="_blank">JUNG graph framework</a>. Regarding the graph the typical three subjects are vertices, directed edges and labels. Labels themselves are attached to respective vertices (1:1 relation). Goal of the graph building code was to create graph test-data for unit tests. To be tested functionality was typically code, which was comparing, merging or filtering JUNG graphs.</p>
+<h3>Verbose, lengthy test-data builder code</h3>
+<p>The first approach to build-up graphs was code, which was quite procedural. Well, it fulfilled its task to create test data, but it was quite lengthy verbose and cleary showed symptoms of evil duplication. As an example have a look at following test case:</p>
+<div class="codesnip-container" >
+<div class="codesnip">&#8230;<br />
+<span class="kw2">class</span> GraphComparerTest <span class="kw2">extends</span> TestCase<span class="br0">&#123;</span><br />
+&nbsp;&#8230;<br />
+&nbsp; <span class="kw2">public</span> <span class="kw4">void</span> testGraphsAreNotEqual<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; Graph graph1 = <span class="kw2">new</span> DirectedSparseGraph<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Vertex vertexA = <span class="kw2">new</span> DirectedSparseVertex<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph1.<span class="me1">addVertex</span><span class="br0">&#40;</span>vertexA<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; JungHelper.<span class="me1">getStringLabeller</span><span class="br0">&#40;</span>graph1<span class="br0">&#41;</span>.<span class="me1">setLabel</span><span class="br0">&#40;</span>vertexA,<span class="st0">&#8220;A&#8221;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Vertex vertexB = <span class="kw2">new</span> DirectedSparseVertex<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph1.<span class="me1">addVertex</span><span class="br0">&#40;</span>vertexB<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; JungHelper.<span class="me1">getStringLabeller</span><span class="br0">&#40;</span>graph1<span class="br0">&#41;</span>.<span class="me1">setLabel</span><span class="br0">&#40;</span>vertexB,<span class="st0">&#8220;B&#8221;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Edge edgeAB = <span class="kw2">new</span> DirectedSparseEdge<span class="br0">&#40;</span>vertexA,vertexB<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph1.<span class="me1">addEdge</span><span class="br0">&#40;</span>edgeAB<span class="br0">&#41;</span>;&nbsp; &nbsp; <br />
+&nbsp; &nbsp; Vertex vertexC = <span class="kw2">new</span> DirectedSparseVertex<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph1.<span class="me1">addVertex</span><span class="br0">&#40;</span>vertexC<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; JungHelper.<span class="me1">getStringLabeller</span><span class="br0">&#40;</span>graph1<span class="br0">&#41;</span>.<span class="me1">setLabel</span><span class="br0">&#40;</span>vertexC,<span class="st0">&#8220;C&#8221;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Edge edgeBC = <span class="kw2">new</span> DirectedSparseEdge<span class="br0">&#40;</span>vertexB,vertexC<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph1.<span class="me1">addEdge</span><span class="br0">&#40;</span>edgeBc<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="co1">//&#8230;</span><br />
+&nbsp; &nbsp; <span class="co1">// the same above procedure for graph2, which is second test data for </span><br />
+&nbsp; &nbsp; <span class="co1">// equals test</span><br />
+&nbsp; &nbsp; <span class="co1">//&#8230;</span><br />
+&nbsp; &nbsp; assertFalse<span class="br0">&#40;</span>graphComparer.<span class="me1">graphsAreEqual</span><span class="br0">&#40;</span>graph1,graph2<span class="br0">&#41;</span><span class="br0">&#41;</span>;&nbsp; &nbsp; &nbsp; <br />
+&nbsp;<span class="br0">&#125;</span> <br />
+&nbsp;&#8230;<br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>With above code unit tests are just a torture to read. It is far to long and by looking at it you don&#8217;t really know where you are (setting up, calling class under test or verification) or what you do (relation of vertices and edges is unclear). Summing up you end up with about 30 lines of code, which is just repeatedly building up graphs as test data. To summarize: This is just ugly code!</p>
+<h3>Refactoring to fluent interface</h3>
+<p>To make this client code better, you really need to go to refactor to a better api. Before doing this you need to know the goal, so cry out loudly: &#8220;I want my client code to do&#8221;:</p>
+<ol>
+<li>Adding vertices to graph</li>
+<li>Connecting vertices to graph with directed edges</li>
+<li>Adding labels to vertices</li>
+</ol>
+<p>These three points had to be encapsulated into a little graph builder api. This api should make it possible to fulfill these tasks at best in a one or two liner. So going ahead the the same test as in previous example turned out quite differently:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">class</span> GraphComparerTest <span class="kw2">extends</span> TestCase<span class="br0">&#123;</span><br />
+&nbsp;&#8230;<br />
+&nbsp; <span class="co1">//intialised in setUp()</span><br />
+&nbsp; TestGraphBuilder builder;<br />
+&nbsp;<br />
+&nbsp;<span class="kw2">public</span> <span class="kw4">void</span> testGraphsAreNotEqual<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; Graph graph1 = builder.<span class="me1">addFirstEdge</span><span class="br0">&#40;</span><span class="st0">&#8220;A&#8221;</span>,<span class="st0">&#8220;B&#8221;</span><span class="br0">&#41;</span>.<span class="me1">and</span><span class="br0">&#40;</span><span class="st0">&#8220;B&#8221;</span>,<span class="st0">&#8220;C&#8221;</span><span class="br0">&#41;</span>.<span class="me1">getBuiltGraph</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Graph graph2 = builder.<span class="me1">addFirstEdge</span><span class="br0">&#40;</span><span class="st0">&#8220;A&#8221;</span>,<span class="st0">&#8220;B&#8221;</span><span class="br0">&#41;</span>.<span class="me1">and</span><span class="br0">&#40;</span><span class="st0">&#8220;A&#8221;</span>,<span class="st0">&#8220;C&#8221;</span><span class="br0">&#41;</span>.<span class="me1">getBuiltGraph</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;&nbsp; &nbsp; <br />
+&nbsp; &nbsp; assertFalse<span class="br0">&#40;</span>graphComparer.<span class="me1">graphsAreEqual</span><span class="br0">&#40;</span>graph1,graph2<span class="br0">&#41;</span><span class="br0">&#41;</span>;&nbsp; &nbsp; &nbsp; <br />
+&nbsp;<span class="br0">&#125;</span> <br />
+&nbsp;&#8230;<br />
+<span class="br0">&#125;</span></div>
+</div>
+<p>Looking at this, reading the test case is a real breeze, where builder code shrinked to two lines!! With this you instantly see, that two graphs are created both with two edges, where the second edge is different (connecting &#8220;B&#8221; with &#8220;C&#8221; in contrast to &#8220;A&#8221; with &#8220;C&#8221;). Now the assertion makes quickly sense, too. The set of edges of both graphs is different so the equals() answer must obviously be false. Looking at a test case and answering such test case questions can be so much fun and further more a big motivation to write more test cases.</p>
+<h3>Implementation of fluent interface</h3>
+<p>The client code got shorter, but how does the implementation of this api look like. Here it is:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="kw2">public</span> <span class="kw2">class</span> TestGraphBuilder <span class="br0">&#123;</span></p>
+<p>&nbsp; Graph graph;<br />
+&nbsp; <span class="co1">//so vertices can be found again and decided whether to create new or just to add edge</span><br />
+&nbsp; Map&lt;String, Vertex&gt; mappings;</p>
+<p>&nbsp; <span class="co1">///////////////////////////////</span><br />
+&nbsp; <span class="co1">//START: CLIENT API&nbsp; </span><br />
+&nbsp; <span class="kw2">public</span> TestGraphBuilder<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; resetInternalGraphBuilderState<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; <span class="br0">&#125;</span> <br />
+&nbsp; &nbsp; <br />
+&nbsp; <span class="co1">//adding edge with initialize (internal edges, vertices get deleted)</span><br />
+&nbsp; <span class="kw2">public</span> TestGraphBuilder addFirstEdge<span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> vertexName1, <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> vertexName2<span class="br0">&#41;</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; resetInternalGraphBuilderState<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="kw2">return</span> and<span class="br0">&#40;</span>vertexName1, vertexName2<span class="br0">&#41;</span>;<br />
+&nbsp; <span class="br0">&#125;</span></p>
+<p>&nbsp; <span class="kw2">public</span> TestGraphBuilder and<span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> vertexName1, <a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> vertexName2<span class="br0">&#41;</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?q=allinurl%3AException+java.sun.com&#038;bntl=1"><span class="kw3">Exception</span></a> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; addVertexWithLabelToGraph<span class="br0">&#40;</span>vertexName1<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; addVertexWithLabelToGraph<span class="br0">&#40;</span>vertexName2<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; Edge edge = <span class="kw2">new</span> DirectedSparseEdge<span class="br0">&#40;</span>mappings.<span class="me1">get</span><span class="br0">&#40;</span>vertexName1<span class="br0">&#41;</span>, mappings.<span class="me1">get</span><span class="br0">&#40;</span>vertexName2<span class="br0">&#41;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; graph.<span class="me1">addEdge</span><span class="br0">&#40;</span>edge<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="kw2">return</span> <span class="kw2">this</span>;<br />
+&nbsp; <span class="br0">&#125;</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; <span class="kw2">public</span> Graph getBuiltGraph<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw2">return</span> graph;<br />
+&nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="co1">//END: CLIENT API</span><br />
+&nbsp; <span class="co1">///////////////////////////////</span><br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; <br />
+&nbsp; <span class="kw2">private</span> <span class="kw4">void</span> resetInternalGraphBuilderState<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; graph = <span class="kw2">new</span> DirectedSparseGraph<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; mappings = <span class="kw2">new</span> HashMap&lt;String, Vertex&gt;<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; <span class="br0">&#125;</span></p>
+<p>
+&nbsp; <span class="kw2">private</span> <span class="kw4">void</span> addVertexWithLabelToGraph<span class="br0">&#40;</span><a href="http://www.google.com/search?q=allinurl%3AString+java.sun.com&#038;bntl=1"><span class="kw3">String</span></a> vertexName1<span class="br0">&#41;</span> <span class="kw2">throws</span> StringLabeller.<span class="me1">UniqueLabelException</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>!mappings.<span class="me1">containsKey</span><span class="br0">&#40;</span>vertexName1<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br />
+&nbsp; &nbsp; &nbsp; Vertex vertex1 = <span class="kw2">new</span> DirectedSparseVertex<span class="br0">&#40;</span><span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; graph.<span class="me1">addVertex</span><span class="br0">&#40;</span>vertex1<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; JungHelper.<span class="me1">getStringLabeller</span><span class="br0">&#40;</span>graph<span class="br0">&#41;</span>.<span class="me1">setLabel</span><span class="br0">&#40;</span>vertex1, vertexName1<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; &nbsp; mappings.<span class="me1">put</span><span class="br0">&#40;</span>vertexName1, vertex1<span class="br0">&#41;</span>;<br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><br />
+&nbsp; <span class="br0">&#125;</span></p>
+<p><span class="br0">&#125;</span></div>
+</div>
+<p>From client side of view the only interesting methods are the public ones. Internally they initialize/reset things (constructor and addFirstEdge(..)) and further more are adding edges (addFirstEdge(..) and and(..). Finally after finishing buidling you want to get the final graph (getBuiltGraph() The client should be reluctant to create the objects of edges and vertices, it is just interested in the label names, so it is enough to pass them and letting the builder do the boring work. Further more a new building sequence should be initialized without creating a new object each time, so this is implicitly done when calling addFirstEdge(&#8230;).<br />
+Another interesting bit of this builder (as fluent interface) both methods and(..) + addFirstEdge(..) are returning the builder-object themselves, so building up multiple edges can be chained together like: addFirstEdge(&#8220;A&#8221;,&#8221;B&#8221;).and(&#8220;B&#8221;,&#8221;C&#8221;).</p>
+<h3>Summary</h3>
+<p>The fluent interface pattern is a simple yet powerful way to create an api, which offers client code only the neccessary methods and parameters and encapsulates the logic behind transparently. The example I showed made test-data builder code much more concise and better maintainable. If you&#8217;re interested more, how this litte builder api made other test cases better readable just have a look at respective test classes of open-source project <a href="http://www.jfrog.org/sites/dep-analyzer/latest/" target="_blank">dependency-analyzer</a>.<br />
+Another lesson to learn is again: Ugly code (as my first test case was indeed) is not carved in stone, merely you are asked to improve it with the powerful refactoring concept.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../04/17/bashing-the-refactoring-fears-practice-refactorings/index.html">Bashing the refactoring criticism</a> </div>
+	<div class="older"> <a href="../../18/ensure-test-suite-quality-and-beware-of-the-green-bar/index.html">Tests: Why code coverage is not enough</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F03%252F31%252Ffluent-interfaces-for-code-comprehensability%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

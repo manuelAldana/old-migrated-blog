@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x) Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Improving weak automatic test-suites incrementally' href='../../13/improving-weak-automatic-test-suites-incrementally/index.html' />
+<link rel='next' title='Avoiding xUnit test-errors (false positives, false negatives)' href='../../../06/16/xunit-test-errors-false-positives-false-negative/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../../2011/09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../../2011/07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="../../../../2011/05/15/embracing-failure-softwareapproaches/index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../../2011/03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../06/16/xunit-test-errors-false-positives-false-negative/index.html">Avoiding xUnit test-errors (false positives, false negatives)</a> </div>
+	<div class="older"> <a href="../../13/improving-weak-automatic-test-suites-incrementally/index.html">Improving weak automatic test-suites incrementally</a> &gt; </div>
+</div>
+					
+			<h4>May 21st, 2008<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>Considerations Eclipse (3.3.2) vs. IntelliJ IDEA (7.x)</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2008/05/21/eclipse-vs-intellij/&amp;title=Considerations+Eclipse+%283.3.2%29+vs.+IntelliJ+IDEA+%287.x%29&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>To master frameworks (Spring, Hibernate, EJB, Struts etc.) and language-systems (Java, PHP, Groovy, C++) you need your &#8220;big&#8221; handy IDE tool which is used for many reasons: Inclusions of third party libs (dependency-management), trigger automatic compiles (if neccessary), automatic/safe refactorings, browsing code, debug, execute tests etc. (the list goes on forever). For that central IDE-tool you should try to use the best one on the market. A few months ago I was interested how my implementation and design work would &#8220;feel&#8221; with a different IDE, so as a long-time Eclipse user I gave IntelliJ a chance. Following article gives an overview of my impressions on trying out a different IDE. My reference IDEs had been <a href="http://www.eclipse.org/ ">Eclipse 3.3.2</a> and <a href="http://www.jetbrains.com/idea/ ">IntelliJ 7.0.3</a>.</p>
+<h3>Download/Installation IntelliJ</h3>
+<p>Though IntelliJ costs a bit you get a free evaluation license for a month. Download and installation is straightforward and easy. First noticed difference is the general workspace layout. In IntelliJ the eclipse-workspace is a project and a eclipse-project is a module. Further more IntelliJ configures things globally in your home directory and most settings are read from there no matter where you got your IntelliJ working directory with all your projects/modules. This is quite different to Eclipse where all workspaces are configured inside themselves in .metadata/ folder, and opening this workspace is completely uncoupled from any user-settings outside the workspace. It&#8217;s different, but is difficult to say which strategy to prefer, both got pros and cons, so I want to dig deeper what advantages exist inside IDE.</p>
+<h3>IntelliJ taking ahead</h3>
+<p>Following things I would emphasize when it comes to advantages of IntelliJ:</p>
+<h4>Clear IDE Layout</h4>
+<p>Generally the IntelliJ IDE layout and the look-and-feel is more tidied up and clear. You don&#8217;t have the millions of perspectives and views as in Eclipse. There is only one perspective with the main editor at center. On left, right and bottom you can find the so called &#8216;Tool-Windows&#8217; (can be compared to Eclipse views). Also you can focus Tool-Windows better and discard them again: Alt+F1 jumps to respective window, pressing Alt+F1 closes it again. This way you tend to only have the Tool-Windows open, which you currently use. In eclipse I often end up with many opened up views, which I am not interested in. Further more you can change opened files in tab-bar very quickly by hitting Strg-Right/Left. When being in project view it is possible that a file gets opened in editor as soon as you focuse a file (in Eclipse this is only possible if file is already opened in a tab). To summarize I like the general IDE navigation much better in comparison to Eclipse.</p>
+<h4>Change History</h4>
+<p>This one is a real delight! In Eclipse I always found the Local-History, where you can track changes very clumsy and difficult to follow. In IntelliJ this is a big feature, you can follow your changes very well and can label them locally, so reverting is just a wink of an eye. This is very handy if you got a bigger refactoring or feature task, which includes certain steps. In Eclipse I tend to check-in many little changes to version control in a short (minutes-scale) time though I would like to commit only complete tasks (which other team members are interested in only). This is possible with IntelliJ: with the great change history feature I am still commiting in short iterations but at the same time only complete things. Last but not least the diff-view is much better as in Eclipse.</p>
+<h4>Dependency Matrix/General analyzations</h4>
+<p>IntelliJ 7.x version introduced the dependency matrix, where you can analyze dependencies between packages and thus can identify coupling problems of subsystems. Generally the analyzations of your project is better as in Eclipse. With Alt+F7 you can quickly see all incoming dependencies. The analyzation-syntax-highlighting is very helpful to concentrate on the essential code bits, too. For instance when pressing Strg+Shift+F7 over a variable, read (blue-color) and write (pink color) access are highligthed. This can come very hand when refactoring large methods. Eclipse got this grey highlighter when you got your caret over a text-bit, but it vanishes as soon as your cursor moved somewhere else and you can highlight only one thing at one time.</p>
+<h4>Intentions</h4>
+<p>Intentions are a way to save you work from doing things manually though a certain context should offer you this task done automatically. Example: When placing the caret over an interface just press Alt+Enter and you are offered to create an implementing class with method-skeletons. When just typing a method call which does not exist, you get offered to create a method-body with respective signature. Since Eclipse 3.3.2 this feature is partly also introduced but not in such a good way as with IntelliJ.</p>
+<h4>Auto-Save of changes</h4>
+<p>In Eclipse I am constantly pressing Strg+S to save my changes. This can be very annoying, because I do a save very often straight after editing before executing a test case or starting the application. IntelliJ takes off this burden and does an auto-save behind the scenes. I really wonder why Eclipse isn&#8217;t doing the same, maybe it could be a performance issue, because recompile is done after each save. IntelliJ seems to handle this auto-compile very good, if errors occur you get to know the compile problem instantly.</p>
+<h4>Plugin installation</h4>
+<p>Though standard IntelliJ comes with enough functionality, for some special things you still need to get some plugins (e.g. Jetbrains groovy/grails plugin). Never the less I found the search and installation much more straightforward as with Eclipse where you really can get headaches especially if there are some transitive plugin dependencies. Further more you are informed if an update got released.</p>
+<h4>Little things, big impact&#8230;</h4>
+<p>Generally little things make a big difference. In IntelliJ there are so many that I cannot list all of them, but here a some which quickly come into my mind:</p>
+<ul>
+<li>When searching for a type (Ctrl+N) you can add a shortcut name of a type: Entering VQTB would quickly pop up (VeryQuickTypeBrowsing), this saves a lot of typing. You can further more quickly decide whether to include only own project types or dependency projects/third-party libs, too. This way you don&#8217;t get overhelmed by the millions of classpath-artifacts.</li>
+<li>Unit-testing: If you are inside a JUnit test-class, pressing Strg+Shift+F10 outside a test method (or F9 for debug mode) executes all test-cases, if you are inside a test-method with your caret and press same shortcut only this single test-case is run. This is very handy because I often only work with one test-case if I debug or add a feature. For regression then I like to run the whole test-class or the whole package for subsystem-tests, so I step outside the test-method for class-run or go to package in project explorer to run a package-test. Shift+F10 opens a Run-dialog  with last executions, so you can choose between last run test sets very quickly.</li>
+<li>Actions on commit: In Subversion commit-dialog you can choose &#8216;Organize imports&#8217;, &#8216;Format code&#8217; or &#8216;Run inspections&#8217; so you can do some actions on the code you would normally forget often (at least I do so). This way you get a better state in version control, where all imports and the code formatting is alright. Annoying diffs where you only see changes in different formatted code or unused imports should be vanished then.</li>
+<li>Tip of the day: If actions need some time (e.g. building project) you see a little dialog, where some nice shortcuts or general IDE tips are presented. This way without explicitly reading the online help, you learn a lot while just working normally with the IDE day by day.</li>
+</ul>
+<h3>Eclipse taking ahead</h3>
+<p>Of course there are some advantages of Eclipse, when compared to IntelliJ:</p>
+<h4>OSGi support</h4>
+<p>Eclipse migrated their former proprietary plugin architecture to standard OSGi platform to master the complexity of all these plugin dependencies and general plugin startup issues, which works great. Through the direct support of OSGi writing applications for the OSGi platform goes very well. OSGi Plugin for IntelliJ exists, but is far not as good as Eclipse with its equinox runtime and PDE environment.</p>
+<h4>Mylyn</h4>
+<p>I think Mylyn is a big plus for Eclipse, because it takes team collaboration with tracking-tools as a first child. With Mylyn you integrate common ticket-tools and can connect tickets with certain artifacts (packages, classes, other files etc.). There are many of mature Mylyn connectors (Bugzilla, trac, JIRA), which work very well. For IntelliJ you can choose from some ticket-tool integration plugins, but I did not perceive them as good as the Mylyn solution.</p>
+<h4>Eclipse Modeling Project</h4>
+<p>The <a href="http://www.eclipse.org/modeling/" target="_blank">Eclipse Modeling Project</a> for doing MDSD looks very promising (though I must admit I only read articles about it, but haven&#8217;t tried it out yet). After searching on the web I could not find an equally mature MDSD platform or plugin (like the one from <a href="http://www.openarchitectureware.org/" target="_blank">oaw</a>) for IntelliJ.</p>
+<h3>IDE synchronization</h3>
+<p>IntelliJ offers a simple eclipse project files export (.project, .classpath meta-data), so checked in Intellij modules can be used by Eclipse. Still I must admit that I did not elaborate enough, whether the IDE bridge/export between Eclipse and IntelliJ could generally work in a bigger team. Especially the synchronization of plugin metadata (like maven2, AspectJ) should not work without problems.</p>
+<h3>Summary</h3>
+<p>There is no size-fits-all IDE. On top of it is often difficult to say which IDE is better, because the quality and functionality also depends on the released plugins (e.g. maven2 eclipse plugin is better with Eclipse, groovy/grails plugin is better with IntelliJ). The automatic and safe refactorings, which I heard was always a big plus of IntelliJ are in my perception equally mature to the ones of Eclipse. In my view IntelliJ has other very nice points. Apart from the ones I mentioned above, there are many other little things which added together make the real IDE difference, where you are always close to the keyboard got control over so many things. In my view in many circumstances (when not developing for OSGi platform, RCP-apps or because of other plugin-show stoppers) IntelliJ is definetely worth the money and can increase productivity if your are willing to invest some time to switch. The pricing is moderate and as an Open Source developer it is for free.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a> &middot;  <a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts in Technologies/Tools" rel="category tag">Technologies/Tools</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../06/16/xunit-test-errors-false-positives-false-negative/index.html">Avoiding xUnit test-errors (false positives, false negatives)</a> </div>
+	<div class="older"> <a href="../../13/improving-weak-automatic-test-suites-incrementally/index.html">Improving weak automatic test-suites incrementally</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2008%252F05%252F21%252Feclipse-vs-intellij%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>

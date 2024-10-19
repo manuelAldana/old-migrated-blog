@@ -1,0 +1,378 @@
+/*
+Theme Name:		Aldana Cutline
+Theme URI:		http://www.aldana-online.de
+Description:	adjusted template for aldana from cutline them 
+Version:		1.1
+Author:			Chris Pearson/Aldana
+Author URI:		http://www.aldana-online.de
+*/
+
+body { background: #fff; color: #333; font-family: arial, verdana, sans-serif; text-align: center; }
+
+* { padding: 0; margin: 0; }
+
+
+
+/*---:[ global elements ]:---*/
+
+a { color: #397AD4;  text-decoration:none}
+
+a:visited { color: #303A99; text-decoration:none}
+
+a:hover { color: #df0000}
+	
+a img { border: none; }
+	
+blockquote { font-style: italic; font-family: Georgia, "Times New Roman", Times, serif; color: #555; margin: 0 30px 1.5em 30px; padding: 0 0 0 10px; border-left: 1px solid #aaa; }
+
+abbr, acronym { border-bottom: 1px dotted #aaa; text-transform: uppercase; cursor: help; }
+	
+code { color: #090; font-family: Courier, monospace; font-size: 11px; text-align:center;}
+
+pre { overflow: auto; font-size: 11px; clear: both; }
+
+p.center { text-align: center !important; }
+
+p.bottom { margin: 0 !important; }
+
+p.unstyled { font-size: 12px; }
+
+
+.green { color: #090; }
+
+.red { color: #f00; }
+
+.orange { color: #f40; }
+
+.purple { color: #909; }
+
+
+
+/*---:[ headlines ]:---*/
+
+h1, h2, h3 { font-weight: bold; font-family: calibri,Helvetica, Arial, sans-serif; color: #000; }
+
+h1 { font-size: 3.6em; letter-spacing: -0.03em; }
+
+	#masthead h1 { padding: 0.4em 0 0.2em 0; border-top: 1px solid #ccc; text-align: center; clear: both; }
+	
+	h1 a, h1 a:visited, h1 a:hover { color: #000; text-decoration: none; }
+	
+h2 { font-size: 25px;}
+
+	h2 a { color: #397AD4; text-decoration: none; }
+	
+		h2 a:visited { color: #303A99; text-decoration: none; }
+	
+		h2 a:hover { color: #df0000; text-decoration: none; }
+		
+		
+	
+	.posts h2 { padding: 0.25em 0 0.2em 0;line-height: 1.2em; font-size:22px;color: #000000;border-bottom:1px solid #AAAAAA;}
+	
+	.posts h4 {font-size:12px;text-decoration:none;margin-bottom:5px;} 
+	.pages h2 { padding: 0.25em 0 0.2em 0;line-height: 1.2em; font-size:22px;color: #000000;border-bottom:1px solid #AAAAAA;}
+	
+
+	
+	h2.archive_head { padding: 0.25em 0 0.2em 0;line-height: 1.2em; font-size:14px;color: #B21616;margin-bottom::20px;text-transform:uppercase;}	
+
+	
+h3 { 
+	font-size: 19px;
+}
+
+h3.archive_body{
+	margin-top:2px; 
+	font-weight:bolder;
+	text-transform: none; 
+	text-decoration:none; 
+	border-bottom: 1px 
+	solid #aaa; 
+}
+
+h4.archive_date{
+	font-size:12px;
+	background:none;
+}
+
+#masthead h3 { margin: 0 0 0.75em 0; font-weight: normal; font-size: 1.8em; text-transform: none; color: #888; text-align: center; }
+
+.entry a.more-link {font-size:11px;}
+
+	.entry h3 { margin: 1.5em 0 0.5em 0; }
+	
+	.entry h3.top { margin: 1.5em 0 0.5em 0 !important; }
+	
+	h3.comments_headers { font-size: 12px; }
+
+h4 {text-decoration:underline;}
+
+	h4 a, h4 a:visited { color: #888; text-decoration: none; }
+	
+		h4 a:hover { color: #888; text-decoration: underline; }
+	
+	.posts h4 { margin: 0 0 0 0; padding: 0 0 0 0; }
+
+
+
+
+
+/*---:[ core layout elements ]:---*/
+
+
+#container { width: 920px; margin: 10px 0 0 10px; }
+					
+	#content_box { width: 920px; text-align: left; float: left; clear: both; }	
+
+		#content { width: 700px; padding: 0 0 0 0; float: left; }
+		
+		#sidebar { width: 200px; padding: 0 0 0 15px; float: right; }
+	
+		#l_sidebar { width: 200px; padding: 0 10px 0 10px; float: left; }
+		
+	#footer { width: 900px; padding: 4px 0 0 0; border-top: 2px solid #ccc; float: left; clear: both; }
+		
+
+
+
+/*---:[ header styles ]:---*/
+
+#masthead { width: 900px; /*height: 100px; background: url('images/logo.gif') no-repeat;*/ /* uncomment the height and background declarations here if you intend to use a graphic in the header instead of the h1 */ }
+
+	/* #masthead a { display: block; width: 970px; height: 100px; } */ /* uncomment this line if you use a graphic in the header - make sure the height of your header graphic is equal to the height declared in this line of code! */
+
+ul#nav { list-style: none; width: 920px; padding: 5px 10px;  float: left; clear: both; }
+
+	ul#nav li { padding: 0.85em 40px 0.7em 0; font: bold 12px Helvetica, Arial, sans-serif; text-transform: uppercase; float: left; }
+	
+		ul#nav li a, ul#nav li a:visited { color: #000; text-decoration: none; }
+	
+		ul#nav li a:hover { color: #000;}
+		
+		ul#nav li a.current, ul#nav li a.current:visited, ul#nav li a.current:hover { color: #090; }
+		
+	ul#nav li.rss { padding: 0.2em 0 0.2em 0; float: right; }
+			
+		ul#nav li.rss a { padding: 0 18px 0 0; background: url('images/icon_rss.gif') 100% 50% no-repeat; }
+			
+#header_text_big {font-family: Helvetica,Arial; font-weight:bold; font-size:18pt; margin-left: 5px;text-align:left; color:#303A99}
+#header_text_normal {font-family: Arial; font-style:normal; font-size:16pt; margin-left: 5px;text-align:left; color:#303A99}
+			
+#header_img { position: relative; border-bottom: 1px solid #000; float: left; clear: both; }
+
+	#header_img img { display: block; } /* this is really just an IE 6 and 7 hack in disguise */
+
+
+
+
+/*---:[ content styles ]:---*/
+
+.entry { font-size:15px; line-height: 1.5em;text-align:justify;font-family:calibri,verdana,'trebuchet-ms',sans-serif;margin-top:5px;}
+		
+	.entry blockquote { font-size: 1.0em; }
+	
+		.entry blockquote.right { width: 200px; font-style: normal !important; font-size: 1.3em !important; margin: 0.3em 0 0.3em 15px !important; padding: 0.3em 0 !important; border: 3px double #aaa; border-width: 3px 0; text-align: center; float: right; }
+		
+		.entry blockquote.left { width: 200px; font-style: normal !important; font-size: 1.3em !important; margin: 0.3em 15px 0.3em 0 !important; padding: 0.3em 0 !important; border: 3px double #aaa; border-width: 3px 0; text-align: center; float: left; }
+	
+			.entry blockquote.right p, .entry blockquote.left p { margin: 0 !important; line-height: 1.4em !important; }
+	
+	.entry p { margin: 0 0 0.5em 0; }	
+	
+
+	.entry ul, .entry ol { margin: 0 0 1.5em 40px; }
+	
+	.entry ul { list-style-type: square; }
+	
+		.entry li { margin: 0 0 0.1em 0; }
+		
+			.entry ul li ul, .entry ul li ol, .entry ol li ul, .entry ol li ol { margin: 0.5em 0 0.5em 30px; }
+	
+	.entry dl { margin: 0 0 1.5em 0; }
+			
+		.entry dt { font-weight: bold; margin: 0 0 0.5em 0; }
+		
+		.entry dd { margin: 0 0 1.5em 20px; }
+		
+	.entry .ad { margin: 0 0 0.5em 15px; float: right; }
+	
+	.entry .ad_left { margin: 0 15px 0.5em 0; float: left; }
+
+	.entry img { }
+
+		.entry img.left { padding: 3px; margin: 0.5em 15px 0.5em 0; border: 3px double #bbb; float: left; clear: left; }
+		
+		.entry img.right { padding: 3px; margin: 0.5em 0 0.5em 15px; border: 3px double #bbb; float: right; clear: right; }
+		
+		.entry img.center { display: block; padding: 3px; margin: 0 auto 1.5em auto; border: 3px double #bbb; float: none; clear: both; }
+	
+		.entry img.off { padding: 0 !important; border: none !important; }
+		
+		.entry img.stack { clear: none !important; }
+
+.tagged { margin-bottom: 10px; font-size: 12px; line-height: 1.6em; color: #888; clear: both; }
+
+	.tagged a, .tagged a:visited { padding: 0.25em; font-weight: bold; color: #333; text-decoration: none; }
+	
+		.tagged a:hover { color: #df0000; text-decoration: none; }
+	
+	.add_comment { display: block; padding: 0 0 0 20px; font-weight: bold; float: right; }
+
+.navigation { width: 200px; font-size: 1.4em; float: left; }
+	
+	.previous { font-size: 13px; padding: 0 20px 0 0; float: left; }
+	
+	.next { font-size: 13px; float: right; }
+
+.clear { width: 500px; height: 1px; margin: 0 0 2.5em 0; clear: both; }
+
+.flat { margin: 0 0 2.0em 0 !important; }
+
+.whitespace { margin: 0 0 3.5em 0 !important; }
+
+.widget{margin-bottom:10px;}
+
+/*---:[ sidebar styles ]:---*/
+
+/*ul.sidebar_list { list-style: none; }*/
+
+ul.sidebar_list li.widget, ul.sidebar_list li.linkcat { 
+	font-size: 13px;
+	text-decoration: none; float: left;
+	list-style: none; 
+}
+
+li.widget h2, li.linkcat h2 { 
+	font-weight: bold; 
+	font-size: 14px; 
+	text-transform: uppercase;
+	letter-spacing: normal; 
+	padding: 0.4em 2px; 
+}
+
+li.widget p { 
+	margin: 0 0 1.5em 0; 
+	padding: 0 10px; 
+}
+		
+li.widget ul, li.linkcat ul { 
+	list-style: square; 
+	margin: 0.25em 0 0.5em 20px; 
+}
+		
+li.widget ol, li.linkcat ol { 
+	margin: 0 0 0.5em 20px; 
+}
+		
+			li.widget li, li.linkcat li { margin: 0 0 0.5em 0; }
+			
+				li.widget li a, li.widget li a:visited, li.linkcat li a, li.linkcat li a:visited { text-decoration: none; }				
+					
+			
+				li.widget li .recent_date { padding: 0 0 0 8px; font-weight: bold; color: #888; }
+		
+		li.widget ul.flickr_stream { list-style: none; margin: 0; padding: 0 10px; }
+		
+			li.widget ul.flickr_stream li { margin: 0; padding: 0 5px 5px 0; display: inline; }
+			
+				li.widget ul.flickr_stream li a img { padding: 3px; }
+				
+				li.widget ul.flickr_stream li a:hover img { background: #ff2a96; }
+		
+			/*---< FlickrRSS styles for the widget only >---*/
+		
+			li.widget_flickrrss { }
+			
+				li.widget_flickrrss a img { margin: 0 5px 5px 0; padding: 3px; }
+				
+				li.widget_flickrrss a:hover img { background: #ff2a96; }
+				
+		/*---< Calendar widget styles >---*/
+		
+		#calendar_wrap { font-size: 13px; }
+				
+
+
+/*---:[ footer styles ]:---*/
+
+#footer p { margin: 0 0 0.5em 0; font-size: 12px; color: #888; text-align: right; }
+
+	#footer a, #footer a:visited { color: #888; text-decoration: none; }
+		
+		#footer a:hover { color: #888; text-decoration: underline; }
+
+.newer_older { height:20px;font-size: 13px;margin-bottom:15px;font-weight:bold;border-bottom: 1px solid #bbb; }
+.older {text-align:right;float:right;}
+.newer {text-align:left;float:left;}
+
+.addthis_container{margin-top:20px;float:right}
+
+/*---:[ comment styles ]:---*/
+
+#comments { width: 700px; float: left; clear: both;margin-top:10px; }
+
+	ul#comment_list { list-style: none; margin: 0 0 4.0em 0; border-top: 1px solid #bbb; float: left; }
+		
+		ul#comment_list li.comment { width: 650px; padding: 1.2em 0 0 0; border-bottom: 1px dotted #bbb; float: left; }
+			
+		ul#comment_list li.trackback { width: 470px; padding: 1.2em 15px 0 15px; background: url('images/trackback_bg.gif'); }
+				
+			.comment_meta { margin: 0 0 1.2em 0; }
+			
+				.comment_num { padding: 0 15px 0 20px; font-weight: bold; font-size: 1.4em; float: right; }
+				
+				.trackback .comment_num { padding: 0 0 0 20px; }
+				
+					.comment_num a, .comment_num a:visited { color: #888; text-decoration: none; font-size:12px}
+					
+						.comment_num a:hover { color: #df0000; text-decoration: none; }
+				
+				.comment_meta strong { font-size: 14px; }
+					
+				.comment_time { font: normal 13px Verdana, Helvetica, Arial, sans-serif; color: #888; }
+		
+			.comment .entry { padding: 0 15px; }
+			
+				.comment .entry p { margin: 0 0 1.0em 0; }
+			
+
+
+/*---:[ comment form styles ]:---*/
+
+#comment_form { width: 500px; padding: 1.0em 0 0 0; float: left; }
+
+	#comment_form p { padding: 0.6em 0; }
+	
+		#comment_form label { padding: 0 0 0 10px; font-size: 13px;font-weight:bold }
+
+		#comment_form .text_input { width: 191px; padding: 3px; color: #444; font-size:14px; border-top: 2px solid #999; border-left: 2px solid #999; border-right: 1px solid #fff; border-bottom: 1px solid #fff; }
+		
+		#comment_form .text_area { font-size:12px;width: 321px !important; }
+	
+			#comment_form .text_input:focus { border-top: 2px solid #666; border-left: 2px solid #666; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+	
+		#comment_form .form_submit { padding: 0.4em 4px; background: url('images/submit_bg.gif'); border-top-color: #ccc; border-left-color: #ccc; font-size: 12px; font-weight:bolder;cursor: pointer; }
+		
+		#comment_form p.subscribe-to-comments { font-size: 1.4em; }
+		
+			#comment_form p.subscribe-to-comments label { font-size: 1.0em; }
+			
+
+
+/*---:[ search form styles ]:---*/
+
+#search_form { }
+
+	#search_form .search_input { width: 180px; padding: 3px; color: #000; font: normal 1.0em Georgia, "Times New Roman", Times, serif; border-top: 1px solid #999; border-left: 1px solid #999; border-right: 1px solid #f5f5f5; border-bottom: 1px solid #f5f5f5; margin-bottom: 5px;}
+	
+	li.widget .search_input { font-size: 1.1em !important; }
+	
+		#search_form .search_input:focus { border-top: 1px solid #666; border-left: 1px solid #666; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+
+.codesnip-container{
+        font-family: Verdana,Courier;
+        font-size: 13px;
+        line-height: 1.3em;
+}
+

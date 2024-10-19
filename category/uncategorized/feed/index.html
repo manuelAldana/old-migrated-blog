@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Manuel Aldana &#187; Uncategorized</title>
+	<atom:link href="http://www.aldana-online.de/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.aldana-online.de</link>
+	<description>Software Engineering: blog &#38; .lessons_learned</description>
+	<lastBuildDate>Wed, 30 May 2018 18:51:07 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Notes on DSVGO / GDPR regarding comment function</title>
+		<link>http://www.aldana-online.de/2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/</link>
+		<comments>http://www.aldana-online.de/2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/#comments</comments>
+		<pubDate>Wed, 30 May 2018 18:48:50 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=352</guid>
+		<description><![CDATA[Hi there, 
+my blog posts are quite old, still think / hope they might be helpful. Therefore I am right now not shutting down the blog. Still to be DSVGO compliant I removed all comments and disabled comment function. Therefore unfortunately good discussion threads are vanished now, a big sorry to all commenters about that! [...]]]></description>
+			<content:encoded><![CDATA[<p>Hi there, </p>
+<p>my blog posts are quite old, still think / hope they might be helpful. Therefore I am right now not shutting down the blog. Still to be DSVGO compliant I removed all comments and disabled comment function. Therefore unfortunately good discussion threads are vanished now, a big sorry to all commenters about that! But costs to be DSVGO compliant would have been just too high looking at my available spare time :(</p>
+<p>In case you want to get in touch with just contact me directly. </p>
+<p>In the long run I will very likely transfer the content to a blog-posts hoster.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The evil path of Mobile-Apps (vs. Webstandards)&#8230;</title>
+		<link>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/</link>
+		<comments>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/#comments</comments>
+		<pubDate>Thu, 26 Jan 2012 00:06:13 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Technologies/Tools]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=341</guid>
+		<description><![CDATA[The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?
+Step backwards from Web-Standards
+I think web-standards like HTML, JavaScript, [...]]]></description>
+			<content:encoded><![CDATA[<p>The so called Apps are the usual End-User applications running locally on Smartphones and Tablets (similar to Desktop applications). From usability point and hipness factor they offer great moments. But as a Software Developer I am extremely skeptical&#8230;  Well, what is wrong with all these Apps?</p>
+<h3>Step backwards from Web-Standards</h3>
+<p>I think web-standards like HTML, JavaScript, CSS are key technologies for the Internet. The Webapp-Provider can develop in a very agile way as the application is released on servers and ready to be accessed by Webbrowser. The User on the other hand doesn’t need to install anything, the only “application-gate” is the Webbrowser, simply try out a website, toss it away or revisit. No installation/removal necessary. The URL is your application-hook.<br />
+On the Mobile App side big step backwards: I now face the pain that every website has its own app which basically doubles content. I need to go through the annoying search/install/upgrade/removal path to try out things. Instead of keeping simple URL-Bookmarks for several websites the Desktop now is packed with tons of distracting App-Icons and alarming Upgrading Notifications.</p>
+<h3>High Implementation Effort</h3>
+<p>On top of your HTML/Javascript based Webapplication and optional HTTP API you need to add effort to more apps. Your whole application setup gets fragmented and increases maintenance and developing efforts to a big extent. Today 2 major platforms exist (Android, iOS) and it seems that Windows Mobile platform will follow. Yes, on the Webapplication side you indirectly also need to support multiple Browsers (Safara, FF, IE, Chrome etc.) but this effort is much less as maintaining desktop-lik Mobile Apps.</p>
+<h3>App-Store Drawbacks</h3>
+<p>Smartphone Apps are typically distributed through App-Stores (like Apple’s App-Store or Google’s Android Market). These App-Stores and their review process do have their pros: They act as a single entry point for end-users, which can search/browse and rate apps which is really comfortable. Also the review-process and policies can kind of enforce a style guide which can positively influence usabilty. Besides malicious apps are easier to filter and kick-out from App-Store. On top it seems that users tend to be more willing to pay for certain apps in contrast to pay for a website content, which is good for the App-Providers.</p>
+<p>Never the less there are a lot of disadvantages which makes Software Development for Mobile-Apps tough:</p>
+<h4>Missing/Intransparent Auto-Upgrade</h4>
+<p>It can happen that your current installed app is inconsistent to the latest released one (I see this through circle icon top-left of app or App-Store icon) and isn&#8217;t upgraded on the fly. This causes headaches both on user and App-Provider side. The user is annoyed because he/she need to actively upgrade App-versions all the time and at some point will simply not do it. The App-Provider has to invest a lot of developing and testing resources to make all the backend (like APIs) compatible to very old App-releases as there is no guarantee that very old Apps aren’t “out there” any longer. Down compatiblity and supporting multiple application versions is in my view one of the biggest cost drivers in Software Industry.</p>
+<h4>Inefficient Packaging</h4>
+<p>When upgrading an App the whole binary package needs to be downloaded. This is extremely inefficient as usually between releases only a smaller part of App changes (source-code diff). Especially in areas where bandwith isn’t good downloading a 5MB upgrade is a big pain. A more sophisticated packaging build tool which makes binary diffs possible would ease a lot and come hand in hand with an Auto-Upgrade feature. To me it is a mistery why none of current App-Stores have such a feature&#8230;</p>
+<h4>Release/Rollout delay</h4>
+<p>Due to the app-review process there is a delay between your internal approval of app and the final downloadable app inside App-Store. This usual takes a week but also can take longer (e.g. during peak times when many app-providers are offering new apps or versions at the same time). Thinking of being agile and releasing software often (see Continous Delivery) this is a major drawback. You have to invest much more effort on testing your app-package as major production issues could cause an app being unusable without possibilty to react quickly as major bug fix releases need to go through review process again. In such an error-risk environment changes are done much more defensively and you also will meet all the other disadvantages of NOT RELEASING OFTEN.  </p>
+<h4>Distribution dependency</h4>
+<p>App-Store owners (Apple, Google) have full control whether an app is available or not. Apple even has policies disallowing apps which are implementing similar functions as preinstalled Apple ones (Email-Client, Webbrowser). You are dependent on the good will on the reviewers. These hard restriction aren’t found for typical Desktop or webapplications. In Desktop case you simply directly a bundled application-package. As webapplication provider you simply rollout you app and let users find you by the “application”-gate the Webbrowser.</p>
+<h3>Future-Hope</h3>
+<p>My bet and hope (esp. as a Software Developer) is the HTML 5 standard + Responsive-Web-Design movement. It keeps the highly flexible Webapplication oriented approach and offers a single point for both Desktop Webbrowsers and Mobile devices (frontend is “adapting” to end-device). My gut-feeling is undermined as big web-player Google also seems to go this way, e.g. there are hardly any dedicated Google Mobile Apps rather they try to tackle the Mobile Usability problem directly on the Webapplication side.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Top-Tools for Log-Analysis (CLI based)</title>
+		<link>http://www.aldana-online.de/2011/03/13/top-tools-for-logging-analysis-cli-based/</link>
+		<comments>http://www.aldana-online.de/2011/03/13/top-tools-for-logging-analysis-cli-based/#comments</comments>
+		<pubDate>Sun, 13 Mar 2011 11:21:55 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[bash]]></category>
+		<category><![CDATA[cli]]></category>
+		<category><![CDATA[log analysis]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=269</guid>
+		<description><![CDATA[After all the years it is still remarkable how powerful plain text is for software development (human readability, advanced SCM tools, expressiveness, no GUI necessary, etc.). This applies also on logging, where plain text makes a very nice source for doing adhoc analysis. Following samples show how bash, its interprocess-communication piping and the usual suspect [...]]]></description>
+			<content:encoded><![CDATA[<p>After all the years it is still remarkable how powerful plain text is for software development (human readability, advanced SCM tools, expressiveness, no GUI necessary, etc.). This applies also on logging, where plain text makes a very nice source for doing adhoc analysis. Following samples show how bash, its interprocess-communication piping and the usual suspect tools (awk, grep, sed, tr, etc.) give you great control when doing analysis.</p>
+<h3>Format</h3>
+<p>Logs should have a standard format, so analysis can rely on structured output and operate on it, programs are less flexible as humans and need strict patterns. Most often such logs are line-based and white-space separate based. Fortunately most logging frameworks make this a non brainer (e.g apache log-format settings, log4j).</p>
+<p>Usual log-pattern, rows/lines form single datasets and are most often ordered by time, because they are appended by the software over time, they often contain also timestamps. The lines most often are independant of each other, but for each line data needs to follow strict order (apart from loose text like error-messages or furhter stack traces):</p>
+<div class="codesnip-container" >
+<div class="codesnip">dataset1<span class="br0">&#40;</span>line1<span class="br0">&#41;</span>: data1 data2 data3<br />
+dataset2<span class="br0">&#40;</span>line2<span class="br0">&#41;</span>: data1 data2 data3<br />
+dataset3<span class="br0">&#40;</span>line3<span class="br0">&#41;</span>: data1 data2 data3<br />
+&#8230;</div>
+</div>
+<p>To better understand examples I refer to apache-logging pattern (HTTP based web-traffic). Still all the example adhoc queries can be applied to all other log-output target/formats:</p>
+<div class="codesnip-container" >&#8230;<br />
+127.0.0.1 &#8211; - [29/Feb/2011:13:58:50 +0100] &#8220;GET /api/image/status/ok HTTP/1.1&#8243; 200 476 &#8220;-&#8221; &#8220;Jakarta Commons-HttpClient/3.1&#8243;<br />
+&#8230;</div>
+<h3>Log analysis in Action</h3>
+<p>Quick overview for further analysis steps:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># using &#8216;less&#8217; so reading longer output is easier</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | less</p>
+<p><span class="co1"># only direct stuff to &#8216;less&#8217; which is of interest, in this case show relative URI path (7th position)</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | awk <span class="st0">&#8216;{print $7}&#8217;</span> | less</p>
+<p><span class="co1"># plain text is good candidate for compressing therefore on production</span><br />
+<span class="co1"># environment files are often zipped to save disk space, therefore use zgrep</span><br />
+zgrep * | awk <span class="st0">&#8216;{print $7}&#8217;</span> | less</div>
+</div>
+<p>Counts:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># count of HTTP calls which had 404 status</span><br />
+grep -c <span class="st0">&#8221; 404 &#8220;</span> log-file<br />
+<span class="co1"># more verbose equivalent</span><br />
+cat log-file | grep <span class="st0">&#8221; 404 &#8220;</span> | wc -l</p>
+<p><span class="co1"># count of all other but 404 HTTP status (inverse grep)</span><br />
+grep -v -c <span class="st0">&#8221; 404 &#8220;</span> log-file</p>
+<p><span class="co1"># piping (filtering step-by-step)</span><br />
+<span class="co1"># showing number of failed (non 201 status) image uploads (POST)</span><br />
+cat log-file | grep -v <span class="st0">&#8221; 201 &#8220;</span> | grep POST | grep image | wc -l</div>
+</div>
+<p>Filtering:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># spit out all respone times of HTTP 200 status</span><br />
+<span class="co1"># response time is whitespace-separated on 10th position</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | awk <span class="st0">&#8216;{print $10}&#8217;</span></p>
+<p><span class="co1"># show number of&nbsp; unique called URLs (stand on 7th position)</span><br />
+cat log-file | awk <span class="st0">&#8216;{print $7}&#8217;</span> | uniq</p>
+<p><span class="co1"># show slowest response time</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | awk <span class="st0">&#8216;{print $10}&#8217;</span> | sort -n | tail -n1<br />
+<span class="co1"># show fastest response time</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | awk <span class="st0">&#8216;{print $10}&#8217;</span> | sort -n | head -n1</p>
+<p><span class="co1"># filter lines &#8216;from,to&#8217; (e.g. analyse critical time section)</span><br />
+cat log-file | sed -n <span class="st0">&#8216;20,30&#8242;</span></div>
+</div>
+<p>Transformations:</p>
+<div class="codesnip-container" >
+<div class="codesnip"><span class="co1"># chain response times with &#8216;,&#8217; instead of linebreaks &#8216;\n&#8217;</span><br />
+grep <span class="st0">&#8221; 200 &#8220;</span> log-file | awk <span class="st0">&#8216;{print $10}&#8217;</span> | tr -d <span class="st0">&#8220;<span class="es0">\n</span>&#8220;</span> <span class="st0">&#8220;,&#8221;</span></p>
+<p><span class="co1"># delete/omit lines 10-20</span><br />
+cat log-file | awk <span class="st0">&#8216;{print $10}&#8217;</span> | sed <span class="st0">&#8216;20,30d&#8217;</span><br />
+<span class="co1"># slightly shorter</span><br />
+awk <span class="st0">&#8216;{print $10}&#8217;</span> &lt;&nbsp; log-file | sed <span class="st0">&#8216;20,30d&#8217;</span></div>
+</div>
+<p>Side-Note: While running adhoc log-files queries, often it is enough to go the pragmatic way, e.g. above I used the &#8221; 404 &#8221; in grep command which is not correct (404 could occur inside the response time part also). Never the less it is quicker and shorter to write and collision is unlikely.</p>
+<h3>Server farm approach (horizontal scaled)</h3>
+<p>How do you run log-analysis in server-farm environments (lots of machines are used to scale up horizontally)? In this situation logs are distributed around on each machine&#8217;s log directory. An option here  is to have a dedicated more storage focused server which runs a batch/cron-job over night copying all the server logs to a single place. This of course is practicable if the files aren&#8217;t too huge and can be processed in reasonable time by single script. If this is not the case you may want to use a more scalable sophisticated solution (like MapReduce with Hadoop). Another alternative is to analyse log on single machine and extrapolate. Most likely you use a load-balancer which causes the traffic to be distributed equally on each machine, i.e. running the same log-query on each machine would give back similar results. The big advantage of the single machine is simplicity: no infrastructure necessary (terminal and log-file sufficient), commands are simple one-liners and speed (only one machine log-file needs to be analysed).</p>
+<h3>Summary</h3>
+<p>The CLI triangle (bash, its utilities, piping) form a very convenient  ad-hoc query-interface for logs. At first glance they look a bit cryptic, but you get used to it very quickly. Also you already achieve a lot by only knowing a small subset of functionality (e.g. I use only a minimum subset of &#8216;awk&#8217; and &#8217;sed&#8217;). </p>
+<p>Am happy about any comments/hints of other lightweight tooling for log-analysis.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2011/03/13/top-tools-for-logging-analysis-cli-based/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Codebase size implications on Software development</title>
+		<link>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/</link>
+		<comments>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/#comments</comments>
+		<pubDate>Sun, 09 May 2010 19:17:59 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Software Engineering]]></category>
+		<category><![CDATA[Software Maintenance]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=158</guid>
+		<description><![CDATA[Following discusses the implications of big codebases. Codebase size can be measured with the well known &#8216;lines of code&#8217; (LOC) metric. 
+The following codebase size and LOC metric scope is not fine grained on function or class level but for complete codebase or at least on subcomponent level.
+Bad (anti-pattern): Codebase size as progress metric
+Sometimes (though [...]]]></description>
+			<content:encoded><![CDATA[<p>Following discusses the implications of big codebases. Codebase size can be measured with the well known &#8216;lines of code&#8217; (LOC) metric. </p>
+<p>The following codebase size and LOC metric scope is not fine grained on function or class level but for complete codebase or at least on subcomponent level.</p>
+<h3>Bad (anti-pattern): Codebase size as progress metric</h3>
+<p>Sometimes (though fortunately rarely) QA or project management is taking codebase size and LOC as a progress metric to see what the project&#8217;s state is. The more lines of code have been written the closer the project is seen to have been completed. This is a definite anti-pattern for following reasons:</p>
+<ul>
+<li>It is extremely difficult to estimate, how much code will be necessary for a certain scope or a set of requirements. This implies that project or product management cannot know, how much code is missing to mark the requirements as done.</li>
+<li>It is more about quality as of quantity of code. Well structured code with avoidance of duplication tends to have less lines of code.</li>
+<li>It is very important and valuable to throw away dead code (code which isn&#8217;t used or executed anywhere). Using lines of code as a progress metric would mean this important refactoring will cause a negative project progress.</li>
+</ul>
+<h3>Good: Codebase size as compexity metric</h3>
+<p>With a higher LOC metric you are likely to face following problems:</p>
+<ul>
+<li>Increase of feeback time: It takes longer to build deployable artifacts, to startup application and to verify implementation behaviour (this both applies to local development and CI servers).</li>
+<li>Tougher requirements on development tools: Working on large codebases makes the IDE often run less smoothly (e.g. while doing refactorings, using several debugging techniques).</li>
+<li>Code comprehension: More time has to be spent for reverse engineering or reading/understanding documentation. Code comprehension is vital to integrate changes and debugging.</li>
+<li>More complex test-setup: Bigger codebases tend to have more complicated test-setup. This includes setting up external components (like databases, containers, message-queues) and also defining test-data (the domain model is likely to be rich).</li>
+<li>Fixing bugs: First of all exposing a bug is harder (see test-setup). Further more localization of bug is tougher, because more code has to be narrowed down. Potentially more theories exist to have causes the bug.</li>
+<li>Breaking code: New requirements are more difficult to implement and integrate without breaking existing functionality.</li>
+<li>Product knowledge leakage: Bigger codebases tend to cover more functionality. The danger increases, that at some point the organization loses knowledge which functionality the software supports. This blindness has very bad implications on defining further requirements or strategies.
+<li>Compatibility efforts: The larger a codebase the more likely it is that it already has a long lifetime (codebases tend to grow over the years). Along the age of software down-compatibility is a constant requirement, which increases (a lot of) effort.</li>
+<li>Team size + fluctuation: Bigger codebases tend to have been touched by a big size of developers, which can cause knowledge leakage. Due to communication complexity, each developer only knows just a little part of the system and does not distribute it. Even worse due to team-size fluctuation is likely to be higher and knowledge gets completely lost for company.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Quantification of LOC impact is hard</h3>
+<p>Above statements are more qualitative and are not quantifiyable, because the exact mapping of a certain LOC number to a magic complexity number is unfeasible. For instance there are other criterias which have an impact on the complexity of a software system, which are independent of LOC:</p>
+<ul>
+<li>Choice of programming language/system: Maintaining 1.000 LOC of assembly is a complete different story as doing it with 1.000 of Java code.</li>
+<li>Problem domain: Complex algorithms (e.g. to be found in AI or image processing) tend to have less lines of code but still are complicated.</li>
+<li>Heterogenity of chosen technology in your complete source-code ecosystem: E.g. using 10 different frameworks and/or programming-languages and making them integrate to the overall system harder as concentrating on one  framework.</li>
+<li>Quality and existence of documentation: E.g. Api-interfaces aren&#8217;t documented or motivations for major design decision are unknown. From developers point of view such a system is effectively more complex because a lot of effort has to be spent in reverse engineering.</li>
+<li>etc. &#8230;</li>
+</ul>
+<h3>Conclusion</h3>
+<p>The metric LOC representing codebase size has a big impact on your whole software development cycle. Therefore it should be measured, observed and tracked over time (also by subcomponent). Apart from showing you the current state and evolution of your codebase from historical point of view you can also use it proactively for future:</p>
+<ul>
+<li>Estimation/planning: When estimating features take the LOC metric has influence criteria. The higher the LOC the more complicated it will be to integrate feature.</li>
+<li>YAGNI: Take YAGNI (&#8220;you ain&#8217;t gonna need it&#8221;) principle to the extreme. Only implement really necessary features. Do not make your software over-extensible and as simple as possible.</li>
+<li>Refactor out dead code: Being aware of LOC as a complexity metric, you can create a culture of dead-code awareness. Throw away as much unused code away as you can.</li>
+<li>Refactor out dead functionality: Software products often are unneccessarily overcomplex. Also push business towards are more simple product strategy and throw away unused features and achieve a smaller codebase.</li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2010/05/09/process-implications-of-metric-lines-of-code-loc/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Extending source-code syntax highlighting</title>
+		<link>http://www.aldana-online.de/2009/12/13/extending-source-code-syntax-highlighting/</link>
+		<comments>http://www.aldana-online.de/2009/12/13/extending-source-code-syntax-highlighting/#comments</comments>
+		<pubDate>Sun, 13 Dec 2009 12:39:13 +0000</pubDate>
+		<dc:creator>manuel aldana</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://www.aldana-online.de/?p=133</guid>
+		<description><![CDATA[After all the decades of software development, and recently hyped trends (e.g. &#8220;programming in graphical diagrams&#8221;) plain text source code is still the most powerful way to build software systems. Regarding this a high degree of importance is readability and comprehension of source code. In fact you&#8217;re spending more time in reading as with writing [...]]]></description>
+			<content:encoded><![CDATA[<p>After all the decades of software development, and recently hyped trends (e.g. &#8220;programming in graphical diagrams&#8221;) plain text source code is still the most powerful way to build software systems. Regarding this a high degree of importance is readability and comprehension of source code. In fact you&#8217;re spending more time in reading as with writing code. Apart from improving the structure of the code itself (the refactoring concept plays a big role here) syntax highlighting is also very important to get a quick overview. Following gives an example how and  why to tweak your editor defaults.</p>
+<h3>IDE defaults</h3>
+<p>Defaults from several IDEs or more simple text-editors are already giving big help, e.g. in showing keywords, instance fields or comments. Still in my view they can be tweaked, most of editors give options to extend things. Either they work with a graphical interface for changing settings (IDEs like IntelliJ, Eclipse etc.) or are working themselves with plain text highlighting configuration files (vim, krusader etc.). Your syntax highlighting toolbox contains text-decorations (like italic, underscored, bold) and coloring (foreground, background).<br />
+For my tweaks I used my favorite IDE IntelliJ, which offers many syntax highlighting options. Just checkout your editor and see what is possible.</p>
+<h3>Example BEFORE</h3>
+<p>Following annoyed me on the default settings:</p>
+<ul>
+<li>Could not instantly see parameters and variables</li>
+<li>No difference between local-vars and parameters</li>
+<li>Non-javadoc comments were too grey. I write comments to explain the &#8216;Why&#8217; or a important block of a code statement. So comments should be better visible.</li>
+<li>Todo comments were blue. Blue is a too &#8220;friendly&#8221; color to me, whereas looking at todos should wake me up!</li>
+<li>Instance and static vars were colored the same though they have different semantics.</li>
+<li>I tend to use more smaller methods as one monster method. The default highlighting does not separate between method declarations and calls.</li>
+</ul>
+<p>The BEFORE snippet:<br />
+<img class="aligncenter" src="http://www.aldana-online.de/wp-content/uploads/2009/12/before.png" alt="before" /></p>
+<h3>Example AFTER</h3>
+<p>I changed settings to:</p>
+<ul>
+<li>Non-instance + static variables are blue now. Parameters should be handled with more care. (changing them side-effect the callee), so they are bold.</li>
+<li>Static and instance vars have different colors now (pink vs. violet).</li>
+<li>Comments have slight green background now.</li>
+<li>Todo flags have the signal-color orange</li>
+<li>Methods are underscored. Declarations are bold, calls are non-bold.</li>
+</ul>
+<p>The AFTER snippet:<br />
+<img class="aligncenter" src="http://www.aldana-online.de/wp-content/uploads/2009/12/after.png" alt="after" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.aldana-online.de/2009/12/13/extending-source-code-syntax-highlighting/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

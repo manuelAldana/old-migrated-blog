@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Manuel Aldana &#8212  &#8216;Embrace Failure&#8217; approaches in Software Development</title>
+	
+	<meta name="generator" content="WordPress 2.9.2" /> <!-- leave this for stats -->
+  <link rel="shortcut icon" href="../../../../favicon.ico"/>	
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../wp-content/themes/cutlineAldana/custom_css/custom.css" type="text/css" media="screen" />
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie7.css" media="screen" />
+	<![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://www.aldana-online.de/wp-content/themes/cutlineAldana/ie6.css" media="screen" />
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana RSS Feed" href="../../../../feed/index.html" />
+	<link rel="pingback" href="../../../../xmlrpc.php" />
+	<meta name="google-site-verification" content="L4vY5UHsSR0hLG7CXwSvTMmUHiV0P59pw6tX8xhm_kM" />
+
+	<link rel="alternate" type="application/rss+xml" title="Manuel Aldana &raquo; &#8216;Embrace Failure&#8217; approaches in Software Development Comments Feed" href="feed/index.html" />
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js@ver=1.3.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Manuel Aldana' href='../../../../index.html' />
+<link rel='start' title='Wordpress setup' href='../../../../2008/01/30/wordpress-setup/index.html' />
+<link rel='prev' title='Top-Tools for Log-Analysis (CLI based)' href='../../../03/13/top-tools-for-logging-analysis-cli-based/index.html' />
+<link rel='next' title='Accessing rrdtool-files Data with Java / Scala' href='../../../07/03/accessing-rrdtool-files-data-with-java/index.html' />
+<meta name="generator" content="WordPress 2.9.2" />
+<link rel='canonical' href='index.html' />
+<link rel="stylesheet" href="../../../../wp-content/plugins/digg-digg/css/diggdigg-style.css@ver=4.2.css" type="text/css" media="screen" /></head>
+
+<body class="custom">
+<div id="container">
+
+<div id="header_text_big">
+SOFTWARE ENGINEERING blog &amp; .lessons_learned</div>
+<div id="header_text_normal">
+manuel aldana
+</div>
+<div id="header_img">		
+		<a href="../../../../index.html"><img src="../../../../wp-content/themes/cutlineAldana/images/blogLogoAldana.jpg" alt="Manuel Aldana" title="Manuel Aldana" /></a>		
+</div>
+
+	<ul id="nav">
+		<li class="rss"><a href="../../../../feed/index.html">RSS</a></li>
+	</ul>
+
+	
+
+	<div id="content_box">
+	
+		<div id="l_sidebar">
+	<ul class="sidebar_list">
+				<li id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widgettitle">Last entries</h2>
+		<ul>
+				<li><a href="../../../../2018/05/30/notes-on-dsvgo-gdpr-regarding-comment-function/index.html" title="Notes on DSVGO / GDPR regarding comment function">Notes on DSVGO / GDPR regarding comment function </a></li>
+				<li><a href="../../../../2012/01/26/the-evil-path-of-mobile-apps-vs-webstandards/index.html" title="The evil path of Mobile-Apps (vs. Webstandards)&#8230;">The evil path of Mobile-Apps (vs. Webstandards)&#8230; </a></li>
+				<li><a href="../../../09/30/complexity-drivers-of-software-systems/index.html" title="Complexity drivers of Software-Systems">Complexity drivers of Software-Systems </a></li>
+				<li><a href="../../../07/03/accessing-rrdtool-files-data-with-java/index.html" title="Accessing rrdtool-files Data with Java / Scala">Accessing rrdtool-files Data with Java / Scala </a></li>
+				<li><a href="index.html" title="&#8216;Embrace Failure&#8217; approaches in Software Development">&#8216;Embrace Failure&#8217; approaches in Software Development </a></li>
+				<li><a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html" title="Top-Tools for Log-Analysis (CLI based)">Top-Tools for Log-Analysis (CLI based) </a></li>
+				</ul>
+		</li>
+<li id="flexi-pages" class="widget flexipages_widget"><h2 class="widgettitle">About me</h2>
+<ul>
+<li class="page_item page-item-2"><a href="../../../../about/index.html" title="About me/Contact">About me/Contact</a></li>
+<li class="page_item page-item-95"><a href="../../../../it-skills/index.html" title="IT-Skills">IT-Skills</a></li>
+<li class="page_item page-item-115"><a href="../../../../my-bookshelfbook-highlights/index.html" title="Book Highlights">Book Highlights</a></li>
+<li class="page_item page-item-14"><a href="../../../../open-source/index.html" title="Open Source">Open Source</a></li>
+<li class="page_item page-item-19"><a href="../../../../university/index.html" title="University">University</a></li>
+<li class="page_item page-item-21"><a href="../../../../leisure/index.html" title="Hobbies">Hobbies</a></li>
+<li class="page_item page-item-6"><a href="../../../../camphill/index.html" title="Camphill">Camphill</a></li>
+</ul>
+</li>
+<li id="categories-1" class="widget widget_categories"><h2 class="widgettitle">Blog Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="../../../../category/software-engineering/continous-integration/index.html" title="View all posts filed under Continous Integration">Continous Integration</a> (7)
+</li>
+	<li class="cat-item cat-item-3"><a href="../../../../category/software-engineering/index.html" title="View all posts filed under Software Engineering">Software Engineering</a> (22)
+</li>
+	<li class="cat-item cat-item-6"><a href="../../../../category/software-engineering/software-maintenance/index.html" title="View all posts filed under Software Maintenance">Software Maintenance</a> (5)
+</li>
+	<li class="cat-item cat-item-20"><a href="../../../../category/software-engineering/technologies-tools/index.html" title="View all posts filed under Technologies/Tools">Technologies/Tools</a> (10)
+</li>
+	<li class="cat-item cat-item-1"><a href="../../../../category/uncategorized/index.html" title="View all posts filed under Uncategorized">Uncategorized</a> (5)
+</li>
+		</ul>
+</li>
+<li id="linkcat-2" class="widget widget_links"><h2 class="widgettitle">Important SE Links</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.artima.com/weblogs/index.jsp?blogger=beckel" title="well known and pragmatic " target="_blank">Bruce Eckel</a></li>
+<li><a href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror</a></li>
+<li><a href="http://www.dzone.com/links/index.html" target="_blank">DZone</a></li>
+<li><a href="http://www.infoq.com/" target="_blank">InfoQ</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">Joel on Software</a></li>
+<li><a href="http://martinfowler.com/bliki/" title="one, of the first pushing refactoring to public" target="_blank">Martin Fowler</a></li>
+<li><a href="http://www.se-radio.net/" title="very interesting podcasts from different experts all around software engineering" target="_blank">Software Engineering Radio</a></li>
+<li><a href="http://theserverside.com" title="all about enterprise applications (especially with java)" target="_blank">TheServerSide</a></li>
+
+	</ul>
+</li>
+
+<li id="search-2" class="widget widget_search"><form method="get" id="search_form" action="../../../../index.html">
+	<input type="text" class="search_input" value="To search, type and hit enter" name="s" id="s" onfocus="if (this.value == 'To search, type and hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To search, type and hit enter';}" />
+	<input type="hidden" id="searchsubmit" value="Search" />
+</form>
+</li>
+	</ul>
+</div>		
+		<div id="content" class="posts">
+			
+				
+<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../07/03/accessing-rrdtool-files-data-with-java/index.html">Accessing rrdtool-files Data with Java / Scala</a> </div>
+	<div class="older"> <a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html">Top-Tools for Log-Analysis (CLI based)</a> &gt; </div>
+</div>
+					
+			<h4>May 15th, 2011<!-- by manuel aldana --> &middot; <a href="index.html#comments">No Comments</a></h4>
+			<h2>&#8216;Embrace Failure&#8217; approaches in Software Development</h2>			
+			
+			<div class="entry">
+				<div class='dd_post_share dd_post_share_left'><div class='dd_buttons'><div class='dd_button'><iframe src='http://widgets.dzone.com/links/widgets/zoneit.html?url=http://www.aldana-online.de/2011/05/15/embracing-failure-softwareapproaches/&amp;title=%27Embrace+Failure%27+approaches+in+Software+Development&amp;t=1' height='68' width='52' frameborder='0' scrolling='no'></iframe></div></div></div><p>Software-Developers (and humans generally) must not try to be 100% perfect but should take the imperfection as granted and &#8220;embrace&#8221; it. Following gives some thoughts on how to approach the &#8216;Embracing failure&#8217; principle in the field of Software Development.</p>
+<h3>Log thoughtfully</h3>
+<p>Proper and insightful logging cannot be overstated, you will praise the developer who provides good logs, i.e. you can easily search for problem-symptoms inside logs. Inside team find an appropriate logging convention for log-patterns + semantics of level. Some short and abbreviated ideas:</p>
+<ul>
+<li>DEBUG: Detailed information while going through integration points (like printing payload of XML for api call). Quantified information like statistics while refreshing/invalidating cache.</li>
+<li>INFO: Bootstrapping/startup information, initialization routines, reoccurring asynchronous actions (including elapsed time).</li>
+<li>WARN: Logging suspicious/errornous application state, where fallback is still possible and routine/call can be proceeded.</li>
+<li>ERROR: No fallback possible. For the user/customer this most likely means a crashed call/request (in HTTP jargon this would be a 500 status). Examples for such failures could be NullPointers or database unavailability.</li>
+</ul>
+<p>NEVER EVER swallow away Exceptions, I&#8217;ve seen several empty catch{} blocks which later caused major headaches during production, on user-level the system crashed on many calls but nothing could be seen inside logs. At topmost application layer log uncaught Exceptions as ERROR.</p>
+<p>Also have a look at a <a target="_blank" href="http://nurkiewicz.blogspot.com/2010/05/clean-code-clean-logs-use-appropriate.html">longer blog-entry</a> about appropriate logging.</p>
+<h3>Make deployment + upgrade easy</h3>
+<p>When a critical failure occurs you want to be able to react quickly. Reaction-time lasts between the time of knowing the issue until the deployment is finished and the customers sees the change. This includes getting the code (thank a fast SCM), understanding the problem, fixing/extending the code, verifying change on local and/or qa-environment and finally push to production. For building deployment package and executing deployment automate and speed up as much as possible. </p>
+<p>If you are lucky your app is a typical browser-server based webapp. It has the highest potential regarding instant deployment: As soon as the new app version has been rolled out to your server machine (or server farm, in case you scaled out) the upgrade is complete and will be instantly seen inside the client&#8217;s browser. Yes, webapp deployments have their own pitfalls (high traffic site&#8217;s rollout isn&#8217;t atomic, cache settings, browser state inside DOM or cookies), but other application classes like embedded-systems, desktop-app or mobile-apps have much tougher deployment requirements and upgrade process is more complicated. But Google&#8217;s Chrome Webbrowser</a> shows that even for these applications a <a target="_blank" href="http://www.codinghorror.com/blog/2011/05/the-infinite-version.html">well designed and transparent upgrade mechanism is possible</a>.</p>
+<h3>Monitor your application</h3>
+<p>At some point the system will fail, therefore you have to focus on notfications of respective problems. A typical and annoying scenario is a &#8216;false negative&#8217; production system: You think everything is alright but in fact the production behaviour is unstable and unreliable. Unstable production behaviour can be infrastructure or application related. Infrastructure problems include network problems, disk crashes, external-system/integration-points downtime or not enough capacity/resources to handle the load. Application related are more &#8220;real&#8221; usual application bugs like unchecked null-references, dead-locks, infinity-loops, thread-unsafety or simply wrong implemented requirements.</p>
+<p>To sense + sanity-check such problems you need system-hooks which deliver data (e.g. Servlet-Container built-in monitoring, JMX). Sometimes you will also write little extension to fulfill a specific monitoring requirement (e.g. ERROR log counter). Apart from data-provision you also need an entity which processes the numbers. To not hire monkeys you should use existing tools. For instance munin + rdd-tool tracks the data over time and plots nice graphs and Nagios alerts you actively in case of a peak of a metric and a potential incident.</p>
+<h3>Make it visible</h3>
+<p>We as humans are also far from perfect at number crunching and intepreting masses of detailed numeric data. Often application &#8220;health&#8221; degrades over time so you should deliver comparison of &#8216;now&#8217; to historic data (like hour over hour, day over day, week over week). Try to abstract away numbers behind meaningful graphs or charts. The signal light analogy (green, orange, red) also helps a lot to classify the criticality of numbers.</p>
+<h3>Enabling live diagnostics</h3>
+<p>Sometimes app behaviour isn&#8217;t well enough understood and you won&#8217;t be able to reproduce a scenario in local isolated environment. You then have to try to get more insight of production system. In case resources are the problem (like CPU, memory) several profilers support live production machine-instance attachements to get some metrics like running threads, heap-stats or garbage collector info. </p>
+<p>If you need more semantically application insights and followed log conventions, you should also make it possible to enable DEBUG or TRACE logs for a certain code sections. Make your logging-levels configurable during runtime. If you have to restart your app when changing log-settings you can wipe away the current application&#8217;s state you want to analyse (issues are often not reproducible straight after restart).</p>
+<p>Another helpful option is live debugging, where you debug remotely and direcetly on the problem-server instance. You can directly sense the concrete problem as is and don&#8217;t need to waste effort for local reproduction. One of your users will have bad luck and will hit a connection timeout, but the request anyway would have caused an error page.</p>
+<h3>Use Users/Customers as feedback provider</h3>
+<p>Even if you are running under a diagnostic friendly webapp (server is under app-provider&#8217;s control) you may end-up with very weird cases, which happen on the client&#8217;s side. Therefore make it very easy for customers to give you feedback, either provide free-phone-contact or a easy to find feedback form. In case you don&#8217;t run as webapp an option would also be that in case of an error the user just needs to click a button and some diagnostic data is sent to the server (I remember, when reporting a bug Ubuntu OS fetched a good deal of OS-configuration-data and attached it to the bug-report). Some embedded systems don&#8217;t need user action but automatically dump application-state to a persistent storage before a reset. This data then can be retrieved later from a mechanic inside a car repair-shop.</p>
+<h3>Conclusion</h3>
+<p>Your production system will fail at some point. You can try to fight this by getting your QA as close as possible to production and invest A LOT into testing. Still you have to find the sweet spot of cost/benefit ratio, because this effort increases exponentially (effort of providing same hardware, 100% test-coverage + test-data, simulate real-user behaviour, etc.). There are software-system classes where this effort must be pushed to the limits like in money + life critical intense systems, but most applications we are building aren&#8217;t that sensitive where damage cannot be tolerated or reversed. Therefore build in as many diagnostics as sensible and have good tooling + process around a quick alert/fix/deploy roundtrip.</p>
+<!-- Social Buttons Shared Counts Generated by Digg Digg plugin v4.2, 
+    Author : Yong Mook Kim
+    Website : http://www.mkyong.com/blog/digg-digg-wordpress-plugin/ -->							</div>
+			<p class="tagged"><strong>Tags:</strong> <a href="../../../../category/software-engineering/index.html" title="View all posts in Software Engineering" rel="category tag">Software Engineering</a></p>
+		
+			<div class="newer_older">		
+	<div class="newer">&lt; <a href="../../../07/03/accessing-rrdtool-files-data-with-java/index.html">Accessing rrdtool-files Data with Java / Scala</a> </div>
+	<div class="older"> <a href="../../../03/13/top-tools-for-logging-analysis-cli-based/index.html">Top-Tools for Log-Analysis (CLI based)</a> &gt; </div>
+</div>
+	
+	
+			
+<!-- You can start editing here. -->
+
+
+<div id="comments">
+
+	<h3 class="comments_headers">0 responses</h3>
+	
+	<ul id="comment_list">
+
+	
+	<!-- Comment Form -->
+		
+			
+			<p class="unstyled">You must <a href="../../../../wp-login.php@redirect_to=http%253A%252F%252Fwww.aldana-online.de%252F2011%252F05%252F15%252Fembracing-failure-softwareapproaches%252F.html">log in</a> to post a comment.</p>
+	
+		
+</div> <!-- Close #comments container -->
+<div class="clear flat"></div>
+			
+				
+		</div>
+		
+
+			
+	</div>
+
+	<div id="footer">
+	
+  
+  <p>	 
+    &copy; 2007&ndash;2010 Software Engineering blog &amp; .more  &mdash; <a href="../../../../sitemap.xml">Sitemap</a> &mdash; Manuel Aldana
+		      
+  </p>
+  <p>
+			<a href="http://www.mozilla.org/products/firefox/" target="_blank" title="Get Firefox"><img src="../../../../getfirefox_small.png"  border="0" alt="Get Firefox" /></a>  
+</p>
+  
+	</div>
+</div>
+
+</body>
+</html>
